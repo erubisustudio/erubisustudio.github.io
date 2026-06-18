@@ -1,46 +1,34 @@
 <!DOCTYPE html>
 
-<html lang="it">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Erubisu Studio | Sviluppo Web Design Minimalista</title>
-
-    <!-- SEO Meta Tags -->
-    <meta name="description"
-        content="Erubisu Studio – Portfolio di sviluppo web curatoriale. Uniamo l'arte dell'estetica giapponese all'efficienza del codice moderno per creare esperienze digitali uniche." />
-    <meta name="keywords"
-        content="web design, sviluppo front-end, portfolio, minimalismo giapponese, UI/UX, Erubisu Studio, web agency italia, design curatoriale" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://erubisu.studio" />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon.png" />
-    <link rel="apple-touch-icon" href="images/favicon.png" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://erubisu.studio" />
-    <meta property="og:title" content="Erubisu Studio | Architectural Quiet Portfolio" />
-    <meta property="og:description"
-        content="L'arte incontra l'efficienza. Sviluppo web curatoriale con eleganza e precisione." />
-    <meta property="og:image" content="https://erubisu.studio/og-image.jpg" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://erubisu.studio" />
-    <meta name="twitter:title" content="Erubisu Studio | Architectural Quiet Portfolio" />
-    <meta name="twitter:description" content="Sviluppo web curatoriale tra estetica giapponese e codice moderno." />
-    <meta name="twitter:image" content="https://erubisu.studio/og-image.jpg" />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap"
-        rel="stylesheet" />
-    <script id="tailwind-config">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Erubisu Studio | Minimalist Web Design &amp; Development</title>
+<!-- SEO Meta Tags -->
+<meta content="Erubisu Studio – Curated web development portfolio. We merge Japanese aesthetic principles with modern code efficiency to create unique digital experiences." name="description"/>
+<meta content="web design, front-end development, portfolio, Japanese minimalism, UI/UX, Erubisu Studio, web agency Italy, curated design" name="keywords"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://erubisu.studio/" rel="canonical"/>
+<!-- Favicon -->
+<link href="images/favicon.png" rel="icon" type="image/png"/>
+<link href="images/favicon.png" rel="apple-touch-icon"/>
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="https://erubisu.studio" property="og:url"/>
+<meta content="Erubisu Studio | Architectural Quiet Portfolio" property="og:title"/>
+<meta content="Art meets efficiency. Curated web development with elegance and precision." property="og:description"/>
+<meta content="https://erubisu.studio/og-image.jpg" property="og:image"/>
+<!-- Twitter -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://erubisu.studio" name="twitter:url"/>
+<meta content="Erubisu Studio | Architectural Quiet Portfolio" name="twitter:title"/>
+<meta content="Curated web development between Japanese aesthetics and modern code." name="twitter:description"/>
+<meta content="https://erubisu.studio/og-image.jpg" name="twitter:image"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -113,7 +101,7 @@
             },
         }
     </script>
-    <style>
+<style>
         html {
             scroll-behavior: smooth;
         }
@@ -135,461 +123,368 @@
             user-select: none;
         }
     </style>
-</head>
-
-<body
-    class="bg-background text-on-background font-body antialiased selection:bg-primary-container selection:text-on-primary-container">
-    <nav
-        class="fixed top-0 w-full z-50 bg-[#fafaf5]/70 dark:bg-[#2e342d]/70 backdrop-blur-xl shadow-[0_20px_40px_rgba(46,52,45,0.06)]">
-        <div class="flex justify-between items-center px-[5vw] py-6 max-w-[1440px] mx-auto">
-            <div class="hover:opacity-80 transition-opacity duration-300">
-                <a href="#hero">
-                    <img src="images/Logo.png" alt="Erubisu Studio" class="h-[85px] w-[85px] object-contain">
-                </a>
-            </div>
-            <ul class="hidden md:flex gap-8 font-headline text-lg tracking-tight">
-                <li><a class="text-[#5b6159] dark:text-[#aeb4aa] hover:text-[#2e342d] dark:hover:text-[#fafaf5] transition-colors"
-                        href="#philosophy">Filosofia</a></li>
-                <li><a class="text-[#5b6159] dark:text-[#aeb4aa] hover:text-[#2e342d] dark:hover:text-[#fafaf5] transition-colors"
-                        href="#process">Processo</a></li>
-                <li><a class="text-[#5b6159] dark:text-[#aeb4aa] hover:text-[#2e342d] dark:hover:text-[#fafaf5] transition-colors"
-                        href="#portfolio">Portfolio</a></li>
-                <li><a class="text-[#5b6159] dark:text-[#aeb4aa] hover:text-[#2e342d] dark:hover:text-[#fafaf5] transition-colors"
-                        href="#skills">Skills</a></li>
-            </ul>
-            <a class="hidden md:inline-flex items-center justify-center px-6 py-2.5 bg-primary text-on-primary rounded font-label text-sm font-medium hover:bg-primary-dim transition-colors duration-300"
-                href="#contact">
-                Contattami
-            </a>
-            <button id="mobile-menu-button" class="md:hidden text-on-surface hover:opacity-80 transition-opacity">
-                <span class="material-symbols-outlined" style='font-variation-settings: "FILL" 0;'>menu</span>
-            </button>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu"
-            class="hidden md:hidden absolute top-full left-0 w-full bg-[#fafaf5]/95 dark:bg-[#2e342d]/95 backdrop-blur-xl shadow-lg border-t border-outline-variant/20">
-            <ul class="flex flex-col font-headline text-lg tracking-tight px-[5vw] py-6 gap-6">
-                <li><a class="block text-[#5b6159] dark:text-[#aeb4aa] hover:text-[#2e342d] dark:hover:text-[#fafaf5] transition-colors"
-                        href="#philosophy">Filosofia</a></li>
-                <li><a class="block text-[#5b6159] dark:text-[#aeb4aa] hover:text-[#2e342d] dark:hover:text-[#fafaf5] transition-colors"
-                        href="#process">Processo</a></li>
-                <li><a class="block text-[#5b6159] dark:text-[#aeb4aa] hover:text-[#2e342d] dark:hover:text-[#fafaf5] transition-colors"
-                        href="#portfolio">Portfolio</a></li>
-                <li><a class="block text-[#5b6159] dark:text-[#aeb4aa] hover:text-[#2e342d] dark:hover:text-[#fafaf5] transition-colors"
-                        href="#skills">Skills</a></li>
-                <li><a class="inline-flex items-center justify-center px-6 py-3 bg-primary text-on-primary rounded font-label text-sm font-medium hover:bg-primary-dim transition-colors duration-300 w-full mt-2"
-                        href="#contact">Contattami</a></li>
-            </ul>
-        </div>
-    </nav>
-    <main>
-        <!-- 1. Hero Section -->
-        <section class="min-h-screen flex items-center pt-24 px-[5vw] max-w-[1440px] mx-auto relative" id="hero">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
-                <div class="lg:col-span-5 flex flex-col gap-8 z-10">
-                    <h1 class="font-headline text-5xl md:text-7xl leading-tight text-on-background">
-                        L'arte incontra<br />l'efficienza
-                    </h1>
-                    <p class="font-body text-lg md:text-xl text-on-surface-variant max-w-md">
-                        Trasformiamo la visione in codice, con eleganza e precisione. Un approccio curatoriale allo
-                        sviluppo digitale.
-                    </p>
-                    <div class="pt-4">
-                        <a class="inline-flex items-center justify-center px-8 py-3.5 bg-gradient-to-br from-primary to-primary-dim text-on-primary rounded font-label text-sm font-medium tracking-wide shadow-md hover:shadow-lg transition-all duration-300"
-                            href="#portfolio">
-                            Esplora i Progetti
-                        </a>
-                    </div>
-                </div>
-                <div class="lg:col-span-7 flex justify-center items-center">
-                    <div
-                        class="w-[320px] h-[320px] md:w-[460px] md:h-[460px] lg:w-[540px] lg:h-[540px] rounded-full overflow-hidden shadow-[0_24px_48px_rgba(46,52,45,0.12)] relative border-[12px] border-surface-container">
-                        <img alt="Professional profile" class="w-full h-full object-cover object-center"
-                            src="images/foto_profilo.webp" />
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- 2. Philosophy -->
-        <section class="py-32 px-[5vw] bg-surface-container-low w-full" id="philosophy">
-            <div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
-                <div class="md:col-span-4 flex flex-col justify-between">
-                    <h2 class="font-headline text-4xl text-on-surface mb-8">Filosofia</h2>
-                </div>
-                <div class="md:col-span-8 flex flex-col gap-12 font-body text-lg text-on-surface-variant">
-                    <div class="p-8 bg-surface-container rounded-lg shadow-[0_20px_40px_rgba(46,52,45,0.06)]">
-                        <h3 class="font-headline text-2xl text-on-surface mb-4">Eliminare il Muda</h3>
-                        <p>Nella filosofia produttiva giapponese, 'Muda' rappresenta lo spreco.
-                            Applichiamo questo concetto al design e al codice, rimuovendo tutto ciò che non aggiunge
-                            valore all'esperienza finale dell'utente. Il risultato è un'interfaccia pulita, essenziale e
-                            focalizzata.</p>
-                    </div>
-                    <div class="p-8 bg-surface-container rounded-lg shadow-[0_20px_40px_rgba(46,52,45,0.06)] md:ml-12">
-                        <h3 class="font-headline text-2xl text-on-surface mb-4">La pratica del Kaizen</h3>
-                        <p>Il miglioramento continuo ('Kaizen') è al centro del nostro processo. Non
-                            ci accontentiamo mai della prima iterazione. Rifiniamo, ottimizziamo e perfezioniamo ogni
-                            riga di codice e ogni dettaglio visivo fino a raggiungere l'equilibrio ottimale.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- 3. Creative Flow -->
-        <section class="py-32 px-[5vw] max-w-[1440px] mx-auto" id="process">
-            <h2 class="font-headline text-5xl text-on-background mb-24 text-center">Processo</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="flex flex-col gap-4">
-                    <div
-                        class="w-12 h-12 bg-primary-container text-on-primary-container rounded flex items-center justify-center font-headline text-xl mb-4">
+<!-- Single-page bilingual version: English is default; Italian is selected via client-side language switcher. --></head>
+<body class="bg-background text-on-background font-body antialiased selection:bg-primary-container selection:text-on-primary-container">
+<nav class="fixed top-0 w-full z-50 bg-[#fafaf5]/70 dark:bg-[#2e342d]/70 backdrop-blur-xl shadow-[0_20px_40px_rgba(46,52,45,0.06)]">
+<div class="flex justify-between items-center px-[5vw] py-6 max-w-[1440px] mx-auto">
+<div class="hover:opacity-80 transition-opacity duration-300">
+<a href="#hero">
+<img alt="Erubisu Studio" class="h-[85px] w-[85px] object-contain" data-i18n-alt="0" src="images/Logo.png"/>
+</a>
+</div>
+<ul class="hidden md:flex gap-8 font-headline text-lg tracking-tight">
+<li><a class="text-[#5b6159] dark:text-[#aeb4aa] hover:text-[#2e342d] dark:hover:text-[#fafaf5] transition-colors" data-i18n="t001" href="#philosophy">Philosophy</a></li>
+<li><a class="text-[#5b6159] dark:text-[#aeb4aa] hover:text-[#2e342d] dark:hover:text-[#fafaf5] transition-colors" data-i18n="t002" href="#process">Process</a></li>
+<li><a class="text-[#5b6159] dark:text-[#aeb4aa] hover:text-[#2e342d] dark:hover:text-[#fafaf5] transition-colors" data-i18n="t003" href="#portfolio">Portfolio</a></li>
+<li><a class="text-[#5b6159] dark:text-[#aeb4aa] hover:text-[#2e342d] dark:hover:text-[#fafaf5] transition-colors" data-i18n="t004" href="#skills">Skills</a></li>
+</ul>
+<a class="hidden md:inline-flex items-center justify-center px-6 py-2.5 bg-primary text-on-primary rounded font-label text-sm font-medium hover:bg-primary-dim transition-colors duration-300" data-i18n="t005" href="#contact">Contact Me</a><div aria-label="Language selector" class="language-switcher hidden md:flex items-center gap-2 font-label text-xs uppercase tracking-[0.08em]"><button aria-pressed="true" class="px-2 py-1 rounded bg-primary text-on-primary transition-colors" data-lang-switch="en" type="button">EN</button><span class="text-on-surface-variant">/</span><button aria-pressed="false" class="px-2 py-1 rounded text-on-surface-variant hover:text-on-surface transition-colors" data-lang-switch="it" type="button">IT</button></div>
+<button class="md:hidden text-on-surface hover:opacity-80 transition-opacity" id="mobile-menu-button">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 0;'>menu</span>
+</button>
+</div>
+<!-- Mobile Menu -->
+<div class="hidden md:hidden absolute top-full left-0 w-full bg-[#fafaf5]/95 dark:bg-[#2e342d]/95 backdrop-blur-xl shadow-lg border-t border-outline-variant/20" id="mobile-menu">
+<ul class="flex flex-col font-headline text-lg tracking-tight px-[5vw] py-6 gap-6">
+<li><a class="block text-[#5b6159] dark:text-[#aeb4aa] hover:text-[#2e342d] dark:hover:text-[#fafaf5] transition-colors" data-i18n="t006" href="#philosophy">Philosophy</a></li>
+<li><a class="block text-[#5b6159] dark:text-[#aeb4aa] hover:text-[#2e342d] dark:hover:text-[#fafaf5] transition-colors" data-i18n="t007" href="#process">Process</a></li>
+<li><a class="block text-[#5b6159] dark:text-[#aeb4aa] hover:text-[#2e342d] dark:hover:text-[#fafaf5] transition-colors" data-i18n="t008" href="#portfolio">Portfolio</a></li>
+<li><a class="block text-[#5b6159] dark:text-[#aeb4aa] hover:text-[#2e342d] dark:hover:text-[#fafaf5] transition-colors" data-i18n="t009" href="#skills">Skills</a></li>
+<li><a class="inline-flex items-center justify-center px-6 py-3 bg-primary text-on-primary rounded font-label text-sm font-medium hover:bg-primary-dim transition-colors duration-300 w-full mt-2" data-i18n="t010" href="#contact">Contact Me</a></li>
+<li aria-label="Language selector" class="mobile-language-switcher flex items-center gap-3 pt-2 font-label text-sm uppercase tracking-[0.08em]"><button aria-pressed="true" class="px-3 py-1.5 rounded bg-primary text-on-primary transition-colors" data-lang-switch="en" type="button">English</button><span class="text-on-surface-variant">/</span><button aria-pressed="false" class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface transition-colors" data-lang-switch="it" type="button">Italiano</button></li></ul>
+</div>
+</nav>
+<main>
+<!-- 1. Hero Section -->
+<section class="min-h-screen flex items-center pt-24 px-[5vw] max-w-[1440px] mx-auto relative" id="hero">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+<div class="lg:col-span-5 flex flex-col gap-8 z-10">
+<h1 class="font-headline text-5xl md:text-7xl leading-tight text-on-background" data-i18n-html="t011">Art meets<br/>efficiency</h1>
+<p class="font-body text-lg md:text-xl text-on-surface-variant max-w-md" data-i18n="t012">We turn vision into code with elegance and precision. A curated approach to digital development.</p>
+<div class="pt-4">
+<a class="inline-flex items-center justify-center px-8 py-3.5 bg-gradient-to-br from-primary to-primary-dim text-on-primary rounded font-label text-sm font-medium tracking-wide shadow-md hover:shadow-lg transition-all duration-300" data-i18n="t013" href="#portfolio">Explore Projects</a>
+</div>
+</div>
+<div class="lg:col-span-7 flex justify-center items-center">
+<div class="w-[320px] h-[320px] md:w-[460px] md:h-[460px] lg:w-[540px] lg:h-[540px] rounded-full overflow-hidden shadow-[0_24px_48px_rgba(46,52,45,0.12)] relative border-[12px] border-surface-container">
+<img alt="Professional profile" class="w-full h-full object-cover object-center" data-i18n-alt="1" src="images/foto_profilo.webp"/>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Philosophy -->
+<section class="py-32 px-[5vw] bg-surface-container-low w-full" id="philosophy">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
+<div class="md:col-span-4 flex flex-col justify-between">
+<h2 class="font-headline text-4xl text-on-surface mb-8" data-i18n="t014">Philosophy</h2>
+</div>
+<div class="md:col-span-8 flex flex-col gap-12 font-body text-lg text-on-surface-variant">
+<div class="p-8 bg-surface-container rounded-lg shadow-[0_20px_40px_rgba(46,52,45,0.06)]">
+<h3 class="font-headline text-2xl text-on-surface mb-4" data-i18n="t015">Eliminating Muda</h3>
+<p data-i18n="t016">In Japanese production philosophy, 'Muda' means waste. We apply this concept to design and code, removing everything that does not add value to the final user experience. The result is a clean, essential, focused interface.</p>
+</div>
+<div class="p-8 bg-surface-container rounded-lg shadow-[0_20px_40px_rgba(46,52,45,0.06)] md:ml-12">
+<h3 class="font-headline text-2xl text-on-surface mb-4" data-i18n="t017">The practice of Kaizen</h3>
+<p data-i18n="t018">Continuous improvement ('Kaizen') is at the center of our process. We never settle for the first iteration. We refine, optimize, and perfect every line of code and every visual detail until we reach the right balance.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Creative Flow -->
+<section class="py-32 px-[5vw] max-w-[1440px] mx-auto" id="process">
+<h2 class="font-headline text-5xl text-on-background mb-24 text-center" data-i18n="t019">Process</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="flex flex-col gap-4">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded flex items-center justify-center font-headline text-xl mb-4" data-i18n="t020">
                         01</div>
-                    <h3 class="font-headline text-xl text-on-surface">Il Brief</h3>
-                    <p class="font-body text-on-surface-variant text-sm md:text-base leading-relaxed">Iniziamo con una chiacchierata. Mi racconti la tua idea, i tuoi obiettivi e cosa ti aspetti dal tuo nuovo sito. Mi serve a capire chi sei per creare qualcosa che ti rappresenti davvero.</p>
-                </div>
-                <div class="flex flex-col gap-4 lg:mt-12">
-                    <div
-                        class="w-12 h-12 bg-primary-container text-on-primary-container rounded flex items-center justify-center font-headline text-xl mb-4">
+<h3 class="font-headline text-xl text-on-surface" data-i18n="t021">The Brief</h3>
+<p class="font-body text-on-surface-variant text-sm md:text-base leading-relaxed" data-i18n="t022">We start with a conversation. You tell me your idea, your goals, and what you expect from your new website. This helps me understand who you are and create something that truly represents you.</p>
+</div>
+<div class="flex flex-col gap-4 lg:mt-12">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded flex items-center justify-center font-headline text-xl mb-4" data-i18n="t023">
                         02</div>
-                    <h3 class="font-headline text-xl text-on-surface">Lo Sviluppo</h3>
-                    <p class="font-body text-on-surface-variant text-sm md:text-base leading-relaxed">Qui entro nel vivo. Trasformo i concetti di cui abbiamo parlato in una struttura reale, veloce e bella da vedere su ogni dispositivo.</p>
-                </div>
-                <div class="flex flex-col gap-4">
-                    <div
-                        class="w-12 h-12 bg-primary-container text-on-primary-container rounded flex items-center justify-center font-headline text-xl mb-4">
+<h3 class="font-headline text-xl text-on-surface" data-i18n="t024">Development</h3>
+<p class="font-body text-on-surface-variant text-sm md:text-base leading-relaxed" data-i18n="t025">This is where the work takes shape. I turn the concepts we discussed into a real structure that is fast, responsive, and beautiful on every device.</p>
+</div>
+<div class="flex flex-col gap-4">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded flex items-center justify-center font-headline text-xl mb-4" data-i18n="t026">
                         03</div>
-                    <h3 class="font-headline text-xl text-on-surface">Il Perfezionamento</h3>
-                    <p class="font-body text-on-surface-variant text-sm md:text-base leading-relaxed">Non mi accontento mai del primo risultato. Controllo ogni dettaglio, correggo i piccoli difetti e mi assicuro che tutto scorra fluidamente. È la fase in cui rendo il tuo sito davvero impeccabile.</p>
-                </div>
-                <div class="flex flex-col gap-4 lg:mt-12">
-                    <div
-                        class="w-12 h-12 bg-primary-container text-on-primary-container rounded flex items-center justify-center font-headline text-xl mb-4">
+<h3 class="font-headline text-xl text-on-surface" data-i18n="t027">Refinement</h3>
+<p class="font-body text-on-surface-variant text-sm md:text-base leading-relaxed" data-i18n="t028">I never settle for the first result. I check every detail, correct small flaws, and make sure everything flows smoothly. This is where your website becomes truly polished.</p>
+</div>
+<div class="flex flex-col gap-4 lg:mt-12">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded flex items-center justify-center font-headline text-xl mb-4" data-i18n="t029">
                         04</div>
-                    <h3 class="font-headline text-xl text-on-surface">La Pubblicazione</h3>
-                    <p class="font-body text-on-surface-variant text-sm md:text-base leading-relaxed">Una volta che tutto è pronto e sei soddisfatto, premo il tasto d'invio. Metto il tuo sito online, lo configuro correttamente e mi assicuro che sia pronto per essere trovato dai tuoi clienti.</p>
-                </div>
-            </div>
-        </section>
-        <!-- 5. Portfolio -->
-        <section class="py-32 px-[5vw] max-w-[1440px] mx-auto" id="portfolio">
-            <h2 class="font-headline text-5xl text-on-background mb-24">Portfolio</h2>
-            <div class="flex flex-col gap-32">
-                <!-- Project 1: Shadow Chat -->
-                <article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    <div class="lg:col-span-7 flex flex-col items-center justify-center order-2 lg:order-1 w-full">
-                        <div
-                            class="relative w-full max-w-[800px] aspect-[16/10] bg-gray-800 border-gray-800 border-[8px] md:border-[12px] rounded-t-xl md:rounded-t-2xl overflow-hidden shadow-2xl">
-                            <div class="absolute inset-0 bg-white overflow-hidden rounded-sm md:rounded">
-                                <img alt="Shadow Chat Interface" class="w-full h-full object-cover object-top"
-                                    src="images/shadow_chat.webp" />
-                            </div>
-                        </div>
-                        <div
-                            class="relative w-[110%] max-w-[880px] h-4 md:h-6 bg-gray-300 dark:bg-gray-700 rounded-b-xl shadow-lg border-t border-gray-400 dark:border-gray-600 flex justify-center">
-                            <div class="w-1/4 h-2 bg-gray-400 dark:bg-gray-800 rounded-b-md opacity-50"></div>
-                        </div>
-                    </div>
-                    <div class="lg:col-span-5 flex flex-col gap-6 order-1 lg:order-2 lg:pl-12">
-                        <span class="font-label text-sm text-on-surface-variant tracking-[0.05em] uppercase">Private
-                            Messaging</span>
-                        <h3 class="font-headline text-4xl text-on-surface">Shadow Chat</h3>
-                        <p class="font-body text-lg text-on-surface-variant">Una piattaforma di chat
-                            minimalista e sicura che utilizza link usa-e-getta per la massima privacy. Progettata con un
-                            focus sul "Ma" (spazio negativo) per ridurre il carico cognitivo.</p>
-                    </div>
-                </article>
-                <!-- Project 2: OSINT Lab -->
-                <article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    <div class="lg:col-span-5 flex flex-col gap-6 lg:pr-12">
-                        <span class="font-label text-sm text-on-surface-variant tracking-[0.05em] uppercase">Digital
-                            Intelligence</span>
-                        <h3 class="font-headline text-4xl text-on-surface">Investigation - OSINT Services</h3>
-                        <p class="font-body text-lg text-on-surface-variant">Una dashboard avanzata di digital
-                            intelligence per la ricerca open-source. Combina informazioni ad alta densità con
-                            un'interfaccia pulita e funzionale per un'analisi efficiente.</p>
-                    </div>
-                    <div class="lg:col-span-7 flex flex-col items-center justify-center w-full">
-                        <div
-                            class="relative w-full max-w-[800px] aspect-[16/10] bg-gray-800 border-gray-800 border-[8px] md:border-[12px] rounded-t-xl md:rounded-t-2xl overflow-hidden shadow-2xl">
-                            <div class="absolute inset-0 bg-white overflow-hidden rounded-sm md:rounded">
-                                <img alt="OSINT Lab Interface" class="w-full h-full object-cover object-top"
-                                    src="images/osint_website.webp" />
-                            </div>
-                        </div>
-                        <div
-                            class="relative w-[110%] max-w-[880px] h-4 md:h-6 bg-gray-300 dark:bg-gray-700 rounded-b-xl shadow-lg border-t border-gray-400 dark:border-gray-600 flex justify-center">
-                            <div class="w-1/4 h-2 bg-gray-400 dark:bg-gray-800 rounded-b-md opacity-50"></div>
-                        </div>
-                    </div>
-                </article>
-                <!-- Project 3: Vera Social -->
-                <article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    <div class="lg:col-span-7 flex flex-col items-center justify-center order-2 lg:order-1 w-full">
-                        <div
-                            class="relative w-full max-w-[800px] aspect-[16/10] bg-gray-800 border-gray-800 border-[8px] md:border-[12px] rounded-t-xl md:rounded-t-2xl overflow-hidden shadow-2xl">
-                            <div class="absolute inset-0 bg-white overflow-hidden rounded-sm md:rounded">
-                                <img alt="Vera Social Interface" class="w-full h-full object-cover object-top"
-                                    src="images/vera_social.webp" />
-                            </div>
-                        </div>
-                        <div
-                            class="relative w-[110%] max-w-[880px] h-4 md:h-6 bg-gray-300 dark:bg-gray-700 rounded-b-xl shadow-lg border-t border-gray-400 dark:border-gray-600 flex justify-center">
-                            <div class="w-1/4 h-2 bg-gray-400 dark:bg-gray-800 rounded-b-md opacity-50"></div>
-                        </div>
-                    </div>
-                    <div class="lg:col-span-5 flex flex-col gap-6 order-1 lg:order-2 lg:pl-12">
-                        <span class="font-label text-sm text-on-surface-variant tracking-[0.05em] uppercase">Premium
-                            Networking</span>
-                        <h3 class="font-headline text-4xl text-on-surface">Vera Social</h3>
-                        <p class="font-body text-lg text-on-surface-variant">Un concetto di social networking
-                            esclusivo dove l'autenticità ha valore. Progettato con un'estetica premium e focalizzata per
-                            massimizzare il segnale del brand e minimizzare il rumore.</p>
-                    </div>
-                </article>
-            </div>
-        </section>
-        <!-- 7. Technical Skills -->
-        <section class="py-32 px-[5vw] max-w-[1440px] mx-auto" id="skills">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-24">
-                <div>
-                    <h2 class="font-headline text-4xl text-on-surface mb-8">Skills</h2>
-                    <p class="font-body text-lg text-on-surface-variant mb-12">
-                        Per me, lo sviluppo web è un equilibrio tra arte e logica. Applico il <strong>Muda</strong> per
-                        rimuovere
-                        tutto ciò che rallenta il tuo sito, lasciando spazio solo all'essenziale e alla velocità.
-                        Grazie al <strong>Kaizen</strong>, perfeziono ogni riga di codice con un miglioramento
-                        costante,
-                        garantendo soluzioni solide, sicure e pronte a crescere nel tempo.
-                    </p>
-                </div>
-                <div class="flex flex-col gap-10 justify-center">
-                    <div>
-                        <div class="flex justify-between items-end mb-2">
-                            <span class="font-headline text-xl text-on-surface">WordPress</span>
-                            <span class="font-label text-sm text-on-surface-variant tracking-[0.05em]">70%</span>
-                        </div>
-                        <div class="h-1 w-full bg-surface-container-high rounded-full overflow-hidden">
-                            <div class="h-full bg-primary rounded-full" style="width: 70%;"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-end mb-2">
-                            <span class="font-headline text-xl text-on-surface">Html5</span>
-                            <span class="font-label text-sm text-on-surface-variant tracking-[0.05em]">75%</span>
-                        </div>
-                        <div class="h-1 w-full bg-surface-container-high rounded-full overflow-hidden">
-                            <div class="h-full bg-primary rounded-full" style="width: 75%;"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-end mb-2">
-                            <span class="font-headline text-xl text-on-surface">CSS</span>
-                            <span class="font-label text-sm text-on-surface-variant tracking-[0.05em]">75%</span>
-                        </div>
-                        <div class="h-1 w-full bg-surface-container-high rounded-full overflow-hidden">
-                            <div class="h-full bg-primary rounded-full" style="width: 75%;"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-end mb-2">
-                            <span class="font-headline text-xl text-on-surface">Ai Knowledge</span>
-                            <span class="font-label text-sm text-on-surface-variant tracking-[0.05em]">80%</span>
-                        </div>
-                        <div class="h-1 w-full bg-surface-container-high rounded-full overflow-hidden">
-                            <div class="h-full bg-primary rounded-full" style="width: 80%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Pricing Plans -->
-        <section class="py-32 px-[5vw] max-w-[1440px] mx-auto" id="pricing">
-            <h2 class="font-headline text-5xl text-on-background mb-8 text-center">Web Design Services</h2>
-            <div class="max-w-3xl mx-auto mb-16 p-6 bg-surface-container-low rounded-lg border border-outline-variant/30 text-center shadow-[0_20px_40px_rgba(46,52,45,0.04)]">
-                <p class="font-body text-on-surface-variant text-sm md:text-base leading-relaxed">
-                    I prezzi indicati sono da intendersi <strong>IVA esclusa</strong>: l'IVA va considerata a parte. Il servizio non include la manutenzione del sito dopo la pubblicazione.
-                </p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div
-                    class="bg-surface-container p-12 rounded-lg shadow-[0_20px_40px_rgba(46,52,45,0.06)] flex flex-col">
-                    <h3 class="font-headline text-2xl text-on-surface mb-2">Pacchetto Base</h3>
-                    <div class="text-4xl text-primary font-headline mb-2">600€</div>
-                    <p class="font-body text-xs uppercase tracking-[0.08em] text-on-surface-variant mb-6">IVA esclusa</p>
-                    <ul class="font-body text-on-surface-variant mb-8 flex-grow space-y-4 text-sm md:text-base">
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-primary mt-0.5" style="font-size: 20px;">check_circle</span>
-                            <span>4 Pagine (Home, Servizi, Chi siamo, Contatti)</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-primary mt-0.5" style="font-size: 20px;">check_circle</span>
-                            <span>Dominio gratuito incluso per un anno</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-primary mt-0.5" style="font-size: 20px;">check_circle</span>
-                            <span>Cloud-hosting gratuito per un anno</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-primary mt-0.5" style="font-size: 20px;">check_circle</span>
-                            <span>Max 2 revisioni incluse.</span>
-                        </li>
-                    </ul>
-                    <a class="inline-flex items-center justify-center px-6 py-3 border border-outline text-on-surface rounded font-label text-sm font-medium hover:bg-surface-container-highest transition-colors duration-300"
-                        href="#contact">Richiedi Info</a>
-                </div>
-                <div
-                    class="bg-primary-container p-12 rounded-lg shadow-[0_20px_40px_rgba(46,52,45,0.06)] flex flex-col relative overflow-hidden transform md:-translate-y-4">
-                    <div
-                        class="absolute top-0 right-0 bg-primary text-on-primary px-4 py-1 rounded-bl-lg font-label text-xs tracking-wider uppercase">
-                        Consigliato</div>
-                    <h3 class="font-headline text-2xl text-on-primary-container mb-2">Pacchetto Medium</h3>
-                    <div class="text-4xl text-primary-dim font-headline mb-2">900€</div>
-                    <p class="font-body text-xs uppercase tracking-[0.08em] text-on-primary-container mb-6">IVA esclusa</p>
-                    <ul class="font-body text-on-primary-container mb-8 flex-grow space-y-4 text-sm md:text-base">
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-primary mt-0.5" style="font-size: 20px;">check_circle</span>
-                            <span>Include tutto il Pacchetto Base</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-primary mt-0.5" style="font-size: 20px;">shield_lock</span>
-                            <span>Focus su sicurezza & privacy</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-primary mt-0.5" style="font-size: 20px;">visibility_off</span>
-                            <span>Protezione dati per prevenire fughe di info online</span>
-                        </li>
-                       
-                    </ul>
-                    <a class="inline-flex items-center justify-center px-6 py-3 bg-primary text-on-primary rounded font-label text-sm font-medium hover:bg-primary-dim transition-colors duration-300 shadow-md"
-                        href="#contact">Richiedi Info</a>
-                </div>
-                <div
-                    class="bg-surface-container p-12 rounded-lg shadow-[0_20px_40px_rgba(46,52,45,0.06)] flex flex-col">
-                    <h3 class="font-headline text-2xl text-on-surface mb-2">Pacchetto Personalizzato</h3>
-                    <div class="text-4xl text-primary font-headline mb-2">Su Misura</div>
-                    <p class="font-body text-xs uppercase tracking-[0.08em] text-on-surface-variant mb-6">IVA da considerare a parte</p>
-                    <p class="font-body text-on-surface-variant mb-8 flex-grow">Soluzioni personalizzate,
-                        integrazioni complesse e sviluppo di piattaforme su misura per esigenze specifiche.</p>
-                    <a class="inline-flex items-center justify-center px-6 py-3 border border-outline text-on-surface rounded font-label text-sm font-medium hover:bg-surface-container-highest transition-colors duration-300"
-                        href="#contact">Parliamone</a>
-                </div>
-            </div>
-        </section>
-        <!-- 8. Contact -->
-        <section class="py-32 px-[5vw] bg-surface-container-low w-full" id="contact">
-            <div
-                class="max-w-[800px] mx-auto bg-surface rounded-lg p-8 md:p-16 shadow-[0_20px_40px_rgba(46,52,45,0.06)] relative overflow-hidden">
-                <div
-                    class="absolute top-0 right-0 w-64 h-64 bg-primary-container rounded-full blur-3xl opacity-30 -mr-20 -mt-20">
-                </div>
-                <h2 class="font-headline text-4xl text-on-surface mb-2 relative z-10">Vuoi iniziare un progetto?</h2>
-                <p class="font-body text-on-surface-variant mb-12 relative z-10">Scrivimi per esplorare come possiamo
-                    collaborare.</p>
-                <div class="flex flex-col sm:flex-row gap-6 relative z-10 mt-8 sm:justify-center">
-                    <button onclick="openContactModal()" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-on-primary rounded font-label text-base font-medium tracking-wide shadow-md hover:bg-primary-dim hover:shadow-lg transition-all duration-300 w-full sm:w-auto">
-                        <span class="material-symbols-outlined mr-2">connect_without_contact</span>
-                        Come contattarmi
-                    </button>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="w-full pt-24 pb-12 px-[5vw] bg-[#f3f4ee] dark:bg-[#1a1d1a]">
-        <div class="max-w-[1440px] mx-auto flex flex-col gap-12">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-                <div class="flex flex-col gap-4">
-                    <span class="font-headline italic text-xl text-[#576246] dark:text-[#effdd8]">Erubisu
-                        Studio - Web Design & Development</span>
-                    <p class="font-body text-sm uppercase tracking-[0.05em] text-[#5b6159] dark:text-[#aeb4aa]">
+<h3 class="font-headline text-xl text-on-surface" data-i18n="t030">Launch</h3>
+<p class="font-body text-on-surface-variant text-sm md:text-base leading-relaxed" data-i18n="t031">Once everything is ready and you are satisfied, I take it live. I publish your website, configure it correctly, and make sure it is ready to be found by your customers.</p>
+</div>
+</div>
+</section>
+<!-- 5. Portfolio -->
+<section class="py-32 px-[5vw] max-w-[1440px] mx-auto" id="portfolio">
+<h2 class="font-headline text-5xl text-on-background mb-24" data-i18n="t032">Portfolio</h2>
+<div class="flex flex-col gap-32">
+<!-- Project 1: Shadow Chat -->
+<article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 flex flex-col items-center justify-center order-2 lg:order-1 w-full">
+<div class="relative w-full max-w-[800px] aspect-[16/10] bg-gray-800 border-gray-800 border-[8px] md:border-[12px] rounded-t-xl md:rounded-t-2xl overflow-hidden shadow-2xl">
+<div class="absolute inset-0 bg-white overflow-hidden rounded-sm md:rounded">
+<img alt="Shadow Chat Interface" class="w-full h-full object-cover object-top" data-i18n-alt="2" src="images/shadow_chat.webp"/>
+</div>
+</div>
+<div class="relative w-[110%] max-w-[880px] h-4 md:h-6 bg-gray-300 dark:bg-gray-700 rounded-b-xl shadow-lg border-t border-gray-400 dark:border-gray-600 flex justify-center">
+<div class="w-1/4 h-2 bg-gray-400 dark:bg-gray-800 rounded-b-md opacity-50"></div>
+</div>
+</div>
+<div class="lg:col-span-5 flex flex-col gap-6 order-1 lg:order-2 lg:pl-12">
+<span class="font-label text-sm text-on-surface-variant tracking-[0.05em] uppercase" data-i18n="t033">Private Messaging</span>
+<h3 class="font-headline text-4xl text-on-surface" data-i18n="t034">Shadow Chat</h3>
+<p class="font-body text-lg text-on-surface-variant" data-i18n="t035">A minimalist and secure chat platform that uses one-time links for maximum privacy. Designed with a focus on "Ma" (negative space) to reduce cognitive load.</p>
+</div>
+</article>
+<!-- Project 2: OSINT Lab -->
+<article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-5 flex flex-col gap-6 lg:pr-12">
+<span class="font-label text-sm text-on-surface-variant tracking-[0.05em] uppercase" data-i18n="t036">Digital Intelligence</span>
+<h3 class="font-headline text-4xl text-on-surface" data-i18n="t037">Investigation - OSINT Services</h3>
+<p class="font-body text-lg text-on-surface-variant" data-i18n="t038">An advanced digital intelligence dashboard for open-source research. It combines high-density information with a clean, functional interface for efficient analysis.</p>
+</div>
+<div class="lg:col-span-7 flex flex-col items-center justify-center w-full">
+<div class="relative w-full max-w-[800px] aspect-[16/10] bg-gray-800 border-gray-800 border-[8px] md:border-[12px] rounded-t-xl md:rounded-t-2xl overflow-hidden shadow-2xl">
+<div class="absolute inset-0 bg-white overflow-hidden rounded-sm md:rounded">
+<img alt="OSINT Lab Interface" class="w-full h-full object-cover object-top" data-i18n-alt="3" src="images/osint_website.webp"/>
+</div>
+</div>
+<div class="relative w-[110%] max-w-[880px] h-4 md:h-6 bg-gray-300 dark:bg-gray-700 rounded-b-xl shadow-lg border-t border-gray-400 dark:border-gray-600 flex justify-center">
+<div class="w-1/4 h-2 bg-gray-400 dark:bg-gray-800 rounded-b-md opacity-50"></div>
+</div>
+</div>
+</article>
+<!-- Project 3: Vera Social -->
+<article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 flex flex-col items-center justify-center order-2 lg:order-1 w-full">
+<div class="relative w-full max-w-[800px] aspect-[16/10] bg-gray-800 border-gray-800 border-[8px] md:border-[12px] rounded-t-xl md:rounded-t-2xl overflow-hidden shadow-2xl">
+<div class="absolute inset-0 bg-white overflow-hidden rounded-sm md:rounded">
+<img alt="Vera Social Interface" class="w-full h-full object-cover object-top" data-i18n-alt="4" src="images/vera_social.webp"/>
+</div>
+</div>
+<div class="relative w-[110%] max-w-[880px] h-4 md:h-6 bg-gray-300 dark:bg-gray-700 rounded-b-xl shadow-lg border-t border-gray-400 dark:border-gray-600 flex justify-center">
+<div class="w-1/4 h-2 bg-gray-400 dark:bg-gray-800 rounded-b-md opacity-50"></div>
+</div>
+</div>
+<div class="lg:col-span-5 flex flex-col gap-6 order-1 lg:order-2 lg:pl-12">
+<span class="font-label text-sm text-on-surface-variant tracking-[0.05em] uppercase" data-i18n="t039">Premium Networking</span>
+<h3 class="font-headline text-4xl text-on-surface" data-i18n="t040">Vera Social</h3>
+<p class="font-body text-lg text-on-surface-variant" data-i18n="t041">An exclusive social networking concept where authenticity has value. Designed with a premium, focused aesthetic to maximize brand signal and minimize noise.</p>
+</div>
+</article>
+</div>
+</section>
+<!-- 7. Technical Skills -->
+<section class="py-32 px-[5vw] max-w-[1440px] mx-auto" id="skills">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-24">
+<div>
+<h2 class="font-headline text-4xl text-on-surface mb-8" data-i18n="t042">Skills</h2>
+<p class="font-body text-lg text-on-surface-variant mb-12" data-i18n-html="t043">For me, web development is a balance between art and logic. I apply <strong data-i18n="t044">Muda</strong> to remove everything that slows down your site, leaving space only for the essentials and speed. Through <strong data-i18n="t045">Kaizen</strong>, I refine every line of code through continuous improvement, delivering solid, secure solutions ready to grow over time.</p>
+</div>
+<div class="flex flex-col gap-10 justify-center">
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="font-headline text-xl text-on-surface" data-i18n="t046">WordPress</span>
+<span class="font-label text-sm text-on-surface-variant tracking-[0.05em]" data-i18n="t047">70%</span>
+</div>
+<div class="h-1 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 70%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="font-headline text-xl text-on-surface" data-i18n="t048">Html5</span>
+<span class="font-label text-sm text-on-surface-variant tracking-[0.05em]" data-i18n="t049">75%</span>
+</div>
+<div class="h-1 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 75%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="font-headline text-xl text-on-surface" data-i18n="t050">CSS</span>
+<span class="font-label text-sm text-on-surface-variant tracking-[0.05em]" data-i18n="t051">75%</span>
+</div>
+<div class="h-1 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 75%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="font-headline text-xl text-on-surface" data-i18n="t052">AI Knowledge</span>
+<span class="font-label text-sm text-on-surface-variant tracking-[0.05em]" data-i18n="t053">80%</span>
+</div>
+<div class="h-1 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 80%;"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Plans -->
+<section class="py-32 px-[5vw] max-w-[1440px] mx-auto" id="pricing">
+<h2 class="font-headline text-5xl text-on-background mb-8 text-center" data-i18n="t054">Web Design Services</h2>
+<div class="max-w-3xl mx-auto mb-16 p-6 bg-surface-container-low rounded-lg border border-outline-variant/30 text-center shadow-[0_20px_40px_rgba(46,52,45,0.04)]">
+<p class="font-body text-on-surface-variant text-sm md:text-base leading-relaxed" data-i18n-html="t055">Prices are <strong data-i18n="t056">VAT excluded</strong>: VAT must be considered separately. The service does not include website maintenance after launch.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container p-12 rounded-lg shadow-[0_20px_40px_rgba(46,52,45,0.06)] flex flex-col">
+<h3 class="font-headline text-2xl text-on-surface mb-2" data-i18n="t057">Basic Package</h3>
+<div class="text-4xl text-primary font-headline mb-2" data-i18n="t058">600€</div>
+<p class="font-body text-xs uppercase tracking-[0.08em] text-on-surface-variant mb-6" data-i18n="t059">VAT excluded</p>
+<ul class="font-body text-on-surface-variant mb-8 flex-grow space-y-4 text-sm md:text-base">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5" style="font-size: 20px;">check_circle</span>
+<span data-i18n="t060">4 Pages (Home, Services, About Us, Contact)</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5" style="font-size: 20px;">check_circle</span>
+<span data-i18n="t061">Free domain included for one year</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5" style="font-size: 20px;">check_circle</span>
+<span data-i18n="t062">Free cloud hosting included for one year</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5" style="font-size: 20px;">check_circle</span>
+<span data-i18n="t063">Max 2 revisions included.</span>
+</li>
+</ul>
+<a class="inline-flex items-center justify-center px-6 py-3 border border-outline text-on-surface rounded font-label text-sm font-medium hover:bg-surface-container-highest transition-colors duration-300" data-i18n="t064" href="#contact">Request Info</a>
+</div>
+<div class="bg-primary-container p-12 rounded-lg shadow-[0_20px_40px_rgba(46,52,45,0.06)] flex flex-col relative overflow-hidden transform md:-translate-y-4">
+<div class="absolute top-0 right-0 bg-primary text-on-primary px-4 py-1 rounded-bl-lg font-label text-xs tracking-wider uppercase" data-i18n="t065">Recommended</div>
+<h3 class="font-headline text-2xl text-on-primary-container mb-2" data-i18n="t066">Medium Package</h3>
+<div class="text-4xl text-primary-dim font-headline mb-2" data-i18n="t067">900€</div>
+<p class="font-body text-xs uppercase tracking-[0.08em] text-on-primary-container mb-6" data-i18n="t068">VAT excluded</p>
+<ul class="font-body text-on-primary-container mb-8 flex-grow space-y-4 text-sm md:text-base">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5" style="font-size: 20px;">check_circle</span>
+<span data-i18n="t069">Includes everything in the Basic Package</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5" style="font-size: 20px;">shield_lock</span>
+<span data-i18n="t070">Security &amp; privacy focus</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5" style="font-size: 20px;">visibility_off</span>
+<span data-i18n="t071">Data protection to prevent online information leaks</span>
+</li>
+</ul>
+<a class="inline-flex items-center justify-center px-6 py-3 bg-primary text-on-primary rounded font-label text-sm font-medium hover:bg-primary-dim transition-colors duration-300 shadow-md" data-i18n="t072" href="#contact">Request Info</a>
+</div>
+<div class="bg-surface-container p-12 rounded-lg shadow-[0_20px_40px_rgba(46,52,45,0.06)] flex flex-col">
+<h3 class="font-headline text-2xl text-on-surface mb-2" data-i18n="t073">Custom Package</h3>
+<div class="text-4xl text-primary font-headline mb-2" data-i18n="t074">Custom Quote</div>
+<p class="font-body text-xs uppercase tracking-[0.08em] text-on-surface-variant mb-6" data-i18n="t075">VAT to be considered separately</p>
+<p class="font-body text-on-surface-variant mb-8 flex-grow" data-i18n="t076">Custom solutions, complex integrations, and bespoke platform development for specific needs.</p>
+<a class="inline-flex items-center justify-center px-6 py-3 border border-outline text-on-surface rounded font-label text-sm font-medium hover:bg-surface-container-highest transition-colors duration-300" data-i18n="t077" href="#contact">Let's Talk</a>
+</div>
+</div>
+</section>
+<!-- 8. Contact -->
+<section class="py-32 px-[5vw] bg-surface-container-low w-full" id="contact">
+<div class="max-w-[800px] mx-auto bg-surface rounded-lg p-8 md:p-16 shadow-[0_20px_40px_rgba(46,52,45,0.06)] relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-container rounded-full blur-3xl opacity-30 -mr-20 -mt-20">
+</div>
+<h2 class="font-headline text-4xl text-on-surface mb-2 relative z-10" data-i18n="t078">Ready to start a project?</h2>
+<p class="font-body text-on-surface-variant mb-12 relative z-10" data-i18n="t079">Write to me to explore how we can collaborate.</p>
+<div class="flex flex-col sm:flex-row gap-6 relative z-10 mt-8 sm:justify-center">
+<button class="inline-flex items-center justify-center px-8 py-4 bg-primary text-on-primary rounded font-label text-base font-medium tracking-wide shadow-md hover:bg-primary-dim hover:shadow-lg transition-all duration-300 w-full sm:w-auto" data-i18n-html="t080" onclick="openContactModal()">
+<span class="material-symbols-outlined mr-2">connect_without_contact</span>How to contact me</button>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full pt-24 pb-12 px-[5vw] bg-[#f3f4ee] dark:bg-[#1a1d1a]">
+<div class="max-w-[1440px] mx-auto flex flex-col gap-12">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+<div class="flex flex-col gap-4">
+<span class="font-headline italic text-xl text-[#576246] dark:text-[#effdd8]" data-i18n="t081">Erubisu
+                        Studio - Web Design &amp; Development</span>
+<p class="font-body text-sm uppercase tracking-[0.05em] text-[#5b6159] dark:text-[#aeb4aa]" data-i18n="t082">
                         © 2026 Erubisu studio
                     </p>
-
-                </div>
-                <div class="flex flex-wrap items-center justify-start md:justify-end gap-6 sm:gap-8 font-body text-sm uppercase tracking-[0.05em] text-on-surface-variant dark:text-outline-variant">
-                    <div class="flex flex-wrap items-center gap-6">
-                        <button onclick="openLegalModal('privacy')" class="hover:text-primary transition-colors">Privacy</button>
-                        <button onclick="openLegalModal('cookie')" class="hover:text-primary transition-colors">Cookie</button>
-                        <button onclick="openLegalModal('gdpr')" class="hover:text-primary transition-colors">GDPR</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Cookie Consent Banner -->
-    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90vw] max-w-[500px] z-[100] bg-surface-container-highest/90 backdrop-blur-md p-6 rounded-xl shadow-2xl border border-outline-variant/20 transition-all duration-500 transform translate-y-0"
-        id="cookie-banner">
-        <div class="flex flex-col gap-4">
-            <div class="flex items-start gap-4">
-                <span class="material-symbols-outlined text-primary mt-0.5">cookie</span>
-                <p class="font-body text-sm text-on-surface-variant leading-relaxed">
-                    Utilizziamo i cookie per affinare la tua esperienza digitale. Continuando la navigazione, accetti la
-                    nostra filosofia di gestione dati.
-                </p>
-            </div>
-            <div class="flex justify-end gap-4">
-                <button id="cookie-pref"
-                    class="px-4 py-2 text-xs font-label uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors">Preferenze</button>
-                <button id="cookie-accept"
-                    class="px-6 py-2 bg-primary text-on-primary rounded text-xs font-label uppercase tracking-widest hover:bg-primary-dim transition-colors shadow-sm">Accetta</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contact Modal -->
-    <div id="contact-modal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4">
-        <!-- Backdrop -->
-        <div class="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300 opacity-0" id="contact-modal-backdrop" onclick="closeContactModal()"></div>
-        
-        <!-- Modal Content -->
-        <div class="relative bg-surface rounded-2xl shadow-[0_24px_48px_rgba(0,0,0,0.2)] p-10 max-w-sm w-full transform scale-95 opacity-0 transition-all duration-300 border border-outline-variant/20 text-center" id="contact-modal-content">
-            <button onclick="closeContactModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface transition-colors" aria-label="Chiudi">
-                <span class="material-symbols-outlined">close</span>
-            </button>
-            <h3 class="font-headline text-2xl text-on-surface mb-6">Scegli come contattarmi</h3>
-            
-            <div class="flex flex-col gap-4">
-                <!-- Email Option -->
-                <div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/30 select-all cursor-pointer group relative hover:bg-surface-container transition-colors" onclick="copyEmail()">
-                    <div class="flex items-center justify-center gap-2 mb-2">
-                        <span class="material-symbols-outlined text-on-surface-variant text-xl">mail</span>
-                        <span class="font-label text-sm uppercase tracking-wide text-on-surface-variant">Email</span>
-                    </div>
-                    <span id="contact-email" class="font-body text-base text-primary font-medium block">adrianelvisiale@gmail.com</span>
-                    <p class="text-[10px] text-primary mt-2 uppercase tracking-[0.1em] opacity-0 group-hover:opacity-100 transition-opacity font-medium">Clicca per copiare</p>
-                </div>
-
-                <!-- LinkedIn Option -->
-                <div onclick="safeNavigate('https://www.linkedin.com/in/adrian-iale-681371388/')" class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/30 group hover:bg-surface-container transition-colors block cursor-pointer">
-                    <div class="flex items-center justify-center gap-2 mb-2">
-                        <svg class="w-5 h-5 text-on-surface-variant" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                        <span class="font-label text-sm uppercase tracking-wide text-on-surface-variant">LinkedIn</span>
-                    </div>
-                    <span class="font-body text-base text-primary font-medium block">Contattami su LinkedIn</span>
-                    <p class="text-[10px] text-primary mt-2 uppercase tracking-[0.1em] opacity-0 group-hover:opacity-100 transition-opacity font-medium">Apri Profilo</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Legal Summary Modal -->
-    <div id="legal-modal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4">
-        <!-- Backdrop -->
-        <div class="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300 opacity-0" id="legal-modal-backdrop" onclick="closeLegalModal()"></div>
-        
-        <!-- Modal Content -->
-        <div class="relative bg-surface rounded-2xl shadow-[0_24px_48px_rgba(0,0,0,0.2)] p-8 max-w-md w-full transform scale-95 opacity-0 transition-all duration-300 border border-outline-variant/20" id="legal-modal-content">
-            <button onclick="closeLegalModal()" class="absolute top-6 right-6 text-on-surface-variant hover:text-on-surface transition-colors" aria-label="Chiudi">
-                <span class="material-symbols-outlined">close</span>
-            </button>
-            <h3 id="legal-modal-title" class="font-headline text-2xl text-on-surface mb-4">Titolo</h3>
-            <p id="legal-modal-body" class="font-body text-on-surface-variant leading-relaxed text-sm md:text-base">
-                Contenuto
-            </p>
-            <div class="mt-8 flex justify-end">
-                <button onclick="closeLegalModal()" class="px-6 py-2.5 bg-primary text-on-primary rounded font-label text-xs uppercase tracking-widest hover:bg-primary-dim transition-colors shadow-sm">Ho capito</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script>
+</div>
+<div class="flex flex-wrap items-center justify-start md:justify-end gap-6 sm:gap-8 font-body text-sm uppercase tracking-[0.05em] text-on-surface-variant dark:text-outline-variant">
+<div class="flex flex-wrap items-center gap-6">
+<button class="hover:text-primary transition-colors" data-i18n="t083" onclick="openLegalModal('privacy')">Privacy</button>
+<button class="hover:text-primary transition-colors" data-i18n="t084" onclick="openLegalModal('cookie')">Cookie</button>
+<button class="hover:text-primary transition-colors" data-i18n="t085" onclick="openLegalModal('gdpr')">GDPR</button>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- Cookie Consent Banner -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90vw] max-w-[500px] z-[100] bg-surface-container-highest/90 backdrop-blur-md p-6 rounded-xl shadow-2xl border border-outline-variant/20 transition-all duration-500 transform translate-y-0" id="cookie-banner">
+<div class="flex flex-col gap-4">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-0.5">cookie</span>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed" data-i18n="t086">We use cookies to refine your digital experience. By continuing to browse, you accept our data management approach.</p>
+</div>
+<div class="flex justify-end gap-4">
+<button class="px-4 py-2 text-xs font-label uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t087" id="cookie-pref">Preferences</button>
+<button class="px-6 py-2 bg-primary text-on-primary rounded text-xs font-label uppercase tracking-widest hover:bg-primary-dim transition-colors shadow-sm" data-i18n="t088" id="cookie-accept">Accept</button>
+</div>
+</div>
+</div>
+<!-- Contact Modal -->
+<div class="fixed inset-0 z-[200] hidden items-center justify-center p-4" id="contact-modal">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300 opacity-0" id="contact-modal-backdrop" onclick="closeContactModal()"></div>
+<!-- Modal Content -->
+<div class="relative bg-surface rounded-2xl shadow-[0_24px_48px_rgba(0,0,0,0.2)] p-10 max-w-sm w-full transform scale-95 opacity-0 transition-all duration-300 border border-outline-variant/20 text-center" id="contact-modal-content">
+<button aria-label="Close" class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface transition-colors" data-i18n-aria-label="close" onclick="closeContactModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+<h3 class="font-headline text-2xl text-on-surface mb-6" data-i18n="t089">Choose how to contact me</h3>
+<div class="flex flex-col gap-4">
+<!-- Email Option -->
+<div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/30 select-all cursor-pointer group relative hover:bg-surface-container transition-colors" onclick="copyEmail()">
+<div class="flex items-center justify-center gap-2 mb-2">
+<span class="material-symbols-outlined text-on-surface-variant text-xl">mail</span>
+<span class="font-label text-sm uppercase tracking-wide text-on-surface-variant" data-i18n="t090">Email</span>
+</div>
+<span class="font-body text-base text-primary font-medium block" data-i18n="t091" id="contact-email">adrianelvisiale@gmail.com</span>
+<p class="text-[10px] text-primary mt-2 uppercase tracking-[0.1em] opacity-0 group-hover:opacity-100 transition-opacity font-medium" data-i18n="t092">Click to copy</p>
+</div>
+<!-- LinkedIn Option -->
+<div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/30 group hover:bg-surface-container transition-colors block cursor-pointer" onclick="safeNavigate('https://www.linkedin.com/in/adrian-iale-681371388/')">
+<div class="flex items-center justify-center gap-2 mb-2">
+<svg class="w-5 h-5 text-on-surface-variant" fill="currentColor" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+<span class="font-label text-sm uppercase tracking-wide text-on-surface-variant" data-i18n="t093">LinkedIn</span>
+</div>
+<span class="font-body text-base text-primary font-medium block" data-i18n="t094">Contact me on LinkedIn</span>
+<p class="text-[10px] text-primary mt-2 uppercase tracking-[0.1em] opacity-0 group-hover:opacity-100 transition-opacity font-medium" data-i18n="t095">Open Profile</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Legal Summary Modal -->
+<div class="fixed inset-0 z-[200] hidden items-center justify-center p-4" id="legal-modal">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300 opacity-0" id="legal-modal-backdrop" onclick="closeLegalModal()"></div>
+<!-- Modal Content -->
+<div class="relative bg-surface rounded-2xl shadow-[0_24px_48px_rgba(0,0,0,0.2)] p-8 max-w-md w-full transform scale-95 opacity-0 transition-all duration-300 border border-outline-variant/20" id="legal-modal-content">
+<button aria-label="Close" class="absolute top-6 right-6 text-on-surface-variant hover:text-on-surface transition-colors" data-i18n-aria-label="close" onclick="closeLegalModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+<h3 class="font-headline text-2xl text-on-surface mb-4" data-i18n="t096" id="legal-modal-title">Title</h3>
+<p class="font-body text-on-surface-variant leading-relaxed text-sm md:text-base" data-i18n="t097" id="legal-modal-body">Content</p>
+<div class="mt-8 flex justify-end">
+<button class="px-6 py-2.5 bg-primary text-on-primary rounded font-label text-xs uppercase tracking-widest hover:bg-primary-dim transition-colors shadow-sm" data-i18n="t098" onclick="closeLegalModal()">Got it</button>
+</div>
+</div>
+</div>
+<!-- Scripts -->
+<script>
         document.addEventListener('DOMContentLoaded', () => {
             // Navigation Logic (Hides URLs from status bar)
             window.safeNavigate = (url) => {
@@ -623,15 +518,15 @@
             const legalData = {
                 privacy: {
                     title: "Privacy Policy",
-                    body: "Rispettiamo il tuo spazio digitale. Raccogliamo esclusivamente le informazioni essenziali per offrirti i nostri servizi. I tuoi dati non verranno mai ceduti o venduti a terzi, ma trattati con la massima riservatezza e protetti con standard di sicurezza elevati."
+                    body: "We respect your digital space. We collect only the information essential to provide our services. Your data will never be transferred or sold to third parties, and it will be handled with maximum confidentiality and protected with high security standards."
                 },
                 cookie: {
                     title: "Cookie Policy",
-                    body: "Per mantenere il sito performante e funzionale, utilizziamo solo cookie tecnici strettamente necessari. Abbiamo eliminato ogni script di tracciamento invasivo o cookie di profilazione non richiesto, nel pieno rispetto della tua privacy e per offrirti un'esperienza veloce e pulita."
+                    body: "To keep the site fast and functional, we use only strictly necessary technical cookies. We removed invasive tracking scripts and unnecessary profiling cookies, fully respecting your privacy and offering a clean, fast experience."
                 },
                 gdpr: {
-                    title: "Conformità GDPR",
-                    body: "Il tuo diritto alla riservatezza è garantito. In piena conformità con il GDPR, ti assicuriamo il controllo totale sui tuoi dati personali. In qualsiasi momento puoi richiederne l'accesso, la rettifica o la cancellazione definitiva dai nostri sistemi."
+                    title: "GDPR Compliance",
+                    body: "Your right to privacy is protected. In full compliance with the GDPR, we ensure full control over your personal data. At any time, you can request access, correction, or permanent deletion from our systems."
                 }
             };
 
@@ -698,7 +593,7 @@
                 navigator.clipboard.writeText(email).then(() => {
                     const emailSpan = document.getElementById('contact-email');
                     const originalText = emailSpan.textContent;
-                    emailSpan.textContent = 'Copiato!';
+                    emailSpan.textContent = 'Copied!';
                     setTimeout(() => {
                         emailSpan.textContent = originalText;
                     }, 2000);
@@ -742,6 +637,401 @@
             }
         });
     </script>
-</body>
 
+<script>
+(function () {
+    const translations = {
+        "en": {
+                "t001": "Philosophy",
+                "t002": "Process",
+                "t003": "Portfolio",
+                "t004": "Skills",
+                "t005": "Contact Me",
+                "t006": "Philosophy",
+                "t007": "Process",
+                "t008": "Portfolio",
+                "t009": "Skills",
+                "t010": "Contact Me",
+                "t011": "Art meets<br/>efficiency",
+                "t012": "We turn vision into code with elegance and precision. A curated approach to digital development.",
+                "t013": "Explore Projects",
+                "t014": "Philosophy",
+                "t015": "Eliminating Muda",
+                "t016": "In Japanese production philosophy, 'Muda' means waste. We apply this concept to design and code, removing everything that does not add value to the final user experience. The result is a clean, essential, focused interface.",
+                "t017": "The practice of Kaizen",
+                "t018": "Continuous improvement ('Kaizen') is at the center of our process. We never settle for the first iteration. We refine, optimize, and perfect every line of code and every visual detail until we reach the right balance.",
+                "t019": "Process",
+                "t020": "\n                        01",
+                "t021": "The Brief",
+                "t022": "We start with a conversation. You tell me your idea, your goals, and what you expect from your new website. This helps me understand who you are and create something that truly represents you.",
+                "t023": "\n                        02",
+                "t024": "Development",
+                "t025": "This is where the work takes shape. I turn the concepts we discussed into a real structure that is fast, responsive, and beautiful on every device.",
+                "t026": "\n                        03",
+                "t027": "Refinement",
+                "t028": "I never settle for the first result. I check every detail, correct small flaws, and make sure everything flows smoothly. This is where your website becomes truly polished.",
+                "t029": "\n                        04",
+                "t030": "Launch",
+                "t031": "Once everything is ready and you are satisfied, I take it live. I publish your website, configure it correctly, and make sure it is ready to be found by your customers.",
+                "t032": "Portfolio",
+                "t033": "Private Messaging",
+                "t034": "Shadow Chat",
+                "t035": "A minimalist and secure chat platform that uses one-time links for maximum privacy. Designed with a focus on \"Ma\" (negative space) to reduce cognitive load.",
+                "t036": "Digital Intelligence",
+                "t037": "Investigation - OSINT Services",
+                "t038": "An advanced digital intelligence dashboard for open-source research. It combines high-density information with a clean, functional interface for efficient analysis.",
+                "t039": "Premium Networking",
+                "t040": "Vera Social",
+                "t041": "An exclusive social networking concept where authenticity has value. Designed with a premium, focused aesthetic to maximize brand signal and minimize noise.",
+                "t042": "Skills",
+                "t043": "For me, web development is a balance between art and logic. I apply <strong>Muda</strong> to remove everything that slows down your site, leaving space only for the essentials and speed. Through <strong>Kaizen</strong>, I refine every line of code through continuous improvement, delivering solid, secure solutions ready to grow over time.",
+                "t044": "Muda",
+                "t045": "Kaizen",
+                "t046": "WordPress",
+                "t047": "70%",
+                "t048": "Html5",
+                "t049": "75%",
+                "t050": "CSS",
+                "t051": "75%",
+                "t052": "AI Knowledge",
+                "t053": "80%",
+                "t054": "Web Design Services",
+                "t055": "Prices are <strong>VAT excluded</strong>: VAT must be considered separately. The service does not include website maintenance after launch.",
+                "t056": "VAT excluded",
+                "t057": "Basic Package",
+                "t058": "600€",
+                "t059": "VAT excluded",
+                "t060": "4 Pages (Home, Services, About Us, Contact)",
+                "t061": "Free domain included for one year",
+                "t062": "Free cloud hosting included for one year",
+                "t063": "Max 2 revisions included.",
+                "t064": "Request Info",
+                "t065": "Recommended",
+                "t066": "Medium Package",
+                "t067": "900€",
+                "t068": "VAT excluded",
+                "t069": "Includes everything in the Basic Package",
+                "t070": "Security & privacy focus",
+                "t071": "Data protection to prevent online information leaks",
+                "t072": "Request Info",
+                "t073": "Custom Package",
+                "t074": "Custom Quote",
+                "t075": "VAT to be considered separately",
+                "t076": "Custom solutions, complex integrations, and bespoke platform development for specific needs.",
+                "t077": "Let's Talk",
+                "t078": "Ready to start a project?",
+                "t079": "Write to me to explore how we can collaborate.",
+                "t080": "\n<span class=\"material-symbols-outlined mr-2\">connect_without_contact</span>How to contact me",
+                "t081": "Erubisu\n                        Studio - Web Design & Development",
+                "t082": "\n                        © 2026 Erubisu studio\n                    ",
+                "t083": "Privacy",
+                "t084": "Cookie",
+                "t085": "GDPR",
+                "t086": "We use cookies to refine your digital experience. By continuing to browse, you accept our data management approach.",
+                "t087": "Preferences",
+                "t088": "Accept",
+                "t089": "Choose how to contact me",
+                "t090": "Email",
+                "t091": "adrianelvisiale@gmail.com",
+                "t092": "Click to copy",
+                "t093": "LinkedIn",
+                "t094": "Contact me on LinkedIn",
+                "t095": "Open Profile",
+                "t096": "Title",
+                "t097": "Content",
+                "t098": "Got it",
+                "close": "Close"
+        },
+        "it": {
+                "t001": "Filosofia",
+                "t002": "Processo",
+                "t003": "Portfolio",
+                "t004": "Skills",
+                "t005": "\n                Contattami\n            ",
+                "t006": "Filosofia",
+                "t007": "Processo",
+                "t008": "Portfolio",
+                "t009": "Skills",
+                "t010": "Contattami",
+                "t011": "\n                        L'arte incontra<br/>l'efficienza\n                    ",
+                "t012": "\n                        Trasformiamo la visione in codice, con eleganza e precisione. Un approccio curatoriale allo\n                        sviluppo digitale.\n                    ",
+                "t013": "\n                            Esplora i Progetti\n                        ",
+                "t014": "Filosofia",
+                "t015": "Eliminare il Muda",
+                "t016": "Nella filosofia produttiva giapponese, 'Muda' rappresenta lo spreco.\n                            Applichiamo questo concetto al design e al codice, rimuovendo tutto ciò che non aggiunge\n                            valore all'esperienza finale dell'utente. Il risultato è un'interfaccia pulita, essenziale e\n                            focalizzata.",
+                "t017": "La pratica del Kaizen",
+                "t018": "Il miglioramento continuo ('Kaizen') è al centro del nostro processo. Non\n                            ci accontentiamo mai della prima iterazione. Rifiniamo, ottimizziamo e perfezioniamo ogni\n                            riga di codice e ogni dettaglio visivo fino a raggiungere l'equilibrio ottimale.",
+                "t019": "Processo",
+                "t020": "\n                        01",
+                "t021": "Il Brief",
+                "t022": "Iniziamo con una chiacchierata. Mi racconti la tua idea, i tuoi obiettivi e cosa ti aspetti dal tuo nuovo sito. Mi serve a capire chi sei per creare qualcosa che ti rappresenti davvero.",
+                "t023": "\n                        02",
+                "t024": "Lo Sviluppo",
+                "t025": "Qui entro nel vivo. Trasformo i concetti di cui abbiamo parlato in una struttura reale, veloce e bella da vedere su ogni dispositivo.",
+                "t026": "\n                        03",
+                "t027": "Il Perfezionamento",
+                "t028": "Non mi accontento mai del primo risultato. Controllo ogni dettaglio, correggo i piccoli difetti e mi assicuro che tutto scorra fluidamente. È la fase in cui rendo il tuo sito davvero impeccabile.",
+                "t029": "\n                        04",
+                "t030": "La Pubblicazione",
+                "t031": "Una volta che tutto è pronto e sei soddisfatto, premo il tasto d'invio. Metto il tuo sito online, lo configuro correttamente e mi assicuro che sia pronto per essere trovato dai tuoi clienti.",
+                "t032": "Portfolio",
+                "t033": "Private\n                            Messaging",
+                "t034": "Shadow Chat",
+                "t035": "Una piattaforma di chat\n                            minimalista e sicura che utilizza link usa-e-getta per la massima privacy. Progettata con un\n                            focus sul \"Ma\" (spazio negativo) per ridurre il carico cognitivo.",
+                "t036": "Digital\n                            Intelligence",
+                "t037": "Investigation - OSINT Services",
+                "t038": "Una dashboard avanzata di digital\n                            intelligence per la ricerca open-source. Combina informazioni ad alta densità con\n                            un'interfaccia pulita e funzionale per un'analisi efficiente.",
+                "t039": "Premium\n                            Networking",
+                "t040": "Vera Social",
+                "t041": "Un concetto di social networking\n                            esclusivo dove l'autenticità ha valore. Progettato con un'estetica premium e focalizzata per\n                            massimizzare il segnale del brand e minimizzare il rumore.",
+                "t042": "Skills",
+                "t043": "\n                        Per me, lo sviluppo web è un equilibrio tra arte e logica. Applico il <strong>Muda</strong> per\n                        rimuovere\n                        tutto ciò che rallenta il tuo sito, lasciando spazio solo all'essenziale e alla velocità.\n                        Grazie al <strong>Kaizen</strong>, perfeziono ogni riga di codice con un miglioramento\n                        costante,\n                        garantendo soluzioni solide, sicure e pronte a crescere nel tempo.\n                    ",
+                "t044": "Muda",
+                "t045": "Kaizen",
+                "t046": "WordPress",
+                "t047": "70%",
+                "t048": "Html5",
+                "t049": "75%",
+                "t050": "CSS",
+                "t051": "75%",
+                "t052": "Ai Knowledge",
+                "t053": "80%",
+                "t054": "Web Design Services",
+                "t055": "\n                    I prezzi indicati sono da intendersi <strong>IVA esclusa</strong>: l'IVA va considerata a parte. Il servizio non include la manutenzione del sito dopo la pubblicazione.\n                ",
+                "t056": "IVA esclusa",
+                "t057": "Pacchetto Base",
+                "t058": "600€",
+                "t059": "IVA esclusa",
+                "t060": "4 Pagine (Home, Servizi, Chi siamo, Contatti)",
+                "t061": "Dominio gratuito incluso per un anno",
+                "t062": "Cloud-hosting gratuito per un anno",
+                "t063": "Max 2 revisioni incluse.",
+                "t064": "Richiedi Info",
+                "t065": "\n                        Consigliato",
+                "t066": "Pacchetto Medium",
+                "t067": "900€",
+                "t068": "IVA esclusa",
+                "t069": "Include tutto il Pacchetto Base",
+                "t070": "Focus su sicurezza & privacy",
+                "t071": "Protezione dati per prevenire fughe di info online",
+                "t072": "Richiedi Info",
+                "t073": "Pacchetto Personalizzato",
+                "t074": "Su Misura",
+                "t075": "IVA da considerare a parte",
+                "t076": "Soluzioni personalizzate,\n                        integrazioni complesse e sviluppo di piattaforme su misura per esigenze specifiche.",
+                "t077": "Parliamone",
+                "t078": "Vuoi iniziare un progetto?",
+                "t079": "Scrivimi per esplorare come possiamo\n                    collaborare.",
+                "t080": "\n<span class=\"material-symbols-outlined mr-2\">connect_without_contact</span>\n                        Come contattarmi\n                    ",
+                "t081": "Erubisu\n                        Studio - Web Design & Development",
+                "t082": "\n                        © 2026 Erubisu studio\n                    ",
+                "t083": "Privacy",
+                "t084": "Cookie",
+                "t085": "GDPR",
+                "t086": "\n                    Utilizziamo i cookie per affinare la tua esperienza digitale. Continuando la navigazione, accetti la\n                    nostra filosofia di gestione dati.\n                ",
+                "t087": "Preferenze",
+                "t088": "Accetta",
+                "t089": "Scegli come contattarmi",
+                "t090": "Email",
+                "t091": "adrianelvisiale@gmail.com",
+                "t092": "Clicca per copiare",
+                "t093": "LinkedIn",
+                "t094": "Contattami su LinkedIn",
+                "t095": "Apri Profilo",
+                "t096": "Titolo",
+                "t097": "\n                Contenuto\n            ",
+                "t098": "Ho capito",
+                "close": "Chiudi"
+        }
+};
+    const metaTranslations = {
+        "en": {
+                "title": "Erubisu Studio | Minimalist Web Design & Development",
+                "description": "",
+                "meta:name:description": "Erubisu Studio – Curated web development portfolio. We merge Japanese aesthetic principles with modern code efficiency to create unique digital experiences.",
+                "meta:name:keywords": "web design, front-end development, portfolio, Japanese minimalism, UI/UX, Erubisu Studio, web agency Italy, curated design",
+                "meta:name:twitter:title": "Erubisu Studio | Architectural Quiet Portfolio",
+                "meta:name:twitter:description": "Curated web development between Japanese aesthetics and modern code.",
+                "meta:property:og:title": "Erubisu Studio | Architectural Quiet Portfolio",
+                "meta:property:og:description": "Art meets efficiency. Curated web development with elegance and precision."
+        },
+        "it": {
+                "title": "Erubisu Studio | Sviluppo Web Design Minimalista",
+                "meta:name:description": "Erubisu Studio – Portfolio di sviluppo web curatoriale. Uniamo l'arte dell'estetica giapponese all'efficienza del codice moderno per creare esperienze digitali uniche.",
+                "meta:name:keywords": "web design, sviluppo front-end, portfolio, minimalismo giapponese, UI/UX, Erubisu Studio, web agency italia, design curatoriale",
+                "meta:name:twitter:title": "Erubisu Studio | Architectural Quiet Portfolio",
+                "meta:name:twitter:description": "Sviluppo web curatoriale tra estetica giapponese e codice moderno.",
+                "meta:property:og:title": "Erubisu Studio | Architectural Quiet Portfolio",
+                "meta:property:og:description": "L'arte incontra l'efficienza. Sviluppo web curatoriale con eleganza e precisione."
+        }
+};
+    const altTranslations = {
+        "en": [
+                "Erubisu Studio",
+                "Professional profile",
+                "Shadow Chat Interface",
+                "OSINT Lab Interface",
+                "Vera Social Interface"
+        ],
+        "it": [
+                "Erubisu Studio",
+                "Professional profile",
+                "Shadow Chat Interface",
+                "OSINT Lab Interface",
+                "Vera Social Interface"
+        ]
+};
+    const legalTranslations = {
+        "en": {
+                "privacy": {
+                        "title": "Privacy Policy",
+                        "body": "We respect your digital space. We collect only the information essential to provide our services. Your data will never be transferred or sold to third parties, and it will be handled with maximum confidentiality and protected with high security standards."
+                },
+                "cookie": {
+                        "title": "Cookie Policy",
+                        "body": "To keep the site fast and functional, we use only strictly necessary technical cookies. We removed invasive tracking scripts and unnecessary profiling cookies, fully respecting your privacy and offering a clean, fast experience."
+                },
+                "gdpr": {
+                        "title": "GDPR Compliance",
+                        "body": "Your right to privacy is protected. In full compliance with the GDPR, we ensure full control over your personal data. At any time, you can request access, correction, or permanent deletion from our systems."
+                },
+                "copied": "Copied!"
+        },
+        "it": {
+                "privacy": {
+                        "title": "Privacy Policy",
+                        "body": "Rispettiamo il tuo spazio digitale. Raccogliamo esclusivamente le informazioni essenziali per offrirti i nostri servizi. I tuoi dati non verranno mai ceduti o venduti a terzi, ma trattati con la massima riservatezza e protetti con standard di sicurezza elevati."
+                },
+                "cookie": {
+                        "title": "Cookie Policy",
+                        "body": "Per mantenere il sito performante e funzionale, utilizziamo solo cookie tecnici strettamente necessari. Abbiamo eliminato ogni script di tracciamento invasivo o cookie di profilazione non richiesto, nel pieno rispetto della tua privacy e per offrirti un'esperienza veloce e pulita."
+                },
+                "gdpr": {
+                        "title": "Conformità GDPR",
+                        "body": "Il tuo diritto alla riservatezza è garantito. In piena conformità con il GDPR, ti assicuriamo il controllo totale sui tuoi dati personali. In qualsiasi momento puoi richiederne l'accesso, la rettifica o la cancellazione definitiva dai nostri sistemi."
+                },
+                "copied": "Copiato!"
+        }
+};
+    const allowedLanguages = ['en', 'it'];
+    let currentLanguage = 'en';
+
+    function normalizeLanguage(lang) {
+        return allowedLanguages.includes(lang) ? lang : 'en';
+    }
+
+    function updateSwitcherState(lang) {
+        document.querySelectorAll('[data-lang-switch]').forEach((button) => {
+            const active = button.dataset.langSwitch === lang;
+            button.setAttribute('aria-pressed', active ? 'true' : 'false');
+            button.classList.toggle('bg-primary', active);
+            button.classList.toggle('text-on-primary', active);
+            button.classList.toggle('text-on-surface-variant', !active);
+            button.classList.toggle('hover:text-on-surface', !active);
+        });
+        document.querySelectorAll('.language-switcher, .mobile-language-switcher').forEach((switcher) => {
+            switcher.setAttribute('aria-label', lang === 'it' ? 'Selettore lingua' : 'Language selector');
+        });
+    }
+
+    function updateMetadata(lang) {
+        const meta = metaTranslations[lang] || metaTranslations.en;
+        if (meta.title) document.title = meta.title;
+        Object.entries(meta).forEach(([key, value]) => {
+            if (!key.startsWith('meta:')) return;
+            const parts = key.split(':');
+            const selector = parts[1] === 'name'
+                ? `meta[name="${parts.slice(2).join(':')}"]`
+                : `meta[property="${parts.slice(2).join(':')}"]`;
+            const tag = document.querySelector(selector);
+            if (tag) tag.setAttribute('content', value);
+        });
+    }
+
+    function applyLanguage(lang) {
+        lang = normalizeLanguage(lang);
+        currentLanguage = lang;
+        document.documentElement.lang = lang;
+
+        document.querySelectorAll('[data-i18n]').forEach((el) => {
+            const key = el.dataset.i18n;
+            const value = translations[lang]?.[key];
+            if (value !== undefined) el.textContent = value;
+        });
+
+        document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+            const key = el.dataset.i18nHtml;
+            const value = translations[lang]?.[key];
+            if (value !== undefined) el.innerHTML = value;
+        });
+
+        document.querySelectorAll('[data-i18n-aria-label]').forEach((el) => {
+            const key = el.dataset.i18nAriaLabel;
+            const value = translations[lang]?.[key];
+            if (value !== undefined) el.setAttribute('aria-label', value);
+        });
+
+        document.querySelectorAll('[data-i18n-alt]').forEach((img) => {
+            const index = Number(img.dataset.i18nAlt);
+            const value = altTranslations[lang]?.[index];
+            if (value !== undefined) img.setAttribute('alt', value);
+        });
+
+        updateSwitcherState(lang);
+        updateMetadata(lang);
+        localStorage.setItem('site-language', lang);
+    }
+
+    window.setSiteLanguage = applyLanguage;
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('[data-lang-switch]').forEach((button) => {
+            button.addEventListener('click', () => {
+                applyLanguage(button.dataset.langSwitch);
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu) mobileMenu.classList.add('hidden');
+            });
+        });
+
+        window.openLegalModal = (type) => {
+            const legalModal = document.getElementById('legal-modal');
+            const legalModalBackdrop = document.getElementById('legal-modal-backdrop');
+            const legalModalContent = document.getElementById('legal-modal-content');
+            const legalModalTitle = document.getElementById('legal-modal-title');
+            const legalModalBody = document.getElementById('legal-modal-body');
+            const data = legalTranslations[currentLanguage]?.[type] || legalTranslations.en[type];
+            if (data && legalModal) {
+                document.body.style.overflow = 'hidden';
+                legalModalTitle.textContent = data.title;
+                legalModalBody.textContent = data.body;
+                legalModal.classList.remove('hidden');
+                legalModal.classList.add('flex');
+                void legalModal.offsetWidth;
+                legalModalBackdrop.classList.remove('opacity-0');
+                legalModalContent.classList.remove('scale-95', 'opacity-0');
+            }
+        };
+
+        window.copyEmail = () => {
+            const emailSpan = document.getElementById('contact-email');
+            if (!emailSpan) return;
+            const email = emailSpan.textContent;
+            navigator.clipboard.writeText(email).then(() => {
+                const originalText = emailSpan.textContent;
+                emailSpan.textContent = legalTranslations[currentLanguage]?.copied || legalTranslations.en.copied;
+                setTimeout(() => {
+                    emailSpan.textContent = originalText;
+                }, 2000);
+            });
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const requestedLanguage = normalizeLanguage(params.get('lang'));
+        const savedLanguage = normalizeLanguage(localStorage.getItem('site-language'));
+        const initialLanguage = params.has('lang') ? requestedLanguage : savedLanguage;
+        applyLanguage(initialLanguage);
+    });
+})();
+</script>
+</body>
 </html>
