@@ -187,9 +187,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 "t030": "Launch",
                 "t031": "Once everything is ready and you are satisfied, I take it live. I publish your website, configure it correctly, and make sure it is ready to be found by your customers.",
                 "t032": "Portfolio",
-                "t033": "Private Messaging",
-                "t034": "Shadow Chat",
-                "t035": "A minimalist and secure chat platform that uses one-time links for maximum privacy. Designed with a focus on \"Ma\" (negative space) to reduce cognitive load.",
+                "t033": "Nautical & Charter",
+                "t034": "Karalis Charter",
+                "t035": "Complete website restyling and technical implementation of custom features to enhance user experience, visual presentation, and online charter booking performance.",
                 "t036": "Digital Intelligence",
                 "t037": "Investigation - OSINT Services",
                 "t038": "An advanced digital intelligence dashboard for open-source research. It combines high-density information with a clean, functional interface for efficient analysis.",
@@ -288,9 +288,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 "t030": "La Pubblicazione",
                 "t031": "Una volta che tutto è pronto e sei soddisfatto, premo il tasto d'invio. Metto il tuo sito online, lo configuro correttamente e mi assicuro che sia pronto per essere trovato dai tuoi clienti.",
                 "t032": "Portfolio",
-                "t033": "Private\n                            Messaging",
-                "t034": "Shadow Chat",
-                "t035": "Una piattaforma di chat\n                            minimalista e sicura che utilizza link usa-e-getta per la massima privacy. Progettata con un\n                            focus sul \"Ma\" (spazio negativo) per ridurre il carico cognitivo.",
+                "t033": "Nautica & Charter",
+                "t034": "Karalis Charter",
+                "t035": "Restyling completo del sito web e sviluppo di nuove funzionalità su misura per migliorare l'esperienza utente, la resa visiva e le prestazioni di prenotazione online.",
                 "t036": "Digital\n                            Intelligence",
                 "t037": "Investigation - OSINT Services",
                 "t038": "Una dashboard avanzata di digital\n                            intelligence per la ricerca open-source. Combina informazioni ad alta densità con\n                            un'interfaccia pulita e funzionale per un'analisi efficiente.",
@@ -382,14 +382,14 @@ document.addEventListener('DOMContentLoaded', () => {
         "en": [
                 "Erubisu Studio",
                 "Professional profile",
-                "Shadow Chat Interface",
+                "Karalis Charter Interface",
                 "OSINT Lab Interface",
                 "Vera Social Interface"
         ],
         "it": [
                 "Erubisu Studio",
                 "Professional profile",
-                "Shadow Chat Interface",
+                "Karalis Charter Interface",
                 "OSINT Lab Interface",
                 "Vera Social Interface"
         ]

@@ -28,6 +28,17 @@
   border-color: #e5e7eb;
 }
 
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 html {
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
