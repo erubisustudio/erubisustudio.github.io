@@ -543,5 +543,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const savedLanguage = normalizeLanguage(localStorage.getItem('site-language'));
         const initialLanguage = params.has('lang') ? requestedLanguage : savedLanguage;
         applyLanguage(initialLanguage);
+
+        // IntersectionObserver for GPU-accelerated scroll animations
+        if ('IntersectionObserver' in window) {
+            const scrollObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => scrollObserver.observe(el));
+        } else {
+            document.querySelectorAll('.animate-on-scroll').forEach(el => el.classList.add('fade-in-visible'));
+        }
     });
 })();

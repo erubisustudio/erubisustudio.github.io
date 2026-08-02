@@ -362,3 +362,24 @@ body {
 .dark .dark\:bg-gray-800 { background-color: #1f2937; }
 .dark .dark\:border-gray-600 { border-color: #4b5563; }
 .dark .dark\:hover\:text-\[\#fafaf5\]:hover { color: #fafaf5; }
+
+/* GPU-Accelerated Scroll Animations & Micro-interactions */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.animate-on-scroll.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

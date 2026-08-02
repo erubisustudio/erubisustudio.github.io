@@ -25,6 +25,8 @@
 <meta content="Erubisu Studio | Architectural Quiet Portfolio" name="twitter:title"/>
 <meta content="Curated web development between Japanese aesthetics and modern code." name="twitter:description"/>
 <meta content="https://erubisu.studio/og-image.jpg" name="twitter:image"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="stylesheet" href="css/style.css"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
@@ -94,7 +96,7 @@
 </div>
 <div class="lg:col-span-7 flex justify-center items-center">
 <div class="w-[320px] h-[320px] md:w-[460px] md:h-[460px] lg:w-[540px] lg:h-[540px] rounded-full overflow-hidden shadow-[0_24px_48px_rgba(46,52,45,0.12)] relative border-[12px] border-surface-container">
-<img alt="Professional profile" class="w-full h-full object-cover object-center" data-i18n-alt="1" src="images/foto_profilo.webp"/>
+<img alt="Professional profile" class="w-full h-full object-cover object-center" data-i18n-alt="1" decoding="async" fetchpriority="high" src="images/foto_profilo.webp"/>
 </div>
 </div>
 </div>
@@ -106,11 +108,11 @@
 <h2 class="font-headline text-4xl text-on-surface mb-8" data-i18n="t014">Philosophy</h2>
 </div>
 <div class="md:col-span-8 flex flex-col gap-12 font-body text-lg text-on-surface-variant">
-<div class="p-8 bg-surface-container rounded-lg shadow-[0_20px_40px_rgba(46,52,45,0.06)]">
+<div class="p-8 bg-surface-container rounded-lg shadow-[0_20px_40px_rgba(46,52,45,0.06)] animate-on-scroll">
 <h3 class="font-headline text-2xl text-on-surface mb-4" data-i18n="t015">Eliminating Muda</h3>
 <p data-i18n="t016">In Japanese production philosophy, 'Muda' means waste. We apply this concept to design and code, removing everything that does not add value to the final user experience. The result is a clean, essential, focused interface.</p>
 </div>
-<div class="p-8 bg-surface-container rounded-lg shadow-[0_20px_40px_rgba(46,52,45,0.06)] md:ml-12">
+<div class="p-8 bg-surface-container rounded-lg shadow-[0_20px_40px_rgba(46,52,45,0.06)] md:ml-12 animate-on-scroll">
 <h3 class="font-headline text-2xl text-on-surface mb-4" data-i18n="t017">The practice of Kaizen</h3>
 <p data-i18n="t018">Continuous improvement ('Kaizen') is at the center of our process. We never settle for the first iteration. We refine, optimize, and perfect every line of code and every visual detail until we reach the right balance.</p>
 </div>
@@ -121,25 +123,25 @@
 <section class="py-32 px-[5vw] max-w-[1440px] mx-auto" id="process">
 <h2 class="font-headline text-5xl text-on-background mb-24 text-center" data-i18n="t019">Process</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-4 animate-on-scroll">
 <div class="w-12 h-12 bg-primary-container text-on-primary-container rounded flex items-center justify-center font-headline text-xl mb-4" data-i18n="t020">
                         01</div>
 <h3 class="font-headline text-xl text-on-surface" data-i18n="t021">The Brief</h3>
 <p class="font-body text-on-surface-variant text-sm md:text-base leading-relaxed" data-i18n="t022">We start with a conversation. You tell me your idea, your goals, and what you expect from your new website. This helps me understand who you are and create something that truly represents you.</p>
 </div>
-<div class="flex flex-col gap-4 lg:mt-12">
+<div class="flex flex-col gap-4 lg:mt-12 animate-on-scroll">
 <div class="w-12 h-12 bg-primary-container text-on-primary-container rounded flex items-center justify-center font-headline text-xl mb-4" data-i18n="t023">
                         02</div>
 <h3 class="font-headline text-xl text-on-surface" data-i18n="t024">Development</h3>
 <p class="font-body text-on-surface-variant text-sm md:text-base leading-relaxed" data-i18n="t025">This is where the work takes shape. I turn the concepts we discussed into a real structure that is fast, responsive, and beautiful on every device.</p>
 </div>
-<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-4 animate-on-scroll">
 <div class="w-12 h-12 bg-primary-container text-on-primary-container rounded flex items-center justify-center font-headline text-xl mb-4" data-i18n="t026">
                         03</div>
 <h3 class="font-headline text-xl text-on-surface" data-i18n="t027">Refinement</h3>
 <p class="font-body text-on-surface-variant text-sm md:text-base leading-relaxed" data-i18n="t028">I never settle for the first result. I check every detail, correct small flaws, and make sure everything flows smoothly. This is where your website becomes truly polished.</p>
 </div>
-<div class="flex flex-col gap-4 lg:mt-12">
+<div class="flex flex-col gap-4 lg:mt-12 animate-on-scroll">
 <div class="w-12 h-12 bg-primary-container text-on-primary-container rounded flex items-center justify-center font-headline text-xl mb-4" data-i18n="t029">
                         04</div>
 <h3 class="font-headline text-xl text-on-surface" data-i18n="t030">Launch</h3>
@@ -152,11 +154,11 @@
 <h2 class="font-headline text-5xl text-on-background mb-24" data-i18n="t032">Portfolio</h2>
 <div class="flex flex-col gap-32">
 <!-- Project 1: Shadow Chat -->
-<article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center animate-on-scroll">
 <div class="lg:col-span-7 flex flex-col items-center justify-center order-2 lg:order-1 w-full">
 <div class="relative w-full max-w-[800px] aspect-[16/10] bg-gray-800 border-gray-800 border-[8px] md:border-[12px] rounded-t-xl md:rounded-t-2xl overflow-hidden shadow-2xl">
 <div class="absolute inset-0 bg-white overflow-hidden rounded-sm md:rounded">
-<img alt="Shadow Chat Interface" class="w-full h-full object-cover object-top" data-i18n-alt="2" src="images/shadow_chat.webp"/>
+<img alt="Shadow Chat Interface" class="w-full h-full object-cover object-top" data-i18n-alt="2" loading="lazy" decoding="async" src="images/shadow_chat.webp"/>
 </div>
 </div>
 <div class="relative w-[110%] max-w-[880px] h-4 md:h-6 bg-gray-300 dark:bg-gray-700 rounded-b-xl shadow-lg border-t border-gray-400 dark:border-gray-600 flex justify-center">
@@ -170,7 +172,7 @@
 </div>
 </article>
 <!-- Project 2: OSINT Lab -->
-<article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center animate-on-scroll">
 <div class="lg:col-span-5 flex flex-col gap-6 lg:pr-12">
 <span class="font-label text-sm text-on-surface-variant tracking-[0.05em] uppercase" data-i18n="t036">Digital Intelligence</span>
 <h3 class="font-headline text-4xl text-on-surface" data-i18n="t037">Investigation - OSINT Services</h3>
@@ -179,7 +181,7 @@
 <div class="lg:col-span-7 flex flex-col items-center justify-center w-full">
 <div class="relative w-full max-w-[800px] aspect-[16/10] bg-gray-800 border-gray-800 border-[8px] md:border-[12px] rounded-t-xl md:rounded-t-2xl overflow-hidden shadow-2xl">
 <div class="absolute inset-0 bg-white overflow-hidden rounded-sm md:rounded">
-<img alt="OSINT Lab Interface" class="w-full h-full object-cover object-top" data-i18n-alt="3" src="images/osint_website.webp"/>
+<img alt="OSINT Lab Interface" class="w-full h-full object-cover object-top" data-i18n-alt="3" loading="lazy" decoding="async" src="images/osint_website.webp"/>
 </div>
 </div>
 <div class="relative w-[110%] max-w-[880px] h-4 md:h-6 bg-gray-300 dark:bg-gray-700 rounded-b-xl shadow-lg border-t border-gray-400 dark:border-gray-600 flex justify-center">
@@ -188,11 +190,11 @@
 </div>
 </article>
 <!-- Project 3: Vera Social -->
-<article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center animate-on-scroll">
 <div class="lg:col-span-7 flex flex-col items-center justify-center order-2 lg:order-1 w-full">
 <div class="relative w-full max-w-[800px] aspect-[16/10] bg-gray-800 border-gray-800 border-[8px] md:border-[12px] rounded-t-xl md:rounded-t-2xl overflow-hidden shadow-2xl">
 <div class="absolute inset-0 bg-white overflow-hidden rounded-sm md:rounded">
-<img alt="Vera Social Interface" class="w-full h-full object-cover object-top" data-i18n-alt="4" src="images/vera_social.webp"/>
+<img alt="Vera Social Interface" class="w-full h-full object-cover object-top" data-i18n-alt="4" loading="lazy" decoding="async" src="images/vera_social.webp"/>
 </div>
 </div>
 <div class="relative w-[110%] max-w-[880px] h-4 md:h-6 bg-gray-300 dark:bg-gray-700 rounded-b-xl shadow-lg border-t border-gray-400 dark:border-gray-600 flex justify-center">
@@ -354,6 +356,6 @@
 
 
 
-<script src="js/main.js"></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>
