@@ -9,95 +9,73 @@
 <meta content="Erubisu Studio – Curated web development portfolio. We merge Japanese aesthetic principles with modern code efficiency to create unique digital experiences." name="description"/>
 <meta content="web design, front-end development, portfolio, Japanese minimalism, UI/UX, Erubisu Studio, web agency Italy, curated design" name="keywords"/>
 <meta content="index, follow" name="robots"/>
-<link href="https://erubisu.studio/" rel="canonical"/>
+<link href="https://erubisustudio.github.io/" rel="canonical"/>
 <!-- Favicon -->
-<link href="images/favicon.png" rel="icon" type="image/png"/>
-<link href="images/favicon.png" rel="apple-touch-icon"/>
+<link href="images/favicon.ico" rel="icon" sizes="48x48"/>
+<link href="images/favicon.png" rel="icon" type="image/png" sizes="32x32"/>
+<link href="images/apple-touch-icon.png" rel="apple-touch-icon"/>
 <!-- Open Graph / Facebook -->
 <meta content="website" property="og:type"/>
-<meta content="https://erubisu.studio" property="og:url"/>
+<meta content="https://erubisustudio.github.io/" property="og:url"/>
 <meta content="Erubisu Studio | Architectural Quiet Portfolio" property="og:title"/>
 <meta content="Art meets efficiency. Curated web development with elegance and precision." property="og:description"/>
-<meta content="https://erubisu.studio/og-image.jpg" property="og:image"/>
+<meta content="https://erubisustudio.github.io/images/og-image.jpg" property="og:image"/>
 <!-- Twitter -->
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="https://erubisu.studio" name="twitter:url"/>
+<meta content="https://erubisustudio.github.io/" name="twitter:url"/>
 <meta content="Erubisu Studio | Architectural Quiet Portfolio" name="twitter:title"/>
 <meta content="Curated web development between Japanese aesthetics and modern code." name="twitter:description"/>
-<meta content="https://erubisu.studio/og-image.jpg" name="twitter:image"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<meta content="https://erubisustudio.github.io/images/og-image.jpg" name="twitter:image"/>
+<link rel="preload" href="fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="fonts/newsreader-400.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="stylesheet" href="css/style.css"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
-<style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        /* Prevent text selection */
-        body {
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-    </style>
-<!-- Single-page bilingual version: English is default; Italian is selected via client-side language switcher. --></head>
+<!-- English default; Japanese via client-side language switcher. --></head>
 <body class="bg-background text-on-background font-body antialiased selection:bg-primary-container selection:text-on-primary-container">
-<nav class="fixed top-0 w-full z-50 bg-[#fafaf5]/70 dark:bg-[#2e342d]/70 backdrop-blur-xl shadow-[0_20px_40px_rgba(46,52,45,0.06)]">
+<nav class="site-nav fixed top-0 w-full z-50">
 <div class="flex justify-between items-center px-[5vw] py-6 max-w-[1440px] mx-auto">
 <div class="hover:opacity-80 transition-opacity duration-300">
 <a href="#hero">
-<img alt="Erubisu Studio" class="h-[85px] w-[85px] object-contain" data-i18n-alt="0" src="images/Logo.png"/>
+<img alt="Erubisu Studio" class="h-14 w-14 object-contain" data-i18n-alt="0" src="images/Logo.png"/>
 </a>
 </div>
 <ul class="hidden md:flex gap-8 font-headline text-lg tracking-tight">
-<li><a class="text-[#5b6159] dark:text-[#aeb4aa] hover:text-[#2e342d] dark:hover:text-[#fafaf5] transition-colors" data-i18n="t001" href="#philosophy">Philosophy</a></li>
-<li><a class="text-[#5b6159] dark:text-[#aeb4aa] hover:text-[#2e342d] dark:hover:text-[#fafaf5] transition-colors" data-i18n="t002" href="#process">Process</a></li>
-<li><a class="text-[#5b6159] dark:text-[#aeb4aa] hover:text-[#2e342d] dark:hover:text-[#fafaf5] transition-colors" data-i18n="t003" href="#portfolio">Portfolio</a></li>
-<li><a class="text-[#5b6159] dark:text-[#aeb4aa] hover:text-[#2e342d] dark:hover:text-[#fafaf5] transition-colors" data-i18n="t004" href="#skills">Skills</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t001" href="#philosophy">Philosophy</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t002" href="#process">Process</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t003" href="#portfolio">Portfolio</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t004" href="#skills">Skills</a></li>
 </ul>
-<a class="hidden md:inline-flex items-center justify-center px-6 py-2.5 bg-primary text-on-primary rounded font-label text-sm font-medium hover:bg-primary-dim transition-colors duration-300" data-i18n="t005" href="#contact">Contact Me</a><div aria-label="Language selector" class="language-switcher hidden md:flex items-center gap-2 font-label text-xs uppercase tracking-[0.08em]"><button aria-pressed="true" class="px-2 py-1 rounded bg-primary text-on-primary transition-colors" data-lang-switch="en" type="button">EN</button><span class="text-on-surface-variant">/</span><button aria-pressed="false" class="px-2 py-1 rounded text-on-surface-variant hover:text-on-surface transition-colors" data-lang-switch="it" type="button">IT</button></div>
-<button class="md:hidden text-on-surface hover:opacity-80 transition-opacity" id="mobile-menu-button">
-<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 0;'>menu</span>
+<div class="hidden md:flex items-center gap-4">
+<a class="font-label text-sm tracking-[0.06em] hover:text-seal transition-colors" data-i18n="t005" href="#contact">Contact Me</a>
+<div aria-label="Language selector" class="language-switcher flex items-center gap-2 font-label text-xs uppercase tracking-[0.08em]"><button aria-pressed="true" class="hit-44 px-2 transition-colors" data-lang-switch="en" type="button">EN</button><span class="text-on-surface-variant">/</span><button aria-pressed="false" class="hit-44 px-2 rounded text-on-surface-variant hover:text-on-surface transition-colors" data-lang-switch="ja" type="button">JA</button></div>
+</div>
+<button aria-expanded="false" aria-label="Menu" class="hit-44 md:hidden text-on-surface hover:opacity-80 transition-opacity" id="mobile-menu-button">
+<svg class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
 </button>
 </div>
 <!-- Mobile Menu -->
-<div class="hidden md:hidden absolute top-full left-0 w-full bg-[#fafaf5]/95 dark:bg-[#2e342d]/95 backdrop-blur-xl shadow-lg border-t border-outline-variant/20" id="mobile-menu">
+<div class="hidden md:hidden absolute top-full left-0 w-full bg-background border-t border-outline-variant/20" id="mobile-menu">
 <ul class="flex flex-col font-headline text-lg tracking-tight px-[5vw] py-6 gap-6">
-<li><a class="block text-[#5b6159] dark:text-[#aeb4aa] hover:text-[#2e342d] dark:hover:text-[#fafaf5] transition-colors" data-i18n="t006" href="#philosophy">Philosophy</a></li>
-<li><a class="block text-[#5b6159] dark:text-[#aeb4aa] hover:text-[#2e342d] dark:hover:text-[#fafaf5] transition-colors" data-i18n="t007" href="#process">Process</a></li>
-<li><a class="block text-[#5b6159] dark:text-[#aeb4aa] hover:text-[#2e342d] dark:hover:text-[#fafaf5] transition-colors" data-i18n="t008" href="#portfolio">Portfolio</a></li>
-<li><a class="block text-[#5b6159] dark:text-[#aeb4aa] hover:text-[#2e342d] dark:hover:text-[#fafaf5] transition-colors" data-i18n="t009" href="#skills">Skills</a></li>
-<li><a class="inline-flex items-center justify-center px-6 py-3 bg-primary text-on-primary rounded font-label text-sm font-medium hover:bg-primary-dim transition-colors duration-300 w-full mt-2" data-i18n="t010" href="#contact">Contact Me</a></li>
-<li aria-label="Language selector" class="mobile-language-switcher flex items-center gap-3 pt-2 font-label text-sm uppercase tracking-[0.08em]"><button aria-pressed="true" class="px-3 py-1.5 rounded bg-primary text-on-primary transition-colors" data-lang-switch="en" type="button">English</button><span class="text-on-surface-variant">/</span><button aria-pressed="false" class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface transition-colors" data-lang-switch="it" type="button">Italiano</button></li></ul>
+<li><a class="block text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t001" href="#philosophy">Philosophy</a></li>
+<li><a class="block text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t002" href="#process">Process</a></li>
+<li><a class="block text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t003" href="#portfolio">Portfolio</a></li>
+<li><a class="block text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t004" href="#skills">Skills</a></li>
+<li><a class="block font-label text-sm tracking-[0.06em] hover:text-seal transition-colors" data-i18n="t005" href="#contact">Contact Me</a></li>
+<li aria-label="Language selector" class="mobile-language-switcher flex items-center gap-3 pt-2 font-label text-sm uppercase tracking-[0.08em]"><button aria-pressed="true" class="hit-44 px-3 transition-colors" data-lang-switch="en" type="button">English</button><span class="text-on-surface-variant">/</span><button aria-pressed="false" class="hit-44 px-3 rounded text-on-surface-variant hover:text-on-surface transition-colors" data-lang-switch="ja" type="button">日本語</button></li></ul>
 </div>
 </nav>
 <main>
 <!-- 1. Hero Section -->
-<section class="min-h-screen flex items-center pt-24 px-[5vw] max-w-[1440px] mx-auto relative" id="hero">
+<section class="min-h-screen flex items-center pt-32 px-[5vw] max-w-[1440px] mx-auto relative" id="hero">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
 <div class="lg:col-span-5 flex flex-col gap-8 z-10">
 <h1 class="font-headline text-5xl md:text-7xl leading-tight text-on-background" data-i18n-html="t011">Art meets<br/>efficiency</h1>
 <p class="font-body text-lg md:text-xl text-on-surface-variant max-w-md" data-i18n="t012">We turn vision into code with elegance and precision. A curated approach to digital development.</p>
 <div class="pt-4">
-<a class="inline-flex items-center justify-center px-8 py-3.5 bg-gradient-to-br from-primary to-primary-dim text-on-primary rounded font-label text-sm font-medium tracking-wide shadow-md hover:shadow-lg transition-all duration-300" data-i18n="t013" href="#portfolio">Explore Projects</a>
+<a class="text-link" data-i18n="t013" href="#portfolio">Explore Projects</a>
 </div>
 </div>
-<div class="lg:col-span-7 flex justify-center items-center">
-<div class="w-[320px] h-[320px] md:w-[460px] md:h-[460px] lg:w-[540px] lg:h-[540px] rounded-full overflow-hidden shadow-[0_24px_48px_rgba(46,52,45,0.12)] relative border-[12px] border-surface-container">
-<img alt="Professional profile" class="w-full h-full object-cover object-center" data-i18n-alt="1" decoding="async" fetchpriority="high" src="images/foto_profilo.webp"/>
-</div>
+<div class="lg:col-span-7 flex justify-end items-end">
+<img alt="Professional profile" class="portrait" data-i18n-alt="1" decoding="async" fetchpriority="high" src="images/foto_profilo.webp"/>
 </div>
 </div>
 </section>
@@ -108,11 +86,11 @@
 <h2 class="font-headline text-4xl text-on-surface mb-8" data-i18n="t014">Philosophy</h2>
 </div>
 <div class="md:col-span-8 flex flex-col gap-12 font-body text-lg text-on-surface-variant">
-<div class="p-8 bg-surface-container rounded-lg shadow-[0_20px_40px_rgba(46,52,45,0.06)] animate-on-scroll">
+<div class="animate-on-scroll">
 <h3 class="font-headline text-2xl text-on-surface mb-4" data-i18n="t015">Eliminating Muda</h3>
 <p data-i18n="t016">In Japanese production philosophy, 'Muda' means waste. We apply this concept to design and code, removing everything that does not add value to the final user experience. The result is a clean, essential, focused interface.</p>
 </div>
-<div class="p-8 bg-surface-container rounded-lg shadow-[0_20px_40px_rgba(46,52,45,0.06)] md:ml-12 animate-on-scroll">
+<div class="md:ml-16 animate-on-scroll">
 <h3 class="font-headline text-2xl text-on-surface mb-4" data-i18n="t017">The practice of Kaizen</h3>
 <p data-i18n="t018">Continuous improvement ('Kaizen') is at the center of our process. We never settle for the first iteration. We refine, optimize, and perfect every line of code and every visual detail until we reach the right balance.</p>
 </div>
@@ -121,53 +99,46 @@
 </section>
 <!-- 3. Creative Flow -->
 <section class="py-32 px-[5vw] max-w-[1440px] mx-auto" id="process">
-<h2 class="font-headline text-5xl text-on-background mb-24 text-center" data-i18n="t019">Process</h2>
+<h2 class="font-headline text-5xl text-on-background mb-24" data-i18n="t019">Process</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 <div class="flex flex-col gap-4 animate-on-scroll">
-<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded flex items-center justify-center font-headline text-xl mb-4" data-i18n="t020">
-                        01</div>
+<p class="step-num mb-4" data-i18n="t020">
+                        01</p>
 <h3 class="font-headline text-xl text-on-surface" data-i18n="t021">The Brief</h3>
 <p class="font-body text-on-surface-variant text-sm md:text-base leading-relaxed" data-i18n="t022">We start with a conversation. You tell me your idea, your goals, and what you expect from your new website. This helps me understand who you are and create something that truly represents you.</p>
 </div>
 <div class="flex flex-col gap-4 lg:mt-12 animate-on-scroll">
-<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded flex items-center justify-center font-headline text-xl mb-4" data-i18n="t023">
-                        02</div>
+<p class="step-num mb-4" data-i18n="t023">
+                        02</p>
 <h3 class="font-headline text-xl text-on-surface" data-i18n="t024">Development</h3>
 <p class="font-body text-on-surface-variant text-sm md:text-base leading-relaxed" data-i18n="t025">This is where the work takes shape. I turn the concepts we discussed into a real structure that is fast, responsive, and beautiful on every device.</p>
 </div>
 <div class="flex flex-col gap-4 animate-on-scroll">
-<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded flex items-center justify-center font-headline text-xl mb-4" data-i18n="t026">
-                        03</div>
+<p class="step-num mb-4" data-i18n="t026">
+                        03</p>
 <h3 class="font-headline text-xl text-on-surface" data-i18n="t027">Refinement</h3>
 <p class="font-body text-on-surface-variant text-sm md:text-base leading-relaxed" data-i18n="t028">I never settle for the first result. I check every detail, correct small flaws, and make sure everything flows smoothly. This is where your website becomes truly polished.</p>
 </div>
 <div class="flex flex-col gap-4 lg:mt-12 animate-on-scroll">
-<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded flex items-center justify-center font-headline text-xl mb-4" data-i18n="t029">
-                        04</div>
+<p class="step-num mb-4" data-i18n="t029">
+                        04</p>
 <h3 class="font-headline text-xl text-on-surface" data-i18n="t030">Launch</h3>
 <p class="font-body text-on-surface-variant text-sm md:text-base leading-relaxed" data-i18n="t031">Once everything is ready and you are satisfied, I take it live. I publish your website, configure it correctly, and make sure it is ready to be found by your customers.</p>
 </div>
 </div>
 </section>
 <!-- 5. Portfolio -->
-<section class="py-32 px-[5vw] max-w-[1440px] mx-auto" id="portfolio">
-<h2 class="font-headline text-5xl text-on-background mb-24" data-i18n="t032">Portfolio</h2>
-<div class="flex flex-col gap-32">
+<section class="py-32 px-[5vw] bg-surface-container-low w-full" id="portfolio">
+<div class="max-w-[1440px] mx-auto flex flex-col gap-32">
+<h2 class="font-headline text-5xl text-on-background" data-i18n="t032">Portfolio</h2>
 <!-- Project 1: Karalis Charter -->
 <article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center animate-on-scroll">
-<div class="lg:col-span-7 flex flex-col items-center justify-center order-2 lg:order-1 w-full cursor-pointer group" onclick="safeNavigate('https://www.karalischarter.com/')">
-<div class="relative w-full max-w-[800px] aspect-[16/10] bg-gray-800 border-gray-800 border-[8px] md:border-[12px] rounded-t-xl md:rounded-t-2xl overflow-hidden shadow-2xl transition-transform duration-300 group-hover:scale-[1.01]">
-<div class="absolute inset-0 bg-white overflow-hidden rounded-sm md:rounded">
-<img alt="Karalis Charter Interface" class="w-full h-full object-cover object-top" data-i18n-alt="2" loading="lazy" decoding="async" src="images/karalis_charter.webp"/>
-</div>
-</div>
-<div class="relative w-[110%] max-w-[880px] h-4 md:h-6 bg-gray-300 dark:bg-gray-700 rounded-b-xl shadow-lg border-t border-gray-400 dark:border-gray-600 flex justify-center">
-<div class="w-1/4 h-2 bg-gray-400 dark:bg-gray-800 rounded-b-md opacity-50"></div>
-</div>
-</div>
+<a class="lg:col-span-7 order-2 lg:order-1 w-full" href="https://www.karalischarter.com/" rel="noopener noreferrer" target="_blank">
+<img alt="Karalis Charter Interface" class="work-shot" data-i18n-alt="2" loading="lazy" decoding="async" src="images/karalis_charter.webp"/>
+</a>
 <div class="lg:col-span-5 flex flex-col gap-6 order-1 lg:order-2 lg:pl-12">
 <span class="font-label text-sm text-on-surface-variant tracking-[0.05em] uppercase" data-i18n="t033">Nautical & Charter</span>
-<h3 class="font-headline text-4xl text-on-surface hover:text-primary transition-colors cursor-pointer" data-i18n="t034" onclick="safeNavigate('https://www.karalischarter.com/')">Karalis Charter</h3>
+<h3 class="font-headline text-4xl text-on-surface hover:text-primary transition-colors"><a data-i18n="t034" href="https://www.karalischarter.com/" rel="noopener noreferrer" target="_blank">Karalis Charter</a></h3>
 <p class="font-body text-lg text-on-surface-variant" data-i18n="t035">Complete website restyling and implementation of custom features to enhance user experience, online booking performance, and brand presence for a luxury charter service in Sardinia.</p>
 </div>
 </article>
@@ -178,28 +149,14 @@
 <h3 class="font-headline text-4xl text-on-surface" data-i18n="t037">Investigation - OSINT Services</h3>
 <p class="font-body text-lg text-on-surface-variant" data-i18n="t038">An advanced digital intelligence dashboard for open-source research. It combines high-density information with a clean, functional interface for efficient analysis.</p>
 </div>
-<div class="lg:col-span-7 flex flex-col items-center justify-center w-full">
-<div class="relative w-full max-w-[800px] aspect-[16/10] bg-gray-800 border-gray-800 border-[8px] md:border-[12px] rounded-t-xl md:rounded-t-2xl overflow-hidden shadow-2xl">
-<div class="absolute inset-0 bg-white overflow-hidden rounded-sm md:rounded">
-<img alt="OSINT Lab Interface" class="w-full h-full object-cover object-top" data-i18n-alt="3" loading="lazy" decoding="async" src="images/osint_website.webp"/>
-</div>
-</div>
-<div class="relative w-[110%] max-w-[880px] h-4 md:h-6 bg-gray-300 dark:bg-gray-700 rounded-b-xl shadow-lg border-t border-gray-400 dark:border-gray-600 flex justify-center">
-<div class="w-1/4 h-2 bg-gray-400 dark:bg-gray-800 rounded-b-md opacity-50"></div>
-</div>
+<div class="lg:col-span-7 w-full">
+<img alt="OSINT Lab Interface" class="work-shot" data-i18n-alt="3" loading="lazy" decoding="async" src="images/osint_website.webp"/>
 </div>
 </article>
 <!-- Project 3: Vera Social -->
 <article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center animate-on-scroll">
-<div class="lg:col-span-7 flex flex-col items-center justify-center order-2 lg:order-1 w-full">
-<div class="relative w-full max-w-[800px] aspect-[16/10] bg-gray-800 border-gray-800 border-[8px] md:border-[12px] rounded-t-xl md:rounded-t-2xl overflow-hidden shadow-2xl">
-<div class="absolute inset-0 bg-white overflow-hidden rounded-sm md:rounded">
-<img alt="Vera Social Interface" class="w-full h-full object-cover object-top" data-i18n-alt="4" loading="lazy" decoding="async" src="images/vera_social.webp"/>
-</div>
-</div>
-<div class="relative w-[110%] max-w-[880px] h-4 md:h-6 bg-gray-300 dark:bg-gray-700 rounded-b-xl shadow-lg border-t border-gray-400 dark:border-gray-600 flex justify-center">
-<div class="w-1/4 h-2 bg-gray-400 dark:bg-gray-800 rounded-b-md opacity-50"></div>
-</div>
+<div class="lg:col-span-7 order-2 lg:order-1 w-full">
+<img alt="Vera Social Interface" class="work-shot" data-i18n-alt="4" loading="lazy" decoding="async" src="images/vera_social.webp"/>
 </div>
 <div class="lg:col-span-5 flex flex-col gap-6 order-1 lg:order-2 lg:pl-12">
 <span class="font-label text-sm text-on-surface-variant tracking-[0.05em] uppercase" data-i18n="t039">Premium Networking</span>
@@ -216,139 +173,64 @@
 <h2 class="font-headline text-4xl text-on-surface mb-8" data-i18n="t042">Skills</h2>
 <p class="font-body text-lg text-on-surface-variant mb-12" data-i18n-html="t043">For me, web development is a balance between art and logic. I apply <strong data-i18n="t044">Muda</strong> to remove everything that slows down your site, leaving space only for the essentials and speed. Through <strong data-i18n="t045">Kaizen</strong>, I refine every line of code through continuous improvement, delivering solid, secure solutions ready to grow over time.</p>
 </div>
-<div class="flex flex-col gap-10 justify-center">
-<div>
-<div class="flex justify-between items-end mb-2">
-<span class="font-headline text-xl text-on-surface" data-i18n="t046">WordPress</span>
-<span class="font-label text-sm text-on-surface-variant tracking-[0.05em]" data-i18n="t047">70%</span>
-</div>
-<div class="h-1 w-full bg-surface-container-high rounded-full overflow-hidden">
-<div class="h-full bg-primary rounded-full" style="width: 70%;"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between items-end mb-2">
-<span class="font-headline text-xl text-on-surface" data-i18n="t048">Html5</span>
-<span class="font-label text-sm text-on-surface-variant tracking-[0.05em]" data-i18n="t049">75%</span>
-</div>
-<div class="h-1 w-full bg-surface-container-high rounded-full overflow-hidden">
-<div class="h-full bg-primary rounded-full" style="width: 75%;"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between items-end mb-2">
-<span class="font-headline text-xl text-on-surface" data-i18n="t050">CSS</span>
-<span class="font-label text-sm text-on-surface-variant tracking-[0.05em]" data-i18n="t051">75%</span>
-</div>
-<div class="h-1 w-full bg-surface-container-high rounded-full overflow-hidden">
-<div class="h-full bg-primary rounded-full" style="width: 75%;"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between items-end mb-2">
-<span class="font-headline text-xl text-on-surface" data-i18n="t052">AI Knowledge</span>
-<span class="font-label text-sm text-on-surface-variant tracking-[0.05em]" data-i18n="t053">80%</span>
-</div>
-<div class="h-1 w-full bg-surface-container-high rounded-full overflow-hidden">
-<div class="h-full bg-primary rounded-full" style="width: 80%;"></div>
-</div>
-</div>
-</div>
+<p class="font-headline text-xl text-on-surface self-center leading-relaxed">
+<span data-i18n="t046">WordPress</span><span class="text-on-surface-variant"> · </span><span data-i18n="t048">HTML5</span><span class="text-on-surface-variant"> · </span><span data-i18n="t050">CSS</span><span class="text-on-surface-variant"> · </span><span data-i18n="t052">JavaScript</span><span class="text-on-surface-variant"> · </span><span data-i18n="t054">PHP</span><span class="text-on-surface-variant"> · </span><span data-i18n="t055">UX/UI</span>
+</p>
 </div>
 </section>
 
 <!-- 8. Contact -->
 <section class="py-32 px-[5vw] bg-surface-container-low w-full" id="contact">
-<div class="max-w-[800px] mx-auto bg-surface rounded-lg p-8 md:p-16 shadow-[0_20px_40px_rgba(46,52,45,0.06)] relative overflow-hidden">
-<div class="absolute top-0 right-0 w-64 h-64 bg-primary-container rounded-full blur-3xl opacity-30 -mr-20 -mt-20">
-</div>
-<h2 class="font-headline text-4xl text-on-surface mb-2 relative z-10" data-i18n="t078">Ready to start a project?</h2>
-<p class="font-body text-on-surface-variant mb-12 relative z-10" data-i18n="t079">Write to me to explore how we can collaborate.</p>
-<div class="flex flex-col sm:flex-row gap-6 relative z-10 mt-8 sm:justify-center">
-<button class="inline-flex items-center justify-center px-8 py-4 bg-primary text-on-primary rounded font-label text-base font-medium tracking-wide shadow-md hover:bg-primary-dim hover:shadow-lg transition-all duration-300 w-full sm:w-auto" data-i18n-html="t080" onclick="openContactModal()">
-<span class="material-symbols-outlined mr-2">connect_without_contact</span>How to contact me</button>
-</div>
+<div class="max-w-[1440px] mx-auto">
+<h2 class="font-headline text-4xl text-on-surface mb-4" data-i18n="t078">Ready to start a project?</h2>
+<p class="font-body text-on-surface-variant mb-10" data-i18n="t079">Write to me to explore how we can collaborate.</p>
+<button class="px-8 py-3 bg-seal text-on-seal rounded-full font-label text-sm tracking-[0.06em] hover:bg-seal-dim transition-colors duration-300" onclick="openContactModal()" type="button">
+<span data-i18n="t080">How to contact me</span>
+</button>
 </div>
 </section>
 </main>
-<footer class="w-full pt-24 pb-12 px-[5vw] bg-[#f3f4ee] dark:bg-[#1a1d1a]">
+<footer class="site-footer w-full pt-24 pb-12 px-[5vw]">
 <div class="max-w-[1440px] mx-auto flex flex-col gap-12">
 <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
 <div class="flex flex-col gap-4">
-<span class="font-headline italic text-xl text-[#576246] dark:text-[#effdd8]" data-i18n="t081">Erubisu
+<span class="font-headline italic text-xl text-primary" data-i18n="t081">Erubisu
                         Studio - Web Design &amp; Development</span>
-<p class="font-body text-sm uppercase tracking-[0.05em] text-[#5b6159] dark:text-[#aeb4aa]" data-i18n="t082">
+<p class="font-body text-sm uppercase tracking-[0.05em] text-on-surface-variant" data-i18n="t082">
                         © 2026 Erubisu studio
                     </p>
 </div>
-<div class="flex flex-wrap items-center justify-start md:justify-end gap-6 sm:gap-8 font-body text-sm uppercase tracking-[0.05em] text-on-surface-variant dark:text-outline-variant">
-<div class="flex flex-wrap items-center gap-6">
-<button class="hover:text-primary transition-colors" data-i18n="t083" onclick="openLegalModal('privacy')">Privacy</button>
-<button class="hover:text-primary transition-colors" data-i18n="t084" onclick="openLegalModal('cookie')">Cookie</button>
-<button class="hover:text-primary transition-colors" data-i18n="t085" onclick="openLegalModal('gdpr')">GDPR</button>
-</div>
+<div class="flex flex-wrap items-center justify-start md:justify-end gap-6 sm:gap-8 font-body text-sm uppercase tracking-[0.05em] text-on-surface-variant">
+<a class="hover:text-primary transition-colors" data-i18n="t083" href="privacy.html">Privacy</a>
 </div>
 </div>
 </div>
 </footer>
-<!-- Cookie Consent Banner -->
-<div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90vw] max-w-[500px] z-[100] bg-surface-container-highest/90 backdrop-blur-md p-6 rounded-xl shadow-2xl border border-outline-variant/20 transition-all duration-500 transform translate-y-0" id="cookie-banner">
-<div class="flex flex-col gap-4">
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-primary mt-0.5">cookie</span>
-<p class="font-body text-sm text-on-surface-variant leading-relaxed" data-i18n="t086">We use cookies to refine your digital experience. By continuing to browse, you accept our data management approach.</p>
-</div>
-<div class="flex justify-end gap-4">
-<button class="px-4 py-2 text-xs font-label uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t087" id="cookie-pref">Preferences</button>
-<button class="px-6 py-2 bg-primary text-on-primary rounded text-xs font-label uppercase tracking-widest hover:bg-primary-dim transition-colors shadow-sm" data-i18n="t088" id="cookie-accept">Accept</button>
-</div>
-</div>
-</div>
 <!-- Contact Modal -->
-<div class="fixed inset-0 z-[200] hidden items-center justify-center p-4" id="contact-modal">
-<!-- Backdrop -->
+<div aria-hidden="true" aria-labelledby="contact-modal-title" aria-modal="true" class="fixed inset-0 z-[200] hidden items-center justify-center p-4" id="contact-modal" role="dialog">
 <div class="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300 opacity-0" id="contact-modal-backdrop" onclick="closeContactModal()"></div>
-<!-- Modal Content -->
 <div class="relative bg-surface rounded-2xl shadow-[0_24px_48px_rgba(0,0,0,0.2)] p-10 max-w-sm w-full transform scale-95 opacity-0 transition-all duration-300 border border-outline-variant/20 text-center" id="contact-modal-content">
-<button aria-label="Close" class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface transition-colors" data-i18n-aria-label="close" onclick="closeContactModal()">
-<span class="material-symbols-outlined">close</span>
+<button aria-label="Close" class="hit-44 absolute top-4 right-4 text-on-surface-variant hover:text-on-surface transition-colors" data-i18n-aria-label="close" id="contact-modal-close" onclick="closeContactModal()" type="button">
+<svg class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
 </button>
-<h3 class="font-headline text-2xl text-on-surface mb-6" data-i18n="t089">Choose how to contact me</h3>
+<h3 class="font-headline text-2xl text-on-surface mb-6" data-i18n="t089" id="contact-modal-title">Choose how to contact me</h3>
 <div class="flex flex-col gap-4">
-<!-- Email Option -->
-<div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/30 select-all cursor-pointer group relative hover:bg-surface-container transition-colors" onclick="copyEmail()">
+<button class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/30 select-all cursor-pointer group relative hover:bg-surface-container transition-colors" onclick="copyEmail()" type="button">
 <div class="flex items-center justify-center gap-2 mb-2">
-<span class="material-symbols-outlined text-on-surface-variant text-xl">mail</span>
+<svg class="icon text-on-surface-variant" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect height="14" rx="2" width="18" x="3" y="5"/><path d="M3 7l9 6 9-6"/></svg>
 <span class="font-label text-sm uppercase tracking-wide text-on-surface-variant" data-i18n="t090">Email</span>
 </div>
 <span class="font-body text-base text-primary font-medium block" data-i18n="t091" id="contact-email">adrianelvisiale@gmail.com</span>
 <p class="text-[10px] text-primary mt-2 uppercase tracking-[0.1em] opacity-0 group-hover:opacity-100 transition-opacity font-medium" data-i18n="t092">Click to copy</p>
-</div>
-<!-- LinkedIn Option -->
-<div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/30 group hover:bg-surface-container transition-colors block cursor-pointer" onclick="safeNavigate('https://www.linkedin.com/in/adrian-iale-681371388/')">
+</button>
+<a class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/30 group hover:bg-surface-container transition-colors block" href="https://www.linkedin.com/in/adrian-iale-681371388/" rel="noopener noreferrer" target="_blank">
 <div class="flex items-center justify-center gap-2 mb-2">
-<svg class="w-5 h-5 text-on-surface-variant" fill="currentColor" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+<svg class="w-5 h-5 text-on-surface-variant" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
 <span class="font-label text-sm uppercase tracking-wide text-on-surface-variant" data-i18n="t093">LinkedIn</span>
 </div>
 <span class="font-body text-base text-primary font-medium block" data-i18n="t094">Contact me on LinkedIn</span>
 <p class="text-[10px] text-primary mt-2 uppercase tracking-[0.1em] opacity-0 group-hover:opacity-100 transition-opacity font-medium" data-i18n="t095">Open Profile</p>
-</div>
-</div>
-</div>
-</div>
-<!-- Legal Summary Modal -->
-<div class="fixed inset-0 z-[200] hidden items-center justify-center p-4" id="legal-modal">
-<!-- Backdrop -->
-<div class="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300 opacity-0" id="legal-modal-backdrop" onclick="closeLegalModal()"></div>
-<!-- Modal Content -->
-<div class="relative bg-surface rounded-2xl shadow-[0_24px_48px_rgba(0,0,0,0.2)] p-8 max-w-md w-full transform scale-95 opacity-0 transition-all duration-300 border border-outline-variant/20" id="legal-modal-content">
-<button aria-label="Close" class="absolute top-6 right-6 text-on-surface-variant hover:text-on-surface transition-colors" data-i18n-aria-label="close" onclick="closeLegalModal()">
-<span class="material-symbols-outlined">close</span>
-</button>
-<h3 class="font-headline text-2xl text-on-surface mb-4" data-i18n="t096" id="legal-modal-title">Title</h3>
-<p class="font-body text-on-surface-variant leading-relaxed text-sm md:text-base" data-i18n="t097" id="legal-modal-body">Content</p>
-<div class="mt-8 flex justify-end">
-<button class="px-6 py-2.5 bg-primary text-on-primary rounded font-label text-xs uppercase tracking-widest hover:bg-primary-dim transition-colors shadow-sm" data-i18n="t098" onclick="closeLegalModal()">Got it</button>
+</a>
 </div>
 </div>
 </div>

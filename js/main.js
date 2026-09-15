@@ -1,432 +1,280 @@
 document.addEventListener('DOMContentLoaded', () => {
-            // Navigation Logic (Hides URLs from status bar)
-            window.safeNavigate = (url) => {
-                window.open(url, '_blank', 'noopener,noreferrer');
-            };
+    const CONTACT_EMAIL = 'adrianelvisiale@gmail.com';
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuLinks = mobileMenu?.querySelectorAll('a');
 
-            // Mobile Menu Logic
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileMenuLinks = mobileMenu?.querySelectorAll('a');
-
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                });
-
-                mobileMenuLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileMenu.classList.add('hidden');
-                    });
-                });
-            }
-
-            // Legal Modal Logic
-            const legalModal = document.getElementById('legal-modal');
-            const legalModalBackdrop = document.getElementById('legal-modal-backdrop');
-            const legalModalContent = document.getElementById('legal-modal-content');
-            const legalModalTitle = document.getElementById('legal-modal-title');
-            const legalModalBody = document.getElementById('legal-modal-body');
-
-            const legalData = {
-                privacy: {
-                    title: "Privacy Policy",
-                    body: "We respect your digital space. We collect only the information essential to provide our services. Your data will never be transferred or sold to third parties, and it will be handled with maximum confidentiality and protected with high security standards."
-                },
-                cookie: {
-                    title: "Cookie Policy",
-                    body: "To keep the site fast and functional, we use only strictly necessary technical cookies. We removed invasive tracking scripts and unnecessary profiling cookies, fully respecting your privacy and offering a clean, fast experience."
-                },
-                gdpr: {
-                    title: "GDPR Compliance",
-                    body: "Your right to privacy is protected. In full compliance with the GDPR, we ensure full control over your personal data. At any time, you can request access, correction, or permanent deletion from our systems."
-                }
-            };
-
-            window.openLegalModal = (type) => {
-                const data = legalData[type];
-                if (data && legalModal) {
-                    document.body.style.overflow = 'hidden'; // Evita scorrimento sfondo
-                    legalModalTitle.textContent = data.title;
-                    legalModalBody.textContent = data.body;
-                    
-                    legalModal.classList.remove('hidden');
-                    legalModal.classList.add('flex');
-                    
-                    void legalModal.offsetWidth;
-                    
-                    legalModalBackdrop.classList.remove('opacity-0');
-                    legalModalContent.classList.remove('scale-95', 'opacity-0');
-                }
-            };
-
-            window.closeLegalModal = () => {
-                if (legalModal) {
-                    document.body.style.overflow = ''; // Ripristina scorrimento
-                    legalModalBackdrop.classList.add('opacity-0');
-                    legalModalContent.classList.add('scale-95', 'opacity-0');
-                    
-                    setTimeout(() => {
-                        legalModal.classList.add('hidden');
-                        legalModal.classList.remove('flex');
-                    }, 300);
-                }
-            };
-
-            // Contact Modal Logic
-            const contactModal = document.getElementById('contact-modal');
-            const contactModalBackdrop = document.getElementById('contact-modal-backdrop');
-            const contactModalContent = document.getElementById('contact-modal-content');
-
-            window.openContactModal = () => {
-                if (contactModal) {
-                    document.body.style.overflow = 'hidden'; // Evita scorrimento sfondo
-                    contactModal.classList.remove('hidden');
-                    contactModal.classList.add('flex');
-                    void contactModal.offsetWidth;
-                    contactModalBackdrop.classList.remove('opacity-0');
-                    contactModalContent.classList.remove('scale-95', 'opacity-0');
-                }
-            };
-
-            window.closeContactModal = () => {
-                if (contactModal) {
-                    document.body.style.overflow = ''; // Ripristina scorrimento
-                    contactModalBackdrop.classList.add('opacity-0');
-                    contactModalContent.classList.add('scale-95', 'opacity-0');
-                    setTimeout(() => {
-                        contactModal.classList.add('hidden');
-                        contactModal.classList.remove('flex');
-                    }, 300);
-                }
-            };
-
-            window.copyEmail = () => {
-                const email = document.getElementById('contact-email').textContent;
-                navigator.clipboard.writeText(email).then(() => {
-                    const emailSpan = document.getElementById('contact-email');
-                    const originalText = emailSpan.textContent;
-                    emailSpan.textContent = 'Copied!';
-                    setTimeout(() => {
-                        emailSpan.textContent = originalText;
-                    }, 2000);
-                });
-            };
-
-            // Prevent Copy and Context Menu
-            document.addEventListener('contextmenu', e => e.preventDefault());
-            document.addEventListener('keydown', e => {
-                if (e.ctrlKey && (e.key === 'c' || e.key === 'v' || e.key === 'u' || e.key === 's')) {
-                    e.preventDefault();
-                }
-            });
-
-            // Cookie Banner Logic
-            const cookieBanner = document.getElementById('cookie-banner');
-            const acceptButton = document.getElementById('cookie-accept');
-            const prefButton = document.getElementById('cookie-pref');
-
-            if (cookieBanner) {
-                // Check if consent was already given
-                if (localStorage.getItem('cookie-consent') === 'accepted') {
-                    cookieBanner.style.display = 'none';
-                }
-
-                const hideBanner = () => {
-                    cookieBanner.classList.add('opacity-0', 'translate-y-10');
-                    setTimeout(() => {
-                        cookieBanner.style.display = 'none';
-                    }, 500);
-                    localStorage.setItem('cookie-consent', 'accepted');
-                };
-
-                if (acceptButton) acceptButton.addEventListener('click', hideBanner);
-                if (prefButton) {
-                    prefButton.addEventListener('click', () => {
-                        hideBanner();
-                        openLegalModal('cookie'); // Mostra la policy dei cookie se cliccano Preferenze
-                    });
-                }
-            }
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+            const open = mobileMenu.classList.toggle('hidden') === false;
+            mobileMenuButton.setAttribute('aria-expanded', open ? 'true' : 'false');
         });
+        mobileMenuLinks.forEach((link) => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
 
-/* --- Script --- */
+    const contactModal = document.getElementById('contact-modal');
+    const contactModalBackdrop = document.getElementById('contact-modal-backdrop');
+    const contactModalContent = document.getElementById('contact-modal-content');
+    const contactClose = document.getElementById('contact-modal-close');
+    let lastFocus = null;
+
+    window.openContactModal = () => {
+        if (!contactModal) return;
+        lastFocus = document.activeElement;
+        document.body.style.overflow = 'hidden';
+        contactModal.classList.remove('hidden');
+        contactModal.classList.add('flex');
+        contactModal.setAttribute('aria-hidden', 'false');
+        void contactModal.offsetWidth;
+        contactModalBackdrop.classList.remove('opacity-0');
+        contactModalContent.classList.remove('scale-95', 'opacity-0');
+        contactClose?.focus();
+    };
+
+    window.closeContactModal = () => {
+        if (!contactModal) return;
+        document.body.style.overflow = '';
+        contactModal.setAttribute('aria-hidden', 'true');
+        contactModalBackdrop.classList.add('opacity-0');
+        contactModalContent.classList.add('scale-95', 'opacity-0');
+        setTimeout(() => {
+            contactModal.classList.add('hidden');
+            contactModal.classList.remove('flex');
+            if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+        }, 300);
+    };
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && contactModal && !contactModal.classList.contains('hidden')) {
+            window.closeContactModal();
+        }
+    });
+
+    window.copyEmail = () => {
+        const emailSpan = document.getElementById('contact-email');
+        if (!emailSpan) return;
+        navigator.clipboard.writeText(CONTACT_EMAIL).then(() => {
+            const originalText = CONTACT_EMAIL;
+            emailSpan.textContent = window.__copiedLabel || 'Copied!';
+            setTimeout(() => {
+                emailSpan.textContent = originalText;
+            }, 2000);
+        });
+    };
+});
 
 (function () {
     const translations = {
-        "en": {
-                "t001": "Philosophy",
-                "t002": "Process",
-                "t003": "Portfolio",
-                "t004": "Skills",
-                "t005": "Contact Me",
-                "t006": "Philosophy",
-                "t007": "Process",
-                "t008": "Portfolio",
-                "t009": "Skills",
-                "t010": "Contact Me",
-                "t011": "Art meets<br/>efficiency",
-                "t012": "We turn vision into code with elegance and precision. A curated approach to digital development.",
-                "t013": "Explore Projects",
-                "t014": "Philosophy",
-                "t015": "Eliminating Muda",
-                "t016": "In Japanese production philosophy, 'Muda' means waste. We apply this concept to design and code, removing everything that does not add value to the final user experience. The result is a clean, essential, focused interface.",
-                "t017": "The practice of Kaizen",
-                "t018": "Continuous improvement ('Kaizen') is at the center of our process. We never settle for the first iteration. We refine, optimize, and perfect every line of code and every visual detail until we reach the right balance.",
-                "t019": "Process",
-                "t020": "\n                        01",
-                "t021": "The Brief",
-                "t022": "We start with a conversation. You tell me your idea, your goals, and what you expect from your new website. This helps me understand who you are and create something that truly represents you.",
-                "t023": "\n                        02",
-                "t024": "Development",
-                "t025": "This is where the work takes shape. I turn the concepts we discussed into a real structure that is fast, responsive, and beautiful on every device.",
-                "t026": "\n                        03",
-                "t027": "Refinement",
-                "t028": "I never settle for the first result. I check every detail, correct small flaws, and make sure everything flows smoothly. This is where your website becomes truly polished.",
-                "t029": "\n                        04",
-                "t030": "Launch",
-                "t031": "Once everything is ready and you are satisfied, I take it live. I publish your website, configure it correctly, and make sure it is ready to be found by your customers.",
-                "t032": "Portfolio",
-                "t033": "Nautical & Charter",
-                "t034": "Karalis Charter",
-                "t035": "Complete website restyling and technical implementation of custom features to enhance user experience, visual presentation, and online charter booking performance.",
-                "t036": "Digital Intelligence",
-                "t037": "Investigation - OSINT Services",
-                "t038": "An advanced digital intelligence dashboard for open-source research. It combines high-density information with a clean, functional interface for efficient analysis.",
-                "t039": "Premium Networking",
-                "t040": "Vera Social",
-                "t041": "An exclusive social networking concept where authenticity has value. Designed with a premium, focused aesthetic to maximize brand signal and minimize noise.",
-                "t042": "Skills",
-                "t043": "For me, web development is a balance between art and logic. I apply <strong>Muda</strong> to remove everything that slows down your site, leaving space only for the essentials and speed. Through <strong>Kaizen</strong>, I refine every line of code through continuous improvement, delivering solid, secure solutions ready to grow over time.",
-                "t044": "Muda",
-                "t045": "Kaizen",
-                "t046": "WordPress",
-                "t047": "70%",
-                "t048": "Html5",
-                "t049": "75%",
-                "t050": "CSS",
-                "t051": "75%",
-                "t052": "AI Knowledge",
-                "t053": "80%",
-                "t054": "Web Design Services",
-                "t055": "Prices are <strong>VAT excluded</strong>: VAT must be considered separately. The service does not include website maintenance after launch.",
-                "t056": "VAT excluded",
-                "t057": "Basic Package",
-                "t058": "600€",
-                "t059": "VAT excluded",
-                "t060": "4 Pages (Home, Services, About Us, Contact)",
-                "t061": "Free domain included for one year",
-                "t062": "Free cloud hosting included for one year",
-                "t063": "Max 2 revisions included.",
-                "t064": "Request Info",
-                "t065": "Recommended",
-                "t066": "Medium Package",
-                "t067": "900€",
-                "t068": "VAT excluded",
-                "t069": "Includes everything in the Basic Package",
-                "t070": "Security & privacy focus",
-                "t071": "Data protection to prevent online information leaks",
-                "t072": "Request Info",
-                "t073": "Custom Package",
-                "t074": "Custom Quote",
-                "t075": "VAT to be considered separately",
-                "t076": "Custom solutions, complex integrations, and bespoke platform development for specific needs.",
-                "t077": "Let's Talk",
-                "t078": "Ready to start a project?",
-                "t079": "Write to me to explore how we can collaborate.",
-                "t080": "\n<span class=\"material-symbols-outlined mr-2\">connect_without_contact</span>How to contact me",
-                "t081": "Erubisu\n                        Studio - Web Design & Development",
-                "t082": "\n                        © 2026 Erubisu studio\n                    ",
-                "t083": "Privacy",
-                "t084": "Cookie",
-                "t085": "GDPR",
-                "t086": "We use cookies to refine your digital experience. By continuing to browse, you accept our data management approach.",
-                "t087": "Preferences",
-                "t088": "Accept",
-                "t089": "Choose how to contact me",
-                "t090": "Email",
-                "t091": "adrianelvisiale@gmail.com",
-                "t092": "Click to copy",
-                "t093": "LinkedIn",
-                "t094": "Contact me on LinkedIn",
-                "t095": "Open Profile",
-                "t096": "Title",
-                "t097": "Content",
-                "t098": "Got it",
-                "close": "Close"
+        en: {
+            t001: 'Philosophy',
+            t002: 'Process',
+            t003: 'Portfolio',
+            t004: 'Skills',
+            t005: 'Contact Me',
+            t006: 'Philosophy',
+            t007: 'Process',
+            t008: 'Portfolio',
+            t009: 'Skills',
+            t010: 'Contact Me',
+            t011: 'Art meets<br/>efficiency',
+            t012: 'We turn vision into code with elegance and precision. A curated approach to digital development.',
+            t013: 'Explore Projects',
+            t014: 'Philosophy',
+            t015: 'Eliminating Muda',
+            t016: "In Japanese production philosophy, 'Muda' means waste. We apply this concept to design and code, removing everything that does not add value to the final user experience. The result is a clean, essential, focused interface.",
+            t017: 'The practice of Kaizen',
+            t018: "Continuous improvement ('Kaizen') is at the center of our process. We never settle for the first iteration. We refine, optimize, and perfect every line of code and every visual detail until we reach the right balance.",
+            t019: 'Process',
+            t020: '01',
+            t021: 'The Brief',
+            t022: 'We start with a conversation. You tell me your idea, your goals, and what you expect from your new website. This helps me understand who you are and create something that truly represents you.',
+            t023: '02',
+            t024: 'Development',
+            t025: 'This is where the work takes shape. I turn the concepts we discussed into a real structure that is fast, responsive, and beautiful on every device.',
+            t026: '03',
+            t027: 'Refinement',
+            t028: 'I never settle for the first result. I check every detail, correct small flaws, and make sure everything flows smoothly. This is where your website becomes truly polished.',
+            t029: '04',
+            t030: 'Launch',
+            t031: 'Once everything is ready and you are satisfied, I take it live. I publish your website, configure it correctly, and make sure it is ready to be found by your customers.',
+            t032: 'Portfolio',
+            t033: 'Nautical & Charter',
+            t034: 'Karalis Charter',
+            t035: 'Complete website restyling and implementation of custom features to enhance user experience, online booking performance, and brand presence for a luxury charter service in Sardinia.',
+            t036: 'Digital Intelligence',
+            t037: 'Investigation - OSINT Services',
+            t038: 'An advanced digital intelligence dashboard for open-source research. It combines high-density information with a clean, functional interface for efficient analysis.',
+            t039: 'Premium Networking',
+            t040: 'Vera Social',
+            t041: 'An exclusive social networking concept where authenticity has value. Designed with a premium, focused aesthetic to maximize brand signal and minimize noise.',
+            t042: 'Skills',
+            t043: 'For me, web development is a balance between art and logic. I apply <strong>Muda</strong> to remove everything that slows down your site, leaving space only for the essentials and speed. Through <strong>Kaizen</strong>, I refine every line of code through continuous improvement, delivering solid, secure solutions ready to grow over time.',
+            t046: 'WordPress',
+            t048: 'HTML5',
+            t050: 'CSS',
+            t052: 'JavaScript',
+            t054: 'PHP',
+            t055: 'UX/UI',
+            t078: 'Ready to start a project?',
+            t079: 'Write to me to explore how we can collaborate.',
+            t080: 'How to contact me',
+            t081: 'Erubisu Studio - Web Design & Development',
+            t082: '© 2026 Erubisu studio',
+            t083: 'Privacy',
+            t089: 'Choose how to contact me',
+            t090: 'Email',
+            t091: 'adrianelvisiale@gmail.com',
+            t092: 'Click to copy',
+            t093: 'LinkedIn',
+            t094: 'Contact me on LinkedIn',
+            t095: 'Open Profile',
+            close: 'Close',
+            copied: 'Copied!',
+            'privacy-title': 'Privacy Policy',
+            'privacy-updated': 'Last updated: 15 September 2026',
+            'privacy-lead': 'This site is a static portfolio. There is no cookie banner because we do not use profiling cookies, analytics, advertising, or tracking pixels.',
+            'privacy-h-controller': 'Data controller',
+            'privacy-controller': 'Erubisu Studio (Adrian Iale). Email: <a href="mailto:adrianelvisiale@gmail.com">adrianelvisiale@gmail.com</a>. Website: <a href="https://erubisustudio.github.io/">https://erubisustudio.github.io</a>.',
+            'privacy-h-data': 'What we process',
+            'privacy-data-1': 'Email you send us. If you write to the address above, we receive your message and email address through our email provider. Legal basis: pre-contractual steps or legitimate interest in answering you. We keep messages only as long as needed to handle the request or to meet legal duties.',
+            'privacy-data-2': 'LinkedIn. The LinkedIn button opens LinkedIn in a new tab. That service applies its own privacy policy.',
+            'privacy-data-3': 'Language preference. Stored only in your browser (localStorage key site-language). It does not leave your device and is not used for profiling.',
+            'privacy-data-4': 'Server logs. The hosting provider may record technical logs (such as IP address and user agent) to operate and secure the server. We do not use them for marketing.',
+            'privacy-h-cookies': 'Cookies',
+            'privacy-cookies': 'We do not set advertising or analytics cookies. Fonts are hosted on this website. We do not load Google Fonts or other third-party tracking scripts.',
+            'privacy-h-rights': 'Your rights',
+            'privacy-rights': 'Under the GDPR you may request access, rectification, erasure, restriction, objection, or portability, and you may lodge a complaint with the Garante per la protezione dei dati personali (Italy). Write to the email above.',
+            'privacy-h-japan': 'Contact from Japan',
+            'privacy-japan': 'If you contact us from Japan, we use your personal information only to respond to that request, for that purpose, and for no other use.'
         },
-        "it": {
-                "t001": "Filosofia",
-                "t002": "Processo",
-                "t003": "Portfolio",
-                "t004": "Skills",
-                "t005": "\n                Contattami\n            ",
-                "t006": "Filosofia",
-                "t007": "Processo",
-                "t008": "Portfolio",
-                "t009": "Skills",
-                "t010": "Contattami",
-                "t011": "\n                        L'arte incontra<br/>l'efficienza\n                    ",
-                "t012": "\n                        Trasformiamo la visione in codice, con eleganza e precisione. Un approccio curatoriale allo\n                        sviluppo digitale.\n                    ",
-                "t013": "\n                            Esplora i Progetti\n                        ",
-                "t014": "Filosofia",
-                "t015": "Eliminare il Muda",
-                "t016": "Nella filosofia produttiva giapponese, 'Muda' rappresenta lo spreco.\n                            Applichiamo questo concetto al design e al codice, rimuovendo tutto ciò che non aggiunge\n                            valore all'esperienza finale dell'utente. Il risultato è un'interfaccia pulita, essenziale e\n                            focalizzata.",
-                "t017": "La pratica del Kaizen",
-                "t018": "Il miglioramento continuo ('Kaizen') è al centro del nostro processo. Non\n                            ci accontentiamo mai della prima iterazione. Rifiniamo, ottimizziamo e perfezioniamo ogni\n                            riga di codice e ogni dettaglio visivo fino a raggiungere l'equilibrio ottimale.",
-                "t019": "Processo",
-                "t020": "\n                        01",
-                "t021": "Il Brief",
-                "t022": "Iniziamo con una chiacchierata. Mi racconti la tua idea, i tuoi obiettivi e cosa ti aspetti dal tuo nuovo sito. Mi serve a capire chi sei per creare qualcosa che ti rappresenti davvero.",
-                "t023": "\n                        02",
-                "t024": "Lo Sviluppo",
-                "t025": "Qui entro nel vivo. Trasformo i concetti di cui abbiamo parlato in una struttura reale, veloce e bella da vedere su ogni dispositivo.",
-                "t026": "\n                        03",
-                "t027": "Il Perfezionamento",
-                "t028": "Non mi accontento mai del primo risultato. Controllo ogni dettaglio, correggo i piccoli difetti e mi assicuro che tutto scorra fluidamente. È la fase in cui rendo il tuo sito davvero impeccabile.",
-                "t029": "\n                        04",
-                "t030": "La Pubblicazione",
-                "t031": "Una volta che tutto è pronto e sei soddisfatto, premo il tasto d'invio. Metto il tuo sito online, lo configuro correttamente e mi assicuro che sia pronto per essere trovato dai tuoi clienti.",
-                "t032": "Portfolio",
-                "t033": "Nautica & Charter",
-                "t034": "Karalis Charter",
-                "t035": "Restyling completo del sito web e sviluppo di nuove funzionalità su misura per migliorare l'esperienza utente, la resa visiva e le prestazioni di prenotazione online.",
-                "t036": "Digital\n                            Intelligence",
-                "t037": "Investigation - OSINT Services",
-                "t038": "Una dashboard avanzata di digital\n                            intelligence per la ricerca open-source. Combina informazioni ad alta densità con\n                            un'interfaccia pulita e funzionale per un'analisi efficiente.",
-                "t039": "Premium\n                            Networking",
-                "t040": "Vera Social",
-                "t041": "Un concetto di social networking\n                            esclusivo dove l'autenticità ha valore. Progettato con un'estetica premium e focalizzata per\n                            massimizzare il segnale del brand e minimizzare il rumore.",
-                "t042": "Skills",
-                "t043": "\n                        Per me, lo sviluppo web è un equilibrio tra arte e logica. Applico il <strong>Muda</strong> per\n                        rimuovere\n                        tutto ciò che rallenta il tuo sito, lasciando spazio solo all'essenziale e alla velocità.\n                        Grazie al <strong>Kaizen</strong>, perfeziono ogni riga di codice con un miglioramento\n                        costante,\n                        garantendo soluzioni solide, sicure e pronte a crescere nel tempo.\n                    ",
-                "t044": "Muda",
-                "t045": "Kaizen",
-                "t046": "WordPress",
-                "t047": "70%",
-                "t048": "Html5",
-                "t049": "75%",
-                "t050": "CSS",
-                "t051": "75%",
-                "t052": "Ai Knowledge",
-                "t053": "80%",
-                "t054": "Web Design Services",
-                "t055": "\n                    I prezzi indicati sono da intendersi <strong>IVA esclusa</strong>: l'IVA va considerata a parte. Il servizio non include la manutenzione del sito dopo la pubblicazione.\n                ",
-                "t056": "IVA esclusa",
-                "t057": "Pacchetto Base",
-                "t058": "600€",
-                "t059": "IVA esclusa",
-                "t060": "4 Pagine (Home, Servizi, Chi siamo, Contatti)",
-                "t061": "Dominio gratuito incluso per un anno",
-                "t062": "Cloud-hosting gratuito per un anno",
-                "t063": "Max 2 revisioni incluse.",
-                "t064": "Richiedi Info",
-                "t065": "\n                        Consigliato",
-                "t066": "Pacchetto Medium",
-                "t067": "900€",
-                "t068": "IVA esclusa",
-                "t069": "Include tutto il Pacchetto Base",
-                "t070": "Focus su sicurezza & privacy",
-                "t071": "Protezione dati per prevenire fughe di info online",
-                "t072": "Richiedi Info",
-                "t073": "Pacchetto Personalizzato",
-                "t074": "Su Misura",
-                "t075": "IVA da considerare a parte",
-                "t076": "Soluzioni personalizzate,\n                        integrazioni complesse e sviluppo di piattaforme su misura per esigenze specifiche.",
-                "t077": "Parliamone",
-                "t078": "Vuoi iniziare un progetto?",
-                "t079": "Scrivimi per esplorare come possiamo\n                    collaborare.",
-                "t080": "\n<span class=\"material-symbols-outlined mr-2\">connect_without_contact</span>\n                        Come contattarmi\n                    ",
-                "t081": "Erubisu\n                        Studio - Web Design & Development",
-                "t082": "\n                        © 2026 Erubisu studio\n                    ",
-                "t083": "Privacy",
-                "t084": "Cookie",
-                "t085": "GDPR",
-                "t086": "\n                    Utilizziamo i cookie per affinare la tua esperienza digitale. Continuando la navigazione, accetti la\n                    nostra filosofia di gestione dati.\n                ",
-                "t087": "Preferenze",
-                "t088": "Accetta",
-                "t089": "Scegli come contattarmi",
-                "t090": "Email",
-                "t091": "adrianelvisiale@gmail.com",
-                "t092": "Clicca per copiare",
-                "t093": "LinkedIn",
-                "t094": "Contattami su LinkedIn",
-                "t095": "Apri Profilo",
-                "t096": "Titolo",
-                "t097": "\n                Contenuto\n            ",
-                "t098": "Ho capito",
-                "close": "Chiudi"
+        ja: {
+            t001: '思想',
+            t002: 'プロセス',
+            t003: '制作実績',
+            t004: 'スキル',
+            t005: 'お問い合わせ',
+            t006: '思想',
+            t007: 'プロセス',
+            t008: '制作実績',
+            t009: 'スキル',
+            t010: 'お問い合わせ',
+            t011: 'アートが<br/>効率と出会う',
+            t012: 'ビジョンを、気品と精度をもってコードへ落とし込みます。デジタル開発への、厳選したアプローチです。',
+            t013: '制作を見る',
+            t014: '思想',
+            t015: 'ムダを削る',
+            t016: '日本のものづくりの考え方では、「ムダ」は無駄を意味します。この考えをデザインとコードに当てはめ、最終的な体験に価値を加えないものは取り除きます。結果として、清らかで、必要最小限で、焦点の定まったインターフェースになります。',
+            t017: 'カイゼンの実践',
+            t018: '継続的な改善（カイゼン）が工程の中心です。最初の案では終わりません。コードの一行、視覚の細部まで磨き、均衡に達するまで最適化します。',
+            t019: 'プロセス',
+            t020: '01',
+            t021: 'ヒアリング',
+            t022: 'まず対話から始めます。アイデア、目的、新しいサイトに求めることを教えてください。あなた自身を理解し、本当に表すものを作るために必要です。',
+            t023: '02',
+            t024: '開発',
+            t025: 'ここで形になります。話し合った構想を、どの端末でも速く、美しく動く実体の構造へ変えます。',
+            t026: '03',
+            t027: '磨き込み',
+            t028: '最初の結果では終わりません。細部を点検し、小さな欠点を直し、流れが滑らかかを確かめます。サイトが本当に整う段階です。',
+            t029: '04',
+            t030: '公開',
+            t031: 'すべてが整い、ご満足いただけたら公開します。サイトをオンラインにし、正しく設定し、お客様に見つかる状態にします。',
+            t032: '制作実績',
+            t033: '船舶・チャーター',
+            t034: 'Karalis Charter',
+            t035: 'サルデーニャのラグジュアリーチャーター向けに、サイトを全面的に再構築し、体験、オンライン予約、ブランドの存在感を高める機能を実装しました。',
+            t036: 'デジタルインテリジェンス',
+            t037: 'Investigation - OSINT Services',
+            t038: 'オープンソース調査向けの高度なデジタルインテリジェンスのダッシュボードです。高密度の情報と、清らかで機能的なインターフェースを合わせ、効率的な分析を支えます。',
+            t039: 'プレミアムネットワーキング',
+            t040: 'Vera Social',
+            t041: '真正さに価値がある、限定的なソーシャルネットワーキングの構想です。ブランドの信号を最大化し、ノイズを最小化するため、焦点の定まったプレミアムな美意識で設計しました。',
+            t042: 'スキル',
+            t043: 'ウェブ開発は、私にとって芸術と論理の均衡です。<strong>ムダ</strong>を適用し、サイトを遅くするものを取り除き、本質と速度だけを残します。<strong>カイゼン</strong>により、コードの一行を継続的に磨き、堅牢で安全、長く育てられる解決を届けます。',
+            t046: 'WordPress',
+            t048: 'HTML5',
+            t050: 'CSS',
+            t052: 'JavaScript',
+            t054: 'PHP',
+            t055: 'UX/UI',
+            t078: 'プロジェクトを始めませんか',
+            t079: '協働の形を探るため、ご連絡ください。',
+            t080: '連絡方法',
+            t081: 'Erubisu Studio - Web Design & Development',
+            t082: '© 2026 Erubisu studio',
+            t083: 'プライバシー',
+            t089: 'ご連絡方法をお選びください',
+            t090: 'メール',
+            t091: 'adrianelvisiale@gmail.com',
+            t092: 'クリックでコピー',
+            t093: 'LinkedIn',
+            t094: 'LinkedInで連絡する',
+            t095: 'プロフィールを開く',
+            close: '閉じる',
+            copied: 'コピーしました',
+            'privacy-title': 'プライバシーポリシー',
+            'privacy-updated': '最終更新：2026年9月15日',
+            'privacy-lead': '本サイトは静的なポートフォリオです。プロファイリング用Cookie、アクセス解析、広告、トラッキングピクセルを使わないため、同意バナーは表示しません。',
+            'privacy-h-controller': '個人情報の管理者',
+            'privacy-controller': 'Erubisu Studio（Adrian Iale）。メール：<a href="mailto:adrianelvisiale@gmail.com">adrianelvisiale@gmail.com</a>。ウェブサイト：<a href="https://erubisustudio.github.io/">https://erubisustudio.github.io</a>。',
+            'privacy-h-data': '取り扱う情報',
+            'privacy-data-1': 'お送りいただくメール。上記アドレスへご連絡いただいた場合、メール事業者を通じてメッセージとメールアドレスを受け取ります。根拠は、契約前の手続、または返信するための正当な利益です。対応、または法令上の義務に必要な期間のみ保管します。',
+            'privacy-data-2': 'LinkedIn。ボタンは新しいタブでLinkedInを開きます。同サービスのプライバシーポリシーが適用されます。',
+            'privacy-data-3': '言語の設定。お使いのブラウザ内（localStorage の site-language）にのみ保存します。端末の外へは出さず、プロファイリングにも使いません。',
+            'privacy-data-4': 'サーバーログ。ホスティング事業者は、運用とセキュリティのため、IPアドレスやユーザーエージェントなどの技術ログを記録する場合があります。マーケティングには使いません。',
+            'privacy-h-cookies': 'Cookie',
+            'privacy-cookies': '広告・解析用のCookieは設定しません。フォントはこのサイトで配信しています。Google Fontsや、追跡目的の第三者スクリプトは読み込みません。',
+            'privacy-h-rights': 'お客様の権利',
+            'privacy-rights': 'GDPRに基づき、開示、訂正、削除、制限、異議、データポータビリティを請求でき、イタリアのデータ保護当局（Garante per la protezione dei dati personali）へ苦情を申し立てることができます。上記メールへご連絡ください。',
+            'privacy-h-japan': '日本からのお問い合わせ',
+            'privacy-japan': '日本からご連絡いただいた場合、そのお問い合わせに返信する目的に限り、個人情報を利用します。他の目的には使いません。'
         }
-};
+    };
+
     const metaTranslations = {
-        "en": {
-                "title": "Erubisu Studio | Minimalist Web Design & Development",
-                "description": "",
-                "meta:name:description": "Erubisu Studio – Curated web development portfolio. We merge Japanese aesthetic principles with modern code efficiency to create unique digital experiences.",
-                "meta:name:keywords": "web design, front-end development, portfolio, Japanese minimalism, UI/UX, Erubisu Studio, web agency Italy, curated design",
-                "meta:name:twitter:title": "Erubisu Studio | Architectural Quiet Portfolio",
-                "meta:name:twitter:description": "Curated web development between Japanese aesthetics and modern code.",
-                "meta:property:og:title": "Erubisu Studio | Architectural Quiet Portfolio",
-                "meta:property:og:description": "Art meets efficiency. Curated web development with elegance and precision."
+        en: {
+            title: 'Erubisu Studio | Minimalist Web Design & Development',
+            'meta:name:description': 'Erubisu Studio – Curated web development portfolio. We merge Japanese aesthetic principles with modern code efficiency to create unique digital experiences.',
+            'meta:name:keywords': 'web design, front-end development, portfolio, Japanese minimalism, UI/UX, Erubisu Studio, web agency Italy, curated design',
+            'meta:name:twitter:title': 'Erubisu Studio | Architectural Quiet Portfolio',
+            'meta:name:twitter:description': 'Curated web development between Japanese aesthetics and modern code.',
+            'meta:property:og:title': 'Erubisu Studio | Architectural Quiet Portfolio',
+            'meta:property:og:description': 'Art meets efficiency. Curated web development with elegance and precision.'
         },
-        "it": {
-                "title": "Erubisu Studio | Sviluppo Web Design Minimalista",
-                "meta:name:description": "Erubisu Studio – Portfolio di sviluppo web curatoriale. Uniamo l'arte dell'estetica giapponese all'efficienza del codice moderno per creare esperienze digitali uniche.",
-                "meta:name:keywords": "web design, sviluppo front-end, portfolio, minimalismo giapponese, UI/UX, Erubisu Studio, web agency italia, design curatoriale",
-                "meta:name:twitter:title": "Erubisu Studio | Architectural Quiet Portfolio",
-                "meta:name:twitter:description": "Sviluppo web curatoriale tra estetica giapponese e codice moderno.",
-                "meta:property:og:title": "Erubisu Studio | Architectural Quiet Portfolio",
-                "meta:property:og:description": "L'arte incontra l'efficienza. Sviluppo web curatoriale con eleganza e precisione."
+        ja: {
+            title: 'Erubisu Studio | ミニマルなウェブデザインと開発',
+            'meta:name:description': 'Erubisu Studio — 日本の美意識と現代のコード効率を合わせ、独自のデジタル体験を作るウェブ開発ポートフォリオ。',
+            'meta:name:keywords': 'ウェブデザイン, フロントエンド, ポートフォリオ, 日本のミニマリズム, UI/UX, Erubisu Studio',
+            'meta:name:twitter:title': 'Erubisu Studio | 建築的な静けさのポートフォリオ',
+            'meta:name:twitter:description': '日本の美意識と現代のコードのあいだで行う、厳選したウェブ開発。',
+            'meta:property:og:title': 'Erubisu Studio | 建築的な静けさのポートフォリオ',
+            'meta:property:og:description': 'アートが効率と出会う。気品と精度のウェブ開発。'
         }
-};
+    };
+
     const altTranslations = {
-        "en": [
-                "Erubisu Studio",
-                "Professional profile",
-                "Karalis Charter Interface",
-                "OSINT Lab Interface",
-                "Vera Social Interface"
+        en: [
+            'Erubisu Studio',
+            'Professional profile',
+            'Karalis Charter Interface',
+            'OSINT Lab Interface',
+            'Vera Social Interface'
         ],
-        "it": [
-                "Erubisu Studio",
-                "Professional profile",
-                "Karalis Charter Interface",
-                "OSINT Lab Interface",
-                "Vera Social Interface"
+        ja: [
+            'Erubisu Studio',
+            'プロフィール写真',
+            'Karalis Charterの画面',
+            'OSINT Labの画面',
+            'Vera Socialの画面'
         ]
-};
-    const legalTranslations = {
-        "en": {
-                "privacy": {
-                        "title": "Privacy Policy",
-                        "body": "We respect your digital space. We collect only the information essential to provide our services. Your data will never be transferred or sold to third parties, and it will be handled with maximum confidentiality and protected with high security standards."
-                },
-                "cookie": {
-                        "title": "Cookie Policy",
-                        "body": "To keep the site fast and functional, we use only strictly necessary technical cookies. We removed invasive tracking scripts and unnecessary profiling cookies, fully respecting your privacy and offering a clean, fast experience."
-                },
-                "gdpr": {
-                        "title": "GDPR Compliance",
-                        "body": "Your right to privacy is protected. In full compliance with the GDPR, we ensure full control over your personal data. At any time, you can request access, correction, or permanent deletion from our systems."
-                },
-                "copied": "Copied!"
-        },
-        "it": {
-                "privacy": {
-                        "title": "Privacy Policy",
-                        "body": "Rispettiamo il tuo spazio digitale. Raccogliamo esclusivamente le informazioni essenziali per offrirti i nostri servizi. I tuoi dati non verranno mai ceduti o venduti a terzi, ma trattati con la massima riservatezza e protetti con standard di sicurezza elevati."
-                },
-                "cookie": {
-                        "title": "Cookie Policy",
-                        "body": "Per mantenere il sito performante e funzionale, utilizziamo solo cookie tecnici strettamente necessari. Abbiamo eliminato ogni script di tracciamento invasivo o cookie di profilazione non richiesto, nel pieno rispetto della tua privacy e per offrirti un'esperienza veloce e pulita."
-                },
-                "gdpr": {
-                        "title": "Conformità GDPR",
-                        "body": "Il tuo diritto alla riservatezza è garantito. In piena conformità con il GDPR, ti assicuriamo il controllo totale sui tuoi dati personali. In qualsiasi momento puoi richiederne l'accesso, la rettifica o la cancellazione definitiva dai nostri sistemi."
-                },
-                "copied": "Copiato!"
-        }
-};
-    const allowedLanguages = ['en', 'it'];
+    };
+
+    const allowedLanguages = ['en', 'ja'];
     let currentLanguage = 'en';
 
     function normalizeLanguage(lang) {
@@ -437,19 +285,25 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('[data-lang-switch]').forEach((button) => {
             const active = button.dataset.langSwitch === lang;
             button.setAttribute('aria-pressed', active ? 'true' : 'false');
-            button.classList.toggle('bg-primary', active);
-            button.classList.toggle('text-on-primary', active);
             button.classList.toggle('text-on-surface-variant', !active);
-            button.classList.toggle('hover:text-on-surface', !active);
         });
         document.querySelectorAll('.language-switcher, .mobile-language-switcher').forEach((switcher) => {
-            switcher.setAttribute('aria-label', lang === 'it' ? 'Selettore lingua' : 'Language selector');
+            switcher.setAttribute('aria-label', lang === 'ja' ? '言語の選択' : 'Language selector');
         });
     }
 
     function updateMetadata(lang) {
         const meta = metaTranslations[lang] || metaTranslations.en;
-        if (meta.title) document.title = meta.title;
+        const isPrivacy = Boolean(document.querySelector('[data-i18n="privacy-title"]'));
+        const privacyTitle = translations[lang]?.['privacy-title'];
+        if (isPrivacy && privacyTitle) {
+            document.title = privacyTitle + ' | Erubisu Studio';
+            const desc = translations[lang]?.['privacy-lead'];
+            const descTag = document.querySelector('meta[name="description"]');
+            if (descTag && desc) descTag.setAttribute('content', desc);
+        } else if (meta.title) {
+            document.title = meta.title;
+        }
         Object.entries(meta).forEach(([key, value]) => {
             if (!key.startsWith('meta:')) return;
             const parts = key.split(':');
@@ -492,7 +346,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         updateSwitcherState(lang);
         updateMetadata(lang);
-        localStorage.setItem('site-language', lang);
+        window.__copiedLabel = translations[lang]?.copied || translations.en.copied;
+        try {
+            localStorage.setItem('site-language', lang);
+        } catch (_) { /* private mode */ }
     }
 
     window.setSiteLanguage = applyLanguage;
@@ -506,58 +363,27 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        window.openLegalModal = (type) => {
-            const legalModal = document.getElementById('legal-modal');
-            const legalModalBackdrop = document.getElementById('legal-modal-backdrop');
-            const legalModalContent = document.getElementById('legal-modal-content');
-            const legalModalTitle = document.getElementById('legal-modal-title');
-            const legalModalBody = document.getElementById('legal-modal-body');
-            const data = legalTranslations[currentLanguage]?.[type] || legalTranslations.en[type];
-            if (data && legalModal) {
-                document.body.style.overflow = 'hidden';
-                legalModalTitle.textContent = data.title;
-                legalModalBody.textContent = data.body;
-                legalModal.classList.remove('hidden');
-                legalModal.classList.add('flex');
-                void legalModal.offsetWidth;
-                legalModalBackdrop.classList.remove('opacity-0');
-                legalModalContent.classList.remove('scale-95', 'opacity-0');
-            }
-        };
-
-        window.copyEmail = () => {
-            const emailSpan = document.getElementById('contact-email');
-            if (!emailSpan) return;
-            const email = emailSpan.textContent;
-            navigator.clipboard.writeText(email).then(() => {
-                const originalText = emailSpan.textContent;
-                emailSpan.textContent = legalTranslations[currentLanguage]?.copied || legalTranslations.en.copied;
-                setTimeout(() => {
-                    emailSpan.textContent = originalText;
-                }, 2000);
-            });
-        };
-
         const params = new URLSearchParams(window.location.search);
+        let savedLanguage = 'en';
+        try {
+            savedLanguage = normalizeLanguage(localStorage.getItem('site-language'));
+        } catch (_) { /* private mode */ }
         const requestedLanguage = normalizeLanguage(params.get('lang'));
-        const savedLanguage = normalizeLanguage(localStorage.getItem('site-language'));
         const initialLanguage = params.has('lang') ? requestedLanguage : savedLanguage;
         applyLanguage(initialLanguage);
 
-        // IntersectionObserver for GPU-accelerated scroll animations
         if ('IntersectionObserver' in window) {
             const scrollObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
+                entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('fade-in-visible');
                         observer.unobserve(entry.target);
                     }
                 });
             }, { threshold: 0.12 });
-
-            document.querySelectorAll('.animate-on-scroll').forEach(el => scrollObserver.observe(el));
+            document.querySelectorAll('.animate-on-scroll').forEach((el) => scrollObserver.observe(el));
         } else {
-            document.querySelectorAll('.animate-on-scroll').forEach(el => el.classList.add('fade-in-visible'));
+            document.querySelectorAll('.animate-on-scroll').forEach((el) => el.classList.add('fade-in-visible'));
         }
     });
 })();
