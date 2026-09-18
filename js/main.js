@@ -1,3 +1,11 @@
+document.documentElement.classList.add('site-guard');
+document.addEventListener('contextmenu', (event) => {
+    event.preventDefault();
+});
+document.addEventListener('dragstart', (event) => {
+    if (event.target.closest && event.target.closest('img')) event.preventDefault();
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     const CONTACT_EMAIL = 'adrianelvisiale@gmail.com';
     const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -66,6 +74,124 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 2000);
         });
     };
+
+    const lightbox = document.getElementById('photo-lightbox');
+    const lightboxImg = document.getElementById('photo-lightbox-img');
+    const notes = Array.from(document.querySelectorAll('.postit'));
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let photoIndex = 0;
+    let photoLastFocus = null;
+    let photoOpen = false;
+
+    function preloadPhoto(src) {
+        if (!src) return;
+        const probe = new Image();
+        probe.src = src;
+    }
+
+    function lightboxFocusables() {
+        return [document.getElementById('photo-lightbox-close'), document.getElementById('photo-lightbox-prev'), document.getElementById('photo-lightbox-next')].filter(Boolean);
+    }
+
+    function setLightboxPhoto(index, fromRect) {
+        const note = notes[index];
+        if (!note || !lightboxImg) return;
+        photoIndex = index;
+        const thumb = note.querySelector('img');
+        lightboxImg.alt = thumb ? thumb.alt : '';
+        const applyFlip = () => {
+            if (!fromRect || reduceMotion.matches) {
+                lightboxImg.style.transform = '';
+                return;
+            }
+            const last = lightboxImg.getBoundingClientRect();
+            if (!last.width || !last.height) return;
+            const dx = fromRect.left - last.left;
+            const dy = fromRect.top - last.top;
+            const sx = fromRect.width / last.width;
+            const sy = fromRect.height / last.height;
+            lightboxImg.style.transition = 'none';
+            lightboxImg.style.transformOrigin = 'top left';
+            lightboxImg.style.transform = `translate(${dx}px, ${dy}px) scale(${sx}, ${sy})`;
+            void lightboxImg.offsetWidth;
+            lightboxImg.style.transition = 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
+            lightboxImg.style.transform = 'translate(0, 0) scale(1)';
+        };
+        const onReady = () => applyFlip();
+        lightboxImg.src = note.dataset.photo;
+        if (lightboxImg.complete && lightboxImg.naturalWidth) onReady();
+        else lightboxImg.addEventListener('load', onReady, { once: true });
+        const prev = notes[index - 1];
+        const next = notes[index + 1];
+        if (prev) preloadPhoto(prev.dataset.photo);
+        if (next) preloadPhoto(next.dataset.photo);
+    }
+
+    function openPhotoLightbox(index) {
+        const note = notes[index];
+        if (!lightbox || !note) return;
+        photoLastFocus = document.activeElement;
+        photoOpen = true;
+        document.body.style.overflow = 'hidden';
+        lightbox.hidden = false;
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        const thumb = note.querySelector('img');
+        setLightboxPhoto(index, thumb ? thumb.getBoundingClientRect() : null);
+        document.getElementById('photo-lightbox-close')?.focus();
+    }
+
+    function closePhotoLightbox() {
+        if (!lightbox || !photoOpen) return;
+        photoOpen = false;
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightbox.hidden = true;
+        lightboxImg.removeAttribute('src');
+        lightboxImg.style.transform = '';
+        lightboxImg.style.transition = '';
+        document.body.style.overflow = '';
+        if (photoLastFocus && typeof photoLastFocus.focus === 'function') photoLastFocus.focus();
+    }
+
+    function stepPhoto(delta) {
+        if (!photoOpen || !notes.length) return;
+        const nextIndex = (photoIndex + delta + notes.length) % notes.length;
+        lightboxImg.style.transition = 'none';
+        lightboxImg.style.transform = '';
+        setLightboxPhoto(nextIndex, null);
+    }
+
+    notes.forEach((note, index) => {
+        note.addEventListener('click', () => openPhotoLightbox(index));
+        note.addEventListener('pointerenter', () => preloadPhoto(note.dataset.photo), { once: true });
+    });
+    document.getElementById('photo-lightbox-close')?.addEventListener('click', closePhotoLightbox);
+    document.querySelector('.photo-lightbox__backdrop')?.addEventListener('click', closePhotoLightbox);
+    document.getElementById('photo-lightbox-prev')?.addEventListener('click', () => stepPhoto(-1));
+    document.getElementById('photo-lightbox-next')?.addEventListener('click', () => stepPhoto(1));
+    document.addEventListener('keydown', (event) => {
+        if (!photoOpen) return;
+        if (event.key === 'Escape') {
+            event.preventDefault();
+            closePhotoLightbox();
+        } else if (event.key === 'ArrowLeft') {
+            event.preventDefault();
+            stepPhoto(-1);
+        } else if (event.key === 'ArrowRight') {
+            event.preventDefault();
+            stepPhoto(1);
+        } else if (event.key === 'Tab') {
+            const items = lightboxFocusables();
+            if (!items.length) return;
+            const current = items.indexOf(document.activeElement);
+            let next = event.shiftKey ? current - 1 : current + 1;
+            if (next < 0) next = items.length - 1;
+            if (next >= items.length) next = 0;
+            event.preventDefault();
+            items[next].focus();
+        }
+    });
 });
 
 (function () {
@@ -76,13 +202,22 @@ document.addEventListener('DOMContentLoaded', () => {
             t003: 'Portfolio',
             t004: 'Skills',
             t005: 'Contact Me',
+            t096: 'Photography',
+            t097: 'A few frames. Click a note to look closer.',
+            'photo-lightbox': 'Photograph',
+            'photo-prev': 'Previous photograph',
+            'photo-next': 'Next photograph',
+            'atm-still': 'Still',
+            'atm-sakura': 'Sakura',
+            'atm-label': 'Atmosphere',
             t006: 'Philosophy',
             t007: 'Process',
             t008: 'Portfolio',
             t009: 'Skills',
             t010: 'Contact Me',
+            role: 'Freelance photographer & web designer',
             t011: 'Art meets<br/>efficiency',
-            t012: 'We turn vision into code with elegance and precision. A curated approach to digital development.',
+            t012: 'I work as a freelance photographer and web designer. Vision becomes images and interfaces, with elegance and precision.',
             t013: 'Explore Projects',
             t014: 'Philosophy',
             t015: 'Eliminating Muda',
@@ -120,10 +255,11 @@ document.addEventListener('DOMContentLoaded', () => {
             t052: 'JavaScript',
             t054: 'PHP',
             t055: 'UX/UI',
+            t056: 'Photography',
             t078: 'Ready to start a project?',
             t079: 'Write to me to explore how we can collaborate.',
             t080: 'How to contact me',
-            t081: 'Erubisu Studio - Web Design & Development',
+            t081: 'Erubisu Studio — Freelance photographer & web designer',
             t082: '© 2026 Erubisu studio',
             t083: 'Privacy',
             t089: 'Choose how to contact me',
@@ -158,13 +294,22 @@ document.addEventListener('DOMContentLoaded', () => {
             t003: '制作実績',
             t004: 'スキル',
             t005: 'お問い合わせ',
+            t096: '写真',
+            t097: 'いくつかのカット。メモをクリックすると寄ります。',
+            'photo-lightbox': '写真',
+            'photo-prev': '前の写真',
+            'photo-next': '次の写真',
+            'atm-still': '間',
+            'atm-sakura': 'サクラ',
+            'atm-label': '表示',
             t006: '思想',
             t007: 'プロセス',
             t008: '制作実績',
             t009: 'スキル',
             t010: 'お問い合わせ',
+            role: 'フリーランスの写真家・ウェブデザイナー',
             t011: 'アートが<br/>効率と出会う',
-            t012: 'ビジョンを、気品と精度をもってコードへ落とし込みます。デジタル開発への、厳選したアプローチです。',
+            t012: 'フリーランスの写真家であり、ウェブデザイナーです。ビジョンを、気品と精度をもって写真と画面へ落とし込みます。',
             t013: '制作を見る',
             t014: '思想',
             t015: 'ムダを削る',
@@ -202,10 +347,11 @@ document.addEventListener('DOMContentLoaded', () => {
             t052: 'JavaScript',
             t054: 'PHP',
             t055: 'UX/UI',
+            t056: '写真',
             t078: 'プロジェクトを始めませんか',
             t079: '協働の形を探るため、ご連絡ください。',
             t080: '連絡方法',
-            t081: 'Erubisu Studio - Web Design & Development',
+            t081: 'Erubisu Studio — フリーランスの写真家・ウェブデザイナー',
             t082: '© 2026 Erubisu studio',
             t083: 'プライバシー',
             t089: 'ご連絡方法をお選びください',
@@ -238,22 +384,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const metaTranslations = {
         en: {
-            title: 'Erubisu Studio | Minimalist Web Design & Development',
-            'meta:name:description': 'Erubisu Studio – Curated web development portfolio. We merge Japanese aesthetic principles with modern code efficiency to create unique digital experiences.',
-            'meta:name:keywords': 'web design, front-end development, portfolio, Japanese minimalism, UI/UX, Erubisu Studio, web agency Italy, curated design',
-            'meta:name:twitter:title': 'Erubisu Studio | Architectural Quiet Portfolio',
-            'meta:name:twitter:description': 'Curated web development between Japanese aesthetics and modern code.',
-            'meta:property:og:title': 'Erubisu Studio | Architectural Quiet Portfolio',
-            'meta:property:og:description': 'Art meets efficiency. Curated web development with elegance and precision.'
+            title: 'Erubisu Studio | Freelance Photographer & Web Designer',
+            'meta:name:description': 'Erubisu Studio – Freelance photographer and web designer. Japanese aesthetic principles, photography, and modern code for focused digital work.',
+            'meta:name:keywords': 'freelance photographer, web designer, photography, web design, front-end development, portfolio, Japanese minimalism, UI/UX, Erubisu Studio',
+            'meta:name:twitter:title': 'Erubisu Studio | Freelance Photographer & Web Designer',
+            'meta:name:twitter:description': 'Freelance photographer and web designer. Japanese aesthetics, photography, and modern code.',
+            'meta:property:og:title': 'Erubisu Studio | Freelance Photographer & Web Designer',
+            'meta:property:og:description': 'Freelance photographer and web designer. Art meets efficiency.'
         },
         ja: {
-            title: 'Erubisu Studio | ミニマルなウェブデザインと開発',
-            'meta:name:description': 'Erubisu Studio — 日本の美意識と現代のコード効率を合わせ、独自のデジタル体験を作るウェブ開発ポートフォリオ。',
-            'meta:name:keywords': 'ウェブデザイン, フロントエンド, ポートフォリオ, 日本のミニマリズム, UI/UX, Erubisu Studio',
-            'meta:name:twitter:title': 'Erubisu Studio | 建築的な静けさのポートフォリオ',
-            'meta:name:twitter:description': '日本の美意識と現代のコードのあいだで行う、厳選したウェブ開発。',
-            'meta:property:og:title': 'Erubisu Studio | 建築的な静けさのポートフォリオ',
-            'meta:property:og:description': 'アートが効率と出会う。気品と精度のウェブ開発。'
+            title: 'Erubisu Studio | フリーランスの写真家・ウェブデザイナー',
+            'meta:name:description': 'Erubisu Studio — フリーランスの写真家・ウェブデザイナー。日本の美意識、写真、現代のコードで、焦点の定まった仕事をします。',
+            'meta:name:keywords': 'フリーランス, 写真家, ウェブデザイナー, 写真, ウェブデザイン, フロントエンド, ポートフォリオ, 日本のミニマリズム, UI/UX, Erubisu Studio',
+            'meta:name:twitter:title': 'Erubisu Studio | フリーランスの写真家・ウェブデザイナー',
+            'meta:name:twitter:description': 'フリーランスの写真家・ウェブデザイナー。日本の美意識、写真、現代のコード。',
+            'meta:property:og:title': 'Erubisu Studio | フリーランスの写真家・ウェブデザイナー',
+            'meta:property:og:description': 'フリーランスの写真家・ウェブデザイナー。アートが効率と出会う。'
         }
     };
 
@@ -263,14 +409,28 @@ document.addEventListener('DOMContentLoaded', () => {
             'Professional profile',
             'Karalis Charter Interface',
             'OSINT Lab Interface',
-            'Vera Social Interface'
+            'Vera Social Interface',
+            'Cow standing in a field at sunset',
+            'White swan preening its wing',
+            'Goldfinch perched on a reed against a blue sky',
+            'Small pale flower on a dark ground',
+            'Macro of a magenta flower',
+            'Children reaching for soap bubbles in a piazza',
+            'Person sitting on a cliff above a dry valley'
         ],
         ja: [
             'Erubisu Studio',
             'プロフィール写真',
             'Karalis Charterの画面',
             'OSINT Labの画面',
-            'Vera Socialの画面'
+            'Vera Socialの画面',
+            '夕暮れの牧草地に立つ牛',
+            '羽を整える白鳥',
+            '青空を背景に、葦にとまるゴシキヒワ',
+            '暗い背景の小さな花',
+            'マゼンタの花の接写',
+            '広場でシャボン玉に手を伸ばす子どもたち',
+            '乾いた谷を見下ろす崖に座る人'
         ]
     };
 
@@ -345,6 +505,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         updateSwitcherState(lang);
+        updateAtmosphereState(currentAtmosphere);
         updateMetadata(lang);
         window.__copiedLabel = translations[lang]?.copied || translations.en.copied;
         try {
@@ -354,12 +515,173 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.setSiteLanguage = applyLanguage;
 
+    const allowedAtmosphere = ['still', 'sakura'];
+    let currentAtmosphere = 'still';
+    let sakura = null;
+
+    function normalizeAtmosphere(mode) {
+        return allowedAtmosphere.includes(mode) ? mode : 'still';
+    }
+
+    function updateAtmosphereState(mode) {
+        document.querySelectorAll('[data-atmosphere]').forEach((button) => {
+            const active = button.dataset.atmosphere === mode;
+            button.setAttribute('aria-pressed', active ? 'true' : 'false');
+            button.classList.toggle('text-on-surface-variant', !active);
+        });
+        const label = translations[currentLanguage]?.['atm-label'] || 'Atmosphere';
+        document.querySelectorAll('.atmosphere-switcher, .mobile-atmosphere-switcher').forEach((el) => {
+            el.setAttribute('aria-label', label);
+        });
+    }
+
+    function createSakura(canvas) {
+        const ctx = canvas.getContext('2d');
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const colors = ['#c9a0a4', '#d4b4b0', '#b8898c'];
+        let running = false;
+        let raf = 0;
+        let petals = [];
+        const COUNT = 16;
+
+        function resize() {
+            const dpr = Math.min(window.devicePixelRatio || 1, 2);
+            canvas.width = Math.floor(window.innerWidth * dpr);
+            canvas.height = Math.floor(window.innerHeight * dpr);
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+
+        function spawn(scatterY) {
+            return {
+                x: Math.random() * window.innerWidth,
+                y: scatterY ? Math.random() * window.innerHeight : -28,
+                s: 12 + Math.random() * 10,
+                r: Math.random() * Math.PI * 2,
+                vr: (Math.random() - 0.5) * 0.03,
+                vy: 0.32 + Math.random() * 0.42,
+                vx: 0.1 + Math.random() * 0.2,
+                sway: Math.random() * Math.PI * 2,
+                vs: 0.008 + Math.random() * 0.012,
+                flip: Math.random() * Math.PI * 2,
+                vf: 0.02 + Math.random() * 0.03,
+                color: colors[(Math.random() * colors.length) | 0],
+                alpha: 0.45 + Math.random() * 0.25
+            };
+        }
+
+        function drawPetal(p) {
+            const s = p.s;
+            ctx.save();
+            ctx.translate(p.x, p.y);
+            ctx.rotate(p.r);
+            ctx.scale(Math.cos(p.flip), 1);
+            ctx.globalAlpha = p.alpha;
+            ctx.fillStyle = p.color;
+            ctx.beginPath();
+            ctx.moveTo(0, 0);
+            ctx.bezierCurveTo(-s * 0.22, -s * 0.12, -s * 0.72, -s * 0.32, -s * 0.38, -s * 0.88);
+            ctx.bezierCurveTo(-s * 0.16, -s * 1.08, 0, -s * 0.72, 0, -s * 0.72);
+            ctx.bezierCurveTo(0, -s * 0.72, s * 0.16, -s * 1.08, s * 0.38, -s * 0.88);
+            ctx.bezierCurveTo(s * 0.72, -s * 0.32, s * 0.22, -s * 0.12, 0, 0);
+            ctx.closePath();
+            ctx.fill();
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.28)';
+            ctx.lineWidth = Math.max(0.6, s * 0.04);
+            ctx.beginPath();
+            ctx.moveTo(0, -s * 0.08);
+            ctx.quadraticCurveTo(-s * 0.04, -s * 0.45, 0, -s * 0.78);
+            ctx.stroke();
+            ctx.restore();
+        }
+
+        function tick() {
+            if (!running) return;
+            const w = window.innerWidth;
+            const h = window.innerHeight;
+            ctx.clearRect(0, 0, w, h);
+            for (const p of petals) {
+                p.sway += p.vs;
+                p.flip += p.vf;
+                p.x += p.vx + Math.sin(p.sway) * 0.45;
+                p.y += p.vy;
+                p.r += p.vr;
+                if (p.y > h + 24 || p.x > w + 32 || p.x < -32) {
+                    Object.assign(p, spawn(false));
+                }
+                drawPetal(p);
+            }
+            raf = requestAnimationFrame(tick);
+        }
+
+        function start() {
+            if (running || reduce.matches) return;
+            resize();
+            if (!petals.length) {
+                petals = Array.from({ length: COUNT }, () => spawn(true));
+            }
+            canvas.hidden = false;
+            running = true;
+            raf = requestAnimationFrame(tick);
+        }
+
+        function stop() {
+            running = false;
+            cancelAnimationFrame(raf);
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            canvas.hidden = true;
+        }
+
+        window.addEventListener('resize', () => {
+            if (running) resize();
+        });
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                cancelAnimationFrame(raf);
+            } else if (running) {
+                raf = requestAnimationFrame(tick);
+            }
+        });
+        reduce.addEventListener('change', () => {
+            if (reduce.matches) stop();
+        });
+
+        return {
+            start,
+            stop,
+            reduced: () => reduce.matches
+        };
+    }
+
+    function applyAtmosphere(mode) {
+        mode = normalizeAtmosphere(mode);
+        if (sakura && sakura.reduced()) mode = 'still';
+        currentAtmosphere = mode;
+        document.documentElement.dataset.atmosphere = mode;
+        updateAtmosphereState(mode);
+        if (!sakura) {
+            const canvas = document.getElementById('sakura-layer');
+            if (canvas) sakura = createSakura(canvas);
+        }
+        if (mode === 'sakura') sakura?.start();
+        else sakura?.stop();
+        try {
+            localStorage.setItem('site-atmosphere', mode);
+        } catch (_) { /* private mode */ }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('[data-lang-switch]').forEach((button) => {
             button.addEventListener('click', () => {
                 applyLanguage(button.dataset.langSwitch);
                 const mobileMenu = document.getElementById('mobile-menu');
                 if (mobileMenu) mobileMenu.classList.add('hidden');
+            });
+        });
+
+        document.querySelectorAll('[data-atmosphere]').forEach((button) => {
+            button.addEventListener('click', () => {
+                applyAtmosphere(button.dataset.atmosphere);
             });
         });
 
@@ -371,6 +693,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const requestedLanguage = normalizeLanguage(params.get('lang'));
         const initialLanguage = params.has('lang') ? requestedLanguage : savedLanguage;
         applyLanguage(initialLanguage);
+
+        let savedAtmosphere = 'still';
+        try {
+            savedAtmosphere = normalizeAtmosphere(localStorage.getItem('site-atmosphere'));
+        } catch (_) { /* private mode */ }
+        applyAtmosphere(savedAtmosphere);
 
         if ('IntersectionObserver' in window) {
             const scrollObserver = new IntersectionObserver((entries, observer) => {

@@ -4,84 +4,93 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Erubisu Studio | Minimalist Web Design &amp; Development</title>
+<title>Erubisu Studio | Freelance Photographer &amp; Web Designer</title>
 <!-- SEO Meta Tags -->
-<meta content="Erubisu Studio – Curated web development portfolio. We merge Japanese aesthetic principles with modern code efficiency to create unique digital experiences." name="description"/>
-<meta content="web design, front-end development, portfolio, Japanese minimalism, UI/UX, Erubisu Studio, web agency Italy, curated design" name="keywords"/>
+<meta content="Erubisu Studio – Freelance photographer and web designer. Japanese aesthetic principles, photography, and modern code for focused digital work." name="description"/>
+<meta content="freelance photographer, web designer, photography, web design, front-end development, portfolio, Japanese minimalism, UI/UX, Erubisu Studio" name="keywords"/>
 <meta content="index, follow" name="robots"/>
 <link href="https://erubisustudio.github.io/" rel="canonical"/>
 <!-- Favicon -->
-<link href="images/favicon.ico" rel="icon" sizes="48x48"/>
-<link href="images/favicon.png" rel="icon" type="image/png" sizes="32x32"/>
-<link href="images/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="images/brand/favicon.ico" rel="icon" sizes="48x48"/>
+<link href="images/brand/favicon.png" rel="icon" type="image/png" sizes="32x32"/>
+<link href="images/brand/apple-touch-icon.png" rel="apple-touch-icon"/>
 <!-- Open Graph / Facebook -->
 <meta content="website" property="og:type"/>
 <meta content="https://erubisustudio.github.io/" property="og:url"/>
-<meta content="Erubisu Studio | Architectural Quiet Portfolio" property="og:title"/>
-<meta content="Art meets efficiency. Curated web development with elegance and precision." property="og:description"/>
-<meta content="https://erubisustudio.github.io/images/og-image.jpg" property="og:image"/>
+<meta content="Erubisu Studio | Freelance Photographer &amp; Web Designer" property="og:title"/>
+<meta content="Freelance photographer and web designer. Art meets efficiency." property="og:description"/>
+<meta content="https://erubisustudio.github.io/images/brand/og-image.jpg" property="og:image"/>
 <!-- Twitter -->
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="https://erubisustudio.github.io/" name="twitter:url"/>
-<meta content="Erubisu Studio | Architectural Quiet Portfolio" name="twitter:title"/>
-<meta content="Curated web development between Japanese aesthetics and modern code." name="twitter:description"/>
-<meta content="https://erubisustudio.github.io/images/og-image.jpg" name="twitter:image"/>
+<meta content="Erubisu Studio | Freelance Photographer &amp; Web Designer" name="twitter:title"/>
+<meta content="Freelance photographer and web designer. Japanese aesthetics, photography, and modern code." name="twitter:description"/>
+<meta content="https://erubisustudio.github.io/images/brand/og-image.jpg" name="twitter:image"/>
 <link rel="preload" href="fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href="fonts/newsreader-400.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="fonts/shippori-mincho-400.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="stylesheet" href="css/style.css"/>
 <!-- English default; Japanese via client-side language switcher. --></head>
 <body class="bg-background text-on-background font-body antialiased selection:bg-primary-container selection:text-on-primary-container">
+<canvas id="sakura-layer" class="sakura-layer" hidden aria-hidden="true"></canvas>
 <nav class="site-nav fixed top-0 w-full z-50">
-<div class="flex justify-between items-center px-[5vw] py-6 max-w-[1440px] mx-auto">
+<div class="shell flex justify-between items-center py-6">
 <div class="hover:opacity-80 transition-opacity duration-300">
 <a href="#hero">
-<img alt="Erubisu Studio" class="h-14 w-14 object-contain" data-i18n-alt="0" src="images/Logo.png"/>
+<img alt="Erubisu Studio" class="h-14 w-14 object-contain" data-i18n-alt="0" src="images/brand/Logo.png"/>
 </a>
 </div>
 <ul class="hidden md:flex gap-8 font-headline text-lg tracking-tight">
 <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t001" href="#philosophy">Philosophy</a></li>
 <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t002" href="#process">Process</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t096" href="#photography">Photography</a></li>
 <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t003" href="#portfolio">Portfolio</a></li>
 <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t004" href="#skills">Skills</a></li>
 </ul>
-<div class="hidden md:flex items-center gap-4">
+<div class="hidden md:flex flex-wrap items-center justify-end gap-4">
 <a class="font-label text-sm tracking-[0.06em] hover:text-seal transition-colors" data-i18n="t005" href="#contact">Contact Me</a>
-<div aria-label="Language selector" class="language-switcher flex items-center gap-2 font-label text-xs uppercase tracking-[0.08em]"><button aria-pressed="true" class="hit-44 px-2 transition-colors" data-lang-switch="en" type="button">EN</button><span class="text-on-surface-variant">/</span><button aria-pressed="false" class="hit-44 px-2 rounded text-on-surface-variant hover:text-on-surface transition-colors" data-lang-switch="ja" type="button">JA</button></div>
+<div aria-label="Language selector" class="language-switcher flex items-center gap-2 font-label text-xs uppercase tracking-[0.08em]"><button aria-pressed="true" class="hit-44 px-2 rounded-full transition-colors" data-lang-switch="en" type="button">EN</button><span class="text-on-surface-variant">/</span><button aria-pressed="false" class="hit-44 px-2 rounded-full text-on-surface-variant hover:text-on-surface transition-colors" data-lang-switch="ja" type="button">JA</button></div>
+<div aria-label="Atmosphere" class="atmosphere-switcher flex items-center gap-2 font-label text-xs uppercase tracking-[0.08em]"><button aria-pressed="true" class="hit-44 px-2 rounded-full transition-colors" data-atmosphere="still" data-i18n="atm-still" type="button">Still</button><span class="text-on-surface-variant">/</span><button aria-pressed="false" class="hit-44 px-2 rounded-full text-on-surface-variant hover:text-on-surface transition-colors" data-atmosphere="sakura" data-i18n="atm-sakura" type="button">Sakura</button></div>
 </div>
-<button aria-expanded="false" aria-label="Menu" class="hit-44 md:hidden text-on-surface hover:opacity-80 transition-opacity" id="mobile-menu-button">
+<button aria-expanded="false" aria-label="Menu" class="hit-44 rounded-full md:hidden text-on-surface hover:opacity-80 transition-opacity" id="mobile-menu-button">
 <svg class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
 </button>
 </div>
 <!-- Mobile Menu -->
 <div class="hidden md:hidden absolute top-full left-0 w-full bg-background border-t border-outline-variant/20" id="mobile-menu">
-<ul class="flex flex-col font-headline text-lg tracking-tight px-[5vw] py-6 gap-6">
+<ul class="shell flex flex-col font-headline text-lg tracking-tight py-6 gap-6">
 <li><a class="block text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t001" href="#philosophy">Philosophy</a></li>
 <li><a class="block text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t002" href="#process">Process</a></li>
+<li><a class="block text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t096" href="#photography">Photography</a></li>
 <li><a class="block text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t003" href="#portfolio">Portfolio</a></li>
 <li><a class="block text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t004" href="#skills">Skills</a></li>
 <li><a class="block font-label text-sm tracking-[0.06em] hover:text-seal transition-colors" data-i18n="t005" href="#contact">Contact Me</a></li>
-<li aria-label="Language selector" class="mobile-language-switcher flex items-center gap-3 pt-2 font-label text-sm uppercase tracking-[0.08em]"><button aria-pressed="true" class="hit-44 px-3 transition-colors" data-lang-switch="en" type="button">English</button><span class="text-on-surface-variant">/</span><button aria-pressed="false" class="hit-44 px-3 rounded text-on-surface-variant hover:text-on-surface transition-colors" data-lang-switch="ja" type="button">日本語</button></li></ul>
+<li aria-label="Language selector" class="mobile-language-switcher flex items-center gap-3 pt-2 font-label text-sm uppercase tracking-[0.08em]"><button aria-pressed="true" class="hit-44 px-3 rounded-full transition-colors" data-lang-switch="en" type="button">English</button><span class="text-on-surface-variant">/</span><button aria-pressed="false" class="hit-44 px-3 rounded-full text-on-surface-variant hover:text-on-surface transition-colors" data-lang-switch="ja" type="button">日本語</button></li>
+<li aria-label="Atmosphere" class="mobile-atmosphere-switcher flex items-center gap-3 font-label text-sm uppercase tracking-[0.08em]"><button aria-pressed="true" class="hit-44 px-3 rounded-full transition-colors" data-atmosphere="still" data-i18n="atm-still" type="button">Still</button><span class="text-on-surface-variant">/</span><button aria-pressed="false" class="hit-44 px-3 rounded-full text-on-surface-variant hover:text-on-surface transition-colors" data-atmosphere="sakura" data-i18n="atm-sakura" type="button">Sakura</button></li>
+</ul>
 </div>
 </nav>
 <main>
 <!-- 1. Hero Section -->
-<section class="min-h-screen flex items-center pt-32 px-[5vw] max-w-[1440px] mx-auto relative" id="hero">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+<section class="min-h-screen flex items-center pt-32 relative" id="hero">
+<div class="shell grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
 <div class="lg:col-span-5 flex flex-col gap-8 z-10">
+<div class="flex flex-col gap-4">
+<p class="font-label text-sm uppercase tracking-[0.08em] text-on-surface-variant" data-i18n="role">Freelance photographer &amp; web designer</p>
 <h1 class="font-headline text-5xl md:text-7xl leading-tight text-on-background" data-i18n-html="t011">Art meets<br/>efficiency</h1>
-<p class="font-body text-lg md:text-xl text-on-surface-variant max-w-md" data-i18n="t012">We turn vision into code with elegance and precision. A curated approach to digital development.</p>
+</div>
+<p class="font-body text-lg md:text-xl text-on-surface-variant" data-i18n="t012">I work as a freelance photographer and web designer. Vision becomes images and interfaces, with elegance and precision.</p>
 <div class="pt-4">
 <a class="text-link" data-i18n="t013" href="#portfolio">Explore Projects</a>
 </div>
 </div>
 <div class="lg:col-span-7 flex justify-end items-end">
-<img alt="Professional profile" class="portrait" data-i18n-alt="1" decoding="async" fetchpriority="high" src="images/foto_profilo.webp"/>
+<img alt="Professional profile" class="portrait" data-i18n-alt="1" decoding="async" fetchpriority="high" src="images/brand/foto_profilo.webp"/>
 </div>
 </div>
 </section>
 <!-- 2. Philosophy -->
-<section class="py-32 px-[5vw] bg-surface-container-low w-full" id="philosophy">
-<div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
+<section class="py-32 bg-surface-container-low w-full" id="philosophy">
+<div class="shell grid grid-cols-1 md:grid-cols-12 gap-12">
 <div class="md:col-span-4 flex flex-col justify-between">
 <h2 class="font-headline text-4xl text-on-surface mb-8" data-i18n="t014">Philosophy</h2>
 </div>
@@ -98,43 +107,79 @@
 </div>
 </section>
 <!-- 3. Creative Flow -->
-<section class="py-32 px-[5vw] max-w-[1440px] mx-auto" id="process">
+<section class="py-32" id="process">
+<div class="shell">
 <h2 class="font-headline text-5xl text-on-background mb-24" data-i18n="t019">Process</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 <div class="flex flex-col gap-4 animate-on-scroll">
-<p class="step-num mb-4" data-i18n="t020">
-                        01</p>
+<p class="step-num mb-4" data-i18n="t020">01</p>
 <h3 class="font-headline text-xl text-on-surface" data-i18n="t021">The Brief</h3>
 <p class="font-body text-on-surface-variant text-sm md:text-base leading-relaxed" data-i18n="t022">We start with a conversation. You tell me your idea, your goals, and what you expect from your new website. This helps me understand who you are and create something that truly represents you.</p>
 </div>
 <div class="flex flex-col gap-4 lg:mt-12 animate-on-scroll">
-<p class="step-num mb-4" data-i18n="t023">
-                        02</p>
+<p class="step-num mb-4" data-i18n="t023">02</p>
 <h3 class="font-headline text-xl text-on-surface" data-i18n="t024">Development</h3>
 <p class="font-body text-on-surface-variant text-sm md:text-base leading-relaxed" data-i18n="t025">This is where the work takes shape. I turn the concepts we discussed into a real structure that is fast, responsive, and beautiful on every device.</p>
 </div>
 <div class="flex flex-col gap-4 animate-on-scroll">
-<p class="step-num mb-4" data-i18n="t026">
-                        03</p>
+<p class="step-num mb-4" data-i18n="t026">03</p>
 <h3 class="font-headline text-xl text-on-surface" data-i18n="t027">Refinement</h3>
 <p class="font-body text-on-surface-variant text-sm md:text-base leading-relaxed" data-i18n="t028">I never settle for the first result. I check every detail, correct small flaws, and make sure everything flows smoothly. This is where your website becomes truly polished.</p>
 </div>
 <div class="flex flex-col gap-4 lg:mt-12 animate-on-scroll">
-<p class="step-num mb-4" data-i18n="t029">
-                        04</p>
+<p class="step-num mb-4" data-i18n="t029">04</p>
 <h3 class="font-headline text-xl text-on-surface" data-i18n="t030">Launch</h3>
 <p class="font-body text-on-surface-variant text-sm md:text-base leading-relaxed" data-i18n="t031">Once everything is ready and you are satisfied, I take it live. I publish your website, configure it correctly, and make sure it is ready to be found by your customers.</p>
 </div>
 </div>
+</div>
+</section>
+<!-- 4. Photography -->
+<section class="py-32 w-full" id="photography">
+<div class="shell flex flex-col gap-16">
+<div class="max-w-xl">
+<h2 class="font-headline text-5xl text-on-background mb-6" data-i18n="t096">Photography</h2>
+<p class="font-body text-lg text-on-surface-variant" data-i18n="t097">A few frames. Click a note to look closer.</p>
+</div>
+<div class="pinboard">
+<button class="postit postit--cow is-landscape" data-photo="images/photography/cow.webp" type="button">
+<span class="postit__tape" aria-hidden="true"></span>
+<img alt="Cow standing in a field at sunset" data-i18n-alt="5" decoding="async" draggable="false" height="540" loading="lazy" src="images/photography/cow-sm.webp" width="720"/>
+</button>
+<button class="postit postit--swan is-portrait" data-photo="images/photography/swan.webp" type="button">
+<span class="postit__tape" aria-hidden="true"></span>
+<img alt="White swan preening its wing" data-i18n-alt="6" decoding="async" draggable="false" height="720" loading="lazy" src="images/photography/swan-sm.webp" width="480"/>
+</button>
+<button class="postit postit--goldfinch is-portrait" data-photo="images/photography/goldfinch.webp" type="button">
+<span class="postit__tape" aria-hidden="true"></span>
+<img alt="Goldfinch perched on a reed against a blue sky" data-i18n-alt="7" decoding="async" draggable="false" height="720" loading="lazy" src="images/photography/goldfinch-sm.webp" width="405"/>
+</button>
+<button class="postit postit--flower-green is-portrait" data-photo="images/photography/flower-green.webp" type="button">
+<span class="postit__tape" aria-hidden="true"></span>
+<img alt="Small pale flower on a dark ground" data-i18n-alt="8" decoding="async" draggable="false" height="720" loading="lazy" src="images/photography/flower-green-sm.webp" width="480"/>
+</button>
+<button class="postit postit--flower-magenta is-landscape" data-photo="images/photography/flower-magenta.webp" type="button">
+<span class="postit__tape" aria-hidden="true"></span>
+<img alt="Macro of a magenta flower" data-i18n-alt="9" decoding="async" draggable="false" height="405" loading="lazy" src="images/photography/flower-magenta-sm.webp" width="720"/>
+</button>
+<button class="postit postit--bubbles is-landscape" data-photo="images/photography/bubbles.webp" type="button">
+<span class="postit__tape" aria-hidden="true"></span>
+<img alt="Children reaching for soap bubbles in a piazza" data-i18n-alt="10" decoding="async" draggable="false" height="406" loading="lazy" src="images/photography/bubbles-sm.webp" width="720"/>
+</button>
+<button class="postit postit--cliff is-landscape" data-photo="images/photography/cliff.webp" type="button">
+<span class="postit__tape" aria-hidden="true"></span>
+<img alt="Person sitting on a cliff above a dry valley" data-i18n-alt="11" decoding="async" draggable="false" height="405" loading="lazy" src="images/photography/cliff-sm.webp" width="720"/>
+</button>
+</div>
+</div>
 </section>
 <!-- 5. Portfolio -->
-<section class="py-32 px-[5vw] bg-surface-container-low w-full" id="portfolio">
-<div class="max-w-[1440px] mx-auto flex flex-col gap-32">
+<section class="py-32 bg-surface-container-low w-full" id="portfolio">
+<div class="shell flex flex-col gap-32">
 <h2 class="font-headline text-5xl text-on-background" data-i18n="t032">Portfolio</h2>
-<!-- Project 1: Karalis Charter -->
 <article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center animate-on-scroll">
 <a class="lg:col-span-7 order-2 lg:order-1 w-full" href="https://www.karalischarter.com/" rel="noopener noreferrer" target="_blank">
-<img alt="Karalis Charter Interface" class="work-shot" data-i18n-alt="2" loading="lazy" decoding="async" src="images/karalis_charter.webp"/>
+<img alt="Karalis Charter Interface" class="work-shot" data-i18n-alt="2" loading="lazy" decoding="async" src="images/web/karalis_charter.webp"/>
 </a>
 <div class="lg:col-span-5 flex flex-col gap-6 order-1 lg:order-2 lg:pl-12">
 <span class="font-label text-sm text-on-surface-variant tracking-[0.05em] uppercase" data-i18n="t033">Nautical & Charter</span>
@@ -142,7 +187,6 @@
 <p class="font-body text-lg text-on-surface-variant" data-i18n="t035">Complete website restyling and implementation of custom features to enhance user experience, online booking performance, and brand presence for a luxury charter service in Sardinia.</p>
 </div>
 </article>
-<!-- Project 2: OSINT Lab -->
 <article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center animate-on-scroll">
 <div class="lg:col-span-5 flex flex-col gap-6 lg:pr-12">
 <span class="font-label text-sm text-on-surface-variant tracking-[0.05em] uppercase" data-i18n="t036">Digital Intelligence</span>
@@ -150,13 +194,12 @@
 <p class="font-body text-lg text-on-surface-variant" data-i18n="t038">An advanced digital intelligence dashboard for open-source research. It combines high-density information with a clean, functional interface for efficient analysis.</p>
 </div>
 <div class="lg:col-span-7 w-full">
-<img alt="OSINT Lab Interface" class="work-shot" data-i18n-alt="3" loading="lazy" decoding="async" src="images/osint_website.webp"/>
+<img alt="OSINT Lab Interface" class="work-shot" data-i18n-alt="3" loading="lazy" decoding="async" src="images/web/osint_website.webp"/>
 </div>
 </article>
-<!-- Project 3: Vera Social -->
 <article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center animate-on-scroll">
 <div class="lg:col-span-7 order-2 lg:order-1 w-full">
-<img alt="Vera Social Interface" class="work-shot" data-i18n-alt="4" loading="lazy" decoding="async" src="images/vera_social.webp"/>
+<img alt="Vera Social Interface" class="work-shot" data-i18n-alt="4" loading="lazy" decoding="async" src="images/web/vera_social.webp"/>
 </div>
 <div class="lg:col-span-5 flex flex-col gap-6 order-1 lg:order-2 lg:pl-12">
 <span class="font-label text-sm text-on-surface-variant tracking-[0.05em] uppercase" data-i18n="t039">Premium Networking</span>
@@ -167,21 +210,21 @@
 </div>
 </section>
 <!-- 7. Technical Skills -->
-<section class="py-32 px-[5vw] max-w-[1440px] mx-auto" id="skills">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-24">
+<section class="py-32" id="skills">
+<div class="shell grid grid-cols-1 md:grid-cols-2 gap-24">
 <div>
 <h2 class="font-headline text-4xl text-on-surface mb-8" data-i18n="t042">Skills</h2>
 <p class="font-body text-lg text-on-surface-variant mb-12" data-i18n-html="t043">For me, web development is a balance between art and logic. I apply <strong data-i18n="t044">Muda</strong> to remove everything that slows down your site, leaving space only for the essentials and speed. Through <strong data-i18n="t045">Kaizen</strong>, I refine every line of code through continuous improvement, delivering solid, secure solutions ready to grow over time.</p>
 </div>
 <p class="font-headline text-xl text-on-surface self-center leading-relaxed">
-<span data-i18n="t046">WordPress</span><span class="text-on-surface-variant"> · </span><span data-i18n="t048">HTML5</span><span class="text-on-surface-variant"> · </span><span data-i18n="t050">CSS</span><span class="text-on-surface-variant"> · </span><span data-i18n="t052">JavaScript</span><span class="text-on-surface-variant"> · </span><span data-i18n="t054">PHP</span><span class="text-on-surface-variant"> · </span><span data-i18n="t055">UX/UI</span>
+<span data-i18n="t056">Photography</span><span class="text-on-surface-variant"> · </span><span data-i18n="t055">UX/UI</span><span class="text-on-surface-variant"> · </span><span data-i18n="t046">WordPress</span><span class="text-on-surface-variant"> · </span><span data-i18n="t048">HTML5</span><span class="text-on-surface-variant"> · </span><span data-i18n="t050">CSS</span><span class="text-on-surface-variant"> · </span><span data-i18n="t052">JavaScript</span><span class="text-on-surface-variant"> · </span><span data-i18n="t054">PHP</span>
 </p>
 </div>
 </section>
 
 <!-- 8. Contact -->
-<section class="py-32 px-[5vw] bg-surface-container-low w-full" id="contact">
-<div class="max-w-[1440px] mx-auto">
+<section class="py-32 bg-surface-container-low w-full" id="contact">
+<div class="shell">
 <h2 class="font-headline text-4xl text-on-surface mb-4" data-i18n="t078">Ready to start a project?</h2>
 <p class="font-body text-on-surface-variant mb-10" data-i18n="t079">Write to me to explore how we can collaborate.</p>
 <button class="px-8 py-3 bg-seal text-on-seal rounded-full font-label text-sm tracking-[0.06em] hover:bg-seal-dim transition-colors duration-300" onclick="openContactModal()" type="button">
@@ -190,12 +233,11 @@
 </div>
 </section>
 </main>
-<footer class="site-footer w-full pt-24 pb-12 px-[5vw]">
-<div class="max-w-[1440px] mx-auto flex flex-col gap-12">
+<footer class="site-footer w-full pt-24 pb-12">
+<div class="shell flex flex-col gap-12">
 <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
 <div class="flex flex-col gap-4">
-<span class="font-headline italic text-xl text-primary" data-i18n="t081">Erubisu
-                        Studio - Web Design &amp; Development</span>
+<span class="font-headline text-xl text-primary" data-i18n="t081">Erubisu Studio — Freelance photographer &amp; web designer</span>
 <p class="font-body text-sm uppercase tracking-[0.05em] text-on-surface-variant" data-i18n="t082">
                         © 2026 Erubisu studio
                     </p>
@@ -210,12 +252,12 @@
 <div aria-hidden="true" aria-labelledby="contact-modal-title" aria-modal="true" class="fixed inset-0 z-[200] hidden items-center justify-center p-4" id="contact-modal" role="dialog">
 <div class="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300 opacity-0" id="contact-modal-backdrop" onclick="closeContactModal()"></div>
 <div class="relative bg-surface rounded-2xl shadow-[0_24px_48px_rgba(0,0,0,0.2)] p-10 max-w-sm w-full transform scale-95 opacity-0 transition-all duration-300 border border-outline-variant/20 text-center" id="contact-modal-content">
-<button aria-label="Close" class="hit-44 absolute top-4 right-4 text-on-surface-variant hover:text-on-surface transition-colors" data-i18n-aria-label="close" id="contact-modal-close" onclick="closeContactModal()" type="button">
+<button aria-label="Close" class="hit-44 rounded-full absolute top-4 right-4 text-on-surface-variant hover:text-on-surface transition-colors" data-i18n-aria-label="close" id="contact-modal-close" onclick="closeContactModal()" type="button">
 <svg class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
 </button>
 <h3 class="font-headline text-2xl text-on-surface mb-6" data-i18n="t089" id="contact-modal-title">Choose how to contact me</h3>
 <div class="flex flex-col gap-4">
-<button class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/30 select-all cursor-pointer group relative hover:bg-surface-container transition-colors" onclick="copyEmail()" type="button">
+<button class="bg-surface-container-low p-4 rounded-full border border-outline-variant/30 select-all cursor-pointer group relative hover:bg-surface-container transition-colors" onclick="copyEmail()" type="button">
 <div class="flex items-center justify-center gap-2 mb-2">
 <svg class="icon text-on-surface-variant" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect height="14" rx="2" width="18" x="3" y="5"/><path d="M3 7l9 6 9-6"/></svg>
 <span class="font-label text-sm uppercase tracking-wide text-on-surface-variant" data-i18n="t090">Email</span>
@@ -223,7 +265,7 @@
 <span class="font-body text-base text-primary font-medium block" data-i18n="t091" id="contact-email">adrianelvisiale@gmail.com</span>
 <p class="text-[10px] text-primary mt-2 uppercase tracking-[0.1em] opacity-0 group-hover:opacity-100 transition-opacity font-medium" data-i18n="t092">Click to copy</p>
 </button>
-<a class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/30 group hover:bg-surface-container transition-colors block" href="https://www.linkedin.com/in/adrian-iale-681371388/" rel="noopener noreferrer" target="_blank">
+<a class="control-pill bg-surface-container-low p-4 rounded-full border border-outline-variant/30 group hover:bg-surface-container transition-colors block" href="https://www.linkedin.com/in/adrian-iale-681371388/" rel="noopener noreferrer" target="_blank">
 <div class="flex items-center justify-center gap-2 mb-2">
 <svg class="w-5 h-5 text-on-surface-variant" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
 <span class="font-label text-sm uppercase tracking-wide text-on-surface-variant" data-i18n="t093">LinkedIn</span>
@@ -234,10 +276,19 @@
 </div>
 </div>
 </div>
-<!-- Scripts -->
-
-
-
+<div aria-hidden="true" aria-label="Photograph" aria-modal="true" class="photo-lightbox" hidden="" id="photo-lightbox" role="dialog">
+<button class="photo-lightbox__backdrop" data-i18n-aria-label="close" type="button"></button>
+<img alt="" decoding="async" draggable="false" id="photo-lightbox-img"/>
+<button class="photo-lightbox__close hit-44 rounded-full" data-i18n-aria-label="close" id="photo-lightbox-close" type="button">
+<svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+</button>
+<button class="photo-lightbox__nav photo-lightbox__nav--prev hit-44 rounded-full" data-i18n-aria-label="photo-prev" id="photo-lightbox-prev" type="button">
+<svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+</button>
+<button class="photo-lightbox__nav photo-lightbox__nav--next hit-44 rounded-full" data-i18n-aria-label="photo-next" id="photo-lightbox-next" type="button">
+<svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+</button>
+</div>
 <script src="js/main.js" defer></script>
 </body>
 </html>

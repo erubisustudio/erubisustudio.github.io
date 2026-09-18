@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="site-guard" lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -7,49 +7,54 @@
 <meta content="Privacy policy for Erubisu Studio. No profiling cookies, analytics, or tracking pixels." name="description"/>
 <meta content="index, follow" name="robots"/>
 <link href="https://erubisustudio.github.io/privacy.html" rel="canonical"/>
-<link href="images/favicon.ico" rel="icon" sizes="48x48"/>
-<link href="images/favicon.png" rel="icon" type="image/png" sizes="32x32"/>
-<link href="images/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="images/brand/favicon.ico" rel="icon" sizes="48x48"/>
+<link href="images/brand/favicon.png" rel="icon" type="image/png" sizes="32x32"/>
+<link href="images/brand/apple-touch-icon.png" rel="apple-touch-icon"/>
 <link rel="preload" href="fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href="fonts/newsreader-400.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="fonts/shippori-mincho-400.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body class="bg-background text-on-background font-body antialiased selection:bg-primary-container selection:text-on-primary-container">
+<canvas id="sakura-layer" class="sakura-layer" hidden aria-hidden="true"></canvas>
 <nav class="site-nav fixed top-0 w-full z-50">
-<div class="flex justify-between items-center px-[5vw] py-6 max-w-[1440px] mx-auto">
+<div class="shell flex justify-between items-center py-6">
 <div class="hover:opacity-80 transition-opacity duration-300">
 <a href="index.html">
-<img alt="Erubisu Studio" class="h-14 w-14 object-contain" data-i18n-alt="0" src="images/Logo.png"/>
+<img alt="Erubisu Studio" class="h-14 w-14 object-contain" data-i18n-alt="0" src="images/brand/Logo.png"/>
 </a>
 </div>
 <ul class="hidden md:flex gap-8 font-headline text-lg tracking-tight">
 <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t001" href="index.html#philosophy">Philosophy</a></li>
 <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t002" href="index.html#process">Process</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t096" href="index.html#photography">Photography</a></li>
 <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t003" href="index.html#portfolio">Portfolio</a></li>
 <li><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t004" href="index.html#skills">Skills</a></li>
 </ul>
-<div class="hidden md:flex items-center gap-4">
+<div class="hidden md:flex flex-wrap items-center justify-end gap-4">
 <a class="font-label text-sm tracking-[0.06em] hover:text-seal transition-colors" data-i18n="t005" href="index.html#contact">Contact Me</a>
-<div aria-label="Language selector" class="language-switcher flex items-center gap-2 font-label text-xs uppercase tracking-[0.08em]"><button aria-pressed="true" class="hit-44 px-2 transition-colors" data-lang-switch="en" type="button">EN</button><span class="text-on-surface-variant">/</span><button aria-pressed="false" class="hit-44 px-2 rounded text-on-surface-variant hover:text-on-surface transition-colors" data-lang-switch="ja" type="button">JA</button></div>
+<div aria-label="Language selector" class="language-switcher flex items-center gap-2 font-label text-xs uppercase tracking-[0.08em]"><button aria-pressed="true" class="hit-44 px-2 rounded-full transition-colors" data-lang-switch="en" type="button">EN</button><span class="text-on-surface-variant">/</span><button aria-pressed="false" class="hit-44 px-2 rounded-full text-on-surface-variant hover:text-on-surface transition-colors" data-lang-switch="ja" type="button">JA</button></div>
+<div aria-label="Atmosphere" class="atmosphere-switcher flex items-center gap-2 font-label text-xs uppercase tracking-[0.08em]"><button aria-pressed="true" class="hit-44 px-2 rounded-full transition-colors" data-atmosphere="still" data-i18n="atm-still" type="button">Still</button><span class="text-on-surface-variant">/</span><button aria-pressed="false" class="hit-44 px-2 rounded-full text-on-surface-variant hover:text-on-surface transition-colors" data-atmosphere="sakura" data-i18n="atm-sakura" type="button">Sakura</button></div>
 </div>
-<button aria-expanded="false" aria-label="Menu" class="hit-44 md:hidden text-on-surface hover:opacity-80 transition-opacity" id="mobile-menu-button">
+<button aria-expanded="false" aria-label="Menu" class="hit-44 rounded-full md:hidden text-on-surface hover:opacity-80 transition-opacity" id="mobile-menu-button">
 <svg class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
 </button>
 </div>
 <div class="hidden md:hidden absolute top-full left-0 w-full bg-background border-t border-outline-variant/20" id="mobile-menu">
-<ul class="flex flex-col font-headline text-lg tracking-tight px-[5vw] py-6 gap-6">
+<ul class="shell flex flex-col font-headline text-lg tracking-tight py-6 gap-6">
 <li><a class="block text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t001" href="index.html#philosophy">Philosophy</a></li>
 <li><a class="block text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t002" href="index.html#process">Process</a></li>
+<li><a class="block text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t096" href="index.html#photography">Photography</a></li>
 <li><a class="block text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t003" href="index.html#portfolio">Portfolio</a></li>
 <li><a class="block text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="t004" href="index.html#skills">Skills</a></li>
 <li><a class="block font-label text-sm tracking-[0.06em] hover:text-seal transition-colors" data-i18n="t005" href="index.html#contact">Contact Me</a></li>
-<li aria-label="Language selector" class="mobile-language-switcher flex items-center gap-3 pt-2 font-label text-sm uppercase tracking-[0.08em]"><button aria-pressed="true" class="hit-44 px-3 transition-colors" data-lang-switch="en" type="button">English</button><span class="text-on-surface-variant">/</span><button aria-pressed="false" class="hit-44 px-3 rounded text-on-surface-variant hover:text-on-surface transition-colors" data-lang-switch="ja" type="button">日本語</button></li>
+<li aria-label="Language selector" class="mobile-language-switcher flex items-center gap-3 pt-2 font-label text-sm uppercase tracking-[0.08em]"><button aria-pressed="true" class="hit-44 px-3 rounded-full transition-colors" data-lang-switch="en" type="button">English</button><span class="text-on-surface-variant">/</span><button aria-pressed="false" class="hit-44 px-3 rounded-full text-on-surface-variant hover:text-on-surface transition-colors" data-lang-switch="ja" type="button">日本語</button></li>
+<li aria-label="Atmosphere" class="mobile-atmosphere-switcher flex items-center gap-3 font-label text-sm uppercase tracking-[0.08em]"><button aria-pressed="true" class="hit-44 px-3 rounded-full transition-colors" data-atmosphere="still" data-i18n="atm-still" type="button">Still</button><span class="text-on-surface-variant">/</span><button aria-pressed="false" class="hit-44 px-3 rounded-full text-on-surface-variant hover:text-on-surface transition-colors" data-atmosphere="sakura" data-i18n="atm-sakura" type="button">Sakura</button></li>
 </ul>
 </div>
 </nav>
 <main>
-<article class="legal-page px-[5vw] max-w-[800px] mx-auto">
-<div class="legal-sheet">
+<article class="legal-page">
+<div class="shell legal-sheet">
 <h1 class="font-headline text-4xl text-on-background mb-4" data-i18n="privacy-title">Privacy Policy</h1>
 <p class="font-label text-sm uppercase tracking-[0.05em] text-on-surface-variant mb-8" data-i18n="privacy-updated">Last updated: 15 September 2026</p>
 <p data-i18n="privacy-lead">This site is a static portfolio. There is no cookie banner because we do not use profiling cookies, analytics, advertising, or tracking pixels.</p>
@@ -71,11 +76,11 @@
 </div>
 </article>
 </main>
-<footer class="site-footer w-full pt-24 pb-12 px-[5vw]">
-<div class="max-w-[1440px] mx-auto flex flex-col gap-12">
+<footer class="site-footer w-full pt-24 pb-12">
+<div class="shell flex flex-col gap-12">
 <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
 <div class="flex flex-col gap-4">
-<span class="font-headline italic text-xl text-primary" data-i18n="t081">Erubisu Studio - Web Design &amp; Development</span>
+<span class="font-headline text-xl text-primary" data-i18n="t081">Erubisu Studio - Web Design &amp; Development</span>
 <p class="font-body text-sm uppercase tracking-[0.05em] text-on-surface-variant" data-i18n="t082">© 2026 Erubisu studio</p>
 </div>
 <div class="flex flex-wrap items-center justify-start md:justify-end gap-6 sm:gap-8 font-body text-sm uppercase tracking-[0.05em] text-on-surface-variant">
